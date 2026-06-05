@@ -1,5 +1,5 @@
 // CFA Accountants — shared multi-page script
-var PAGE_URLS={home:'/',services:'/services.html',accounting:'/accounting.html',advisory:'/advisory.html',tax:'/tax.html',insights:'/insights.html','blog-mileage':'/blog/hmrc-mileage-rate-increase-2026.html',faqs:'/faqs.html',about:'/about.html',contact:'/contact.html',privacy:'/privacy.html'};
+var PAGE_URLS={home:'/',services:'/services',accounting:'/accounting',advisory:'/advisory',tax:'/tax',insights:'/insights','blog-mileage':'/blog/hmrc-mileage-rate-increase-2026',faqs:'/faqs',about:'/about',contact:'/contact',privacy:'/privacy'};
 function show(id){var u=PAGE_URLS[id];if(u)location.href=u;}
 var svcPageMap={'svc-bookkeeping':'accounting','svc-payroll':'accounting','svc-annual':'accounting','svc-vat':'accounting','svc-fd':'accounting','svc-mgmt':'advisory','svc-tax':'advisory','svc-biz':'advisory','svc-corp':'advisory','tax-business':'tax','tax-personal':'tax','tax-compliance':'tax'};
 function goService(id){var p=svcPageMap[id]||'accounting';location.href=PAGE_URLS[p]+'#'+id;}
