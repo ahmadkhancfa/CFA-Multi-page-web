@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CFA Accountants | Expert Accounting & Tax Services Manchester</title>
+<meta name="description" content="Manchester-based chartered certified accountants offering accounting, bookkeeping, tax planning and business advisory for sole traders and limited companies."/>
+<link rel="canonical" href="https://www.cfaaccountants.com/"/>
+<meta property="og:title" content="CFA Accountants | Expert Accounting & Tax Services Manchester"/>
+<meta property="og:description" content="Manchester-based chartered certified accountants offering accounting, bookkeeping, tax planning and business advisory for sole traders and limited companies."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.cfaaccountants.com/"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/styles.css"/>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="brand-lockup" style="cursor:pointer;display:inline-flex;align-items:center;text-decoration:none">
+      <div class="nav-logo-chip">
+      <img class="chip-logo" src="/assets/img/img_b151954839.webp" alt="CFA Accountants" style="height:40px;width:auto;object-fit:contain;display:block"/>
+      </div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="/" class="active" id="nav-home">Home</a>
+      <div class="nav-dd">
+        <a href="/services.html" id="nav-services">Services <span class="dd-caret">▾</span></a>
+        <div class="nav-dd-menu">
+          <a href="/accounting.html"><span class="dd-t">Accounting &amp; Compliance</span><span class="dd-s">The essentials, handled.</span></a>
+          <a href="/advisory.html"><span class="dd-t">Advisory Services</span><span class="dd-s">The bigger picture.</span></a>
+          <a href="/tax.html"><span class="dd-t">Tax Advice &amp; Planning</span><span class="dd-s">Plan ahead, pay less.</span></a>
+        </div>
+      </div>
+      <a href="/insights.html" id="nav-insights">Insights</a>
+      <a href="/faqs.html" id="nav-faqs">FAQs</a>
+      <a href="/about.html" id="nav-about">About</a>
+      <a href="/contact.html" class="nav-cta" id="nav-contact">Get in Touch</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="page-home" class="page active">
+
+  <section class="hero">
+    <div class="hero-orb1"></div>
+    <div class="hero-orb2"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="badge">Manchester based firm</div>
+        <h1 class="glow">Powered by technology.<br>Guided by people.<br>Driven by results.</h1>
+        <p class="hero-desc">CFA Accountants provides total clarity in complex financial matters. As leading Chartered Certified Accountants in Manchester, we actively educate and guide fast-growing businesses to enable informed, confident commercial decisions. Discover modern cloud accounting solutions built on trust, transparency, and sustainable relationships.</p>
+        <div class="btns">
+          <button class="btn-red" onclick="show('contact')">Book Your Free Consultation</button>
+          <button class="btn-ghost" onclick="show('services')">Explore Services</button>
+        </div>
+      </div>
+      <div class="hero-media fade in">
+        <img src="/assets/img/img_5273796859.webp" alt="Manchester canal-side skyline" />
+      </div>
+    </div>
+  </section>
+
+  <section class="services-bg">
+    <div class="wrap">
+      <div class="fade" style="text-align:center;max-width:680px;margin:0 auto"><div class="s-label">What We Do</div><h2 class="s-title" style="text-align:center">Your Numbers Tell a Story. We Help Them Speak.</h2><p class="s-sub" style="margin:0 auto">At CFA, we help you read it clearly. Through expert accounting, tailored reporting, and real-world financial guidance, whether you're an individual investor, a growing business, or planning your financial future, we turn complexity into clarity, helping you move forward with confidence.</p></div>
+      <div class="svc-cols">
+        <div class="svc-col fade">
+          <div class="svc-col-head"><span class="cat-name">Accounting & Compliance</span><span class="cat-tag">The essentials, handled.</span></div>
+          <div class="svc-col-list"><div class="svc-item-row fade" onclick="goService('svc-bookkeeping')"><div class="svc-item-ico">&#128218;</div><h3>Bookkeeping</h3><span class="svc-item-link">Explore more &rarr;</span></div><div class="svc-item-row fade" onclick="goService('svc-payroll')"><div class="svc-item-ico">&#128181;</div><h3>Payroll & PAYE Onboarding</h3><span class="svc-item-link">Explore more &rarr;</span></div><div class="svc-item-row fade" onclick="goService('svc-annual')"><div class="svc-item-ico">&#128203;</div><h3>Annual Accounts</h3><span class="svc-item-link">Explore more &rarr;</span></div><div class="svc-item-row fade" onclick="goService('svc-vat')"><div class="svc-item-ico">&#129534;</div><h3>MTD & VAT Returns</h3><span class="svc-item-link">Explore more &rarr;</span></div><div class="svc-item-row fade" onclick="goService('svc-fd')"><div class="svc-item-ico">&#128101;</div><h3>Outsourced & Flexible Finance Teams</h3><span class="svc-item-link">Explore more &rarr;</span></div></div>
+        </div>
+        <div class="svc-col fade">
+          <div class="svc-col-head"><span class="cat-name">Advisory Services</span><span class="cat-tag">The bigger picture.</span></div>
+          <div class="svc-col-list"><div class="svc-item-row fade" onclick="goService('svc-mgmt')"><div class="svc-item-ico">&#128202;</div><h3>Management Accounts & Insight</h3><span class="svc-item-link">Explore more &rarr;</span></div><div class="svc-item-row fade" onclick="goService('svc-tax')"><div class="svc-item-ico">&#9878;&#65039;</div><h3>Compliance & HMRC Support</h3><span class="svc-item-link">Explore more &rarr;</span></div><div class="svc-item-row fade" onclick="goService('svc-biz')"><div class="svc-item-ico">&#128640;</div><h3>Business Advisory</h3><span class="svc-item-link">Explore more &rarr;</span></div><div class="svc-item-row fade" onclick="goService('svc-corp')"><div class="svc-item-ico">&#127970;</div><h3>Corporate Finance</h3><span class="svc-item-link">Explore more &rarr;</span></div></div>
+        </div>
+        <div class="svc-col fade">
+          <div class="svc-col-head"><span class="cat-name">Tax Advice & Planning</span><span class="cat-tag">Plan ahead, pay less.</span></div>
+          <div class="svc-col-list"><div class="svc-item-row fade" onclick="goService('tax-business')"><div class="svc-item-ico">🏢</div><h3>Business Tax</h3><span class="svc-item-link">Explore more →</span></div><div class="svc-item-row fade" onclick="goService('tax-personal')"><div class="svc-item-ico">👤</div><h3>Personal & Director Tax</h3><span class="svc-item-link">Explore more →</span></div><div class="svc-item-row fade" onclick="goService('tax-compliance')"><div class="svc-item-ico">⚖️</div><h3>Tax Compliance & Advisory</h3><span class="svc-item-link">Explore more →</span></div></div>
+        </div>
+      
+      </div>
+      <div class="fade" style="text-align:center;margin-top:3.5rem">
+        <p style="color:var(--text-mid);font-size:1.05rem;margin-bottom:1.5rem">Not sure where to start? Let's map it out together.</p>
+        <div class="btns" style="justify-content:center"><button class="btn-red" onclick="show('contact')">Book Your Free Consultation</button><button class="btn-ghost" style="color:var(--navy);border-color:rgba(15,42,92,.25)" onclick="show('services')">View All Services</button></div>
+      </div>
+    </div>
+  </section>
+
+    <section>
+    <div class="wrap">
+      <div class="why-top">
+        <div class="why-intro fade">
+          <div class="s-label">Why CFA</div>
+          <h2 class="s-title">Why Partner With CFA Accountants?</h2>
+          <p>CFA Accountants Ltd has partnered with driven firms to ease growth challenges for several years. Unlike traditional firms that treat clients as simply an account, we aim to create a practice that builds appreciation towards our clients, our community, and our environment.</p>
+          <p>We use advanced digital automation coupled with a personalized, environmental-first methodology. This allows us to facilitate thriving businesses, whilst supporting the economy within our community.</p>
+        </div>
+        <div class="creds-square fade">
+          <div class="creds-block"><span class="creds-label">Accredited</span><span class="creds-tile"><img src="/assets/img/img_b33c38a449.webp" alt="ACCA Accredited"/></span></div>
+          <div class="creds-divider"></div>
+          <div class="creds-block"><span class="creds-label">Partners</span><span class="creds-tile"><img src="/assets/img/img_3de5de87f9.webp" alt="Xero Certified Partner"/></span></div>
+        </div>
+      </div>
+
+      <!-- CORE VALUES + FIRM PHOTOS -->
+      <div class="fade" style="margin-top:4rem">
+
+        <!-- Mobile tab switcher (hidden on desktop) -->
+        <div class="cv-tab-bar">
+          <button class="cv-tab active" onclick="cvTab('values')">Our Values</button>
+          <button class="cv-tab" onclick="cvTab('moments')">Our Moments</button>
+        </div>
+
+        <div id="cvGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start">
+
+          <!-- LEFT: Values column -->
+          <div id="cvPanelValues" class="cv-panel">
+            <div class="s-label">Who We Are</div>
+            <h3 style="font-family:'Inter',sans-serif;font-size:1.75rem;color:var(--navy);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:.75rem">Our Core Values</h3>
+            <p style="color:var(--text-mid);font-size:.97rem;line-height:1.8;margin-bottom:2rem;font-weight:400">The principles that guide everything we do — from how we work with clients to how we show up in our community.</p>
+
+            <div style="display:flex;flex-direction:column;gap:1rem">
+
+              <div style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem 1.4rem;background:#fff;border:1px solid rgba(15,42,92,.07);border-radius:12px;transition:box-shadow .2s">
+                <div style="width:38px;height:38px;min-width:38px;background:rgba(231,76,60,.1);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem">🌿</div>
+                <div>
+                  <h4 style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em;margin-bottom:.3rem">Green &amp; Paperless by Design</h4>
+                  <p style="color:var(--text-mid);font-size:.88rem;line-height:1.7;font-weight:400">Cloud-first ecosystems, OCR scanning and fully digital workflows — compliance that's eco-friendly from day one.</p>
+                </div>
+              </div>
+
+              <div style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem 1.4rem;background:#fff;border:1px solid rgba(15,42,92,.07);border-radius:12px">
+                <div style="width:38px;height:38px;min-width:38px;background:rgba(231,76,60,.1);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem">📍</div>
+                <div>
+                  <h4 style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em;margin-bottom:.3rem">Keeping It Local</h4>
+                  <p style="color:var(--text-mid);font-size:.88rem;line-height:1.7;font-weight:400">We never outsource overseas. Every bit of your work is handled right here, by our Manchester-based team.</p>
+                </div>
+              </div>
+
+              <div style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem 1.4rem;background:#fff;border:1px solid rgba(15,42,92,.07);border-radius:12px">
+                <div style="width:38px;height:38px;min-width:38px;background:rgba(231,76,60,.1);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem">👥</div>
+                <div>
+                  <h4 style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em;margin-bottom:.3rem">Every Client Matters</h4>
+                  <p style="color:var(--text-mid);font-size:.88rem;line-height:1.7;font-weight:400">Whether you're a sole trader or a scaling corporate — you get the same dedication, respect and care. You're a partner, not a case file.</p>
+                </div>
+              </div>
+
+              <div style="display:flex;align-items:flex-start;gap:1rem;padding:1.25rem 1.4rem;background:#fff;border:1px solid rgba(15,42,92,.07);border-radius:12px">
+                <div style="width:38px;height:38px;min-width:38px;background:rgba(231,76,60,.1);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem">🎯</div>
+                <div>
+                  <h4 style="font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em;margin-bottom:.3rem">Tailored Solutions</h4>
+                  <p style="color:var(--text-mid);font-size:.88rem;line-height:1.7;font-weight:400">No cookie-cutter fixes. We design flexible workflows around your exact business model and upskill your team with hands-on training.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- RIGHT: Live Photo Gallery -->
+          <div id="cvPanelMoments" class="cv-panel">
+            <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;margin-bottom:.5rem">
+              <div>
+                <div class="s-label">Life at CFA</div>
+                <h3 style="font-family:'Inter',sans-serif;font-size:1.75rem;color:var(--navy);font-weight:800;letter-spacing:-0.03em;line-height:1.2;margin-bottom:.4rem">Our Moments</h3>
+                <p style="color:var(--text-mid);font-size:.92rem;line-height:1.7;font-weight:400">
+              </div>
+              <button id="galleryAdminBtn" onclick="galleryAdminToggle()" style="background:var(--navy);color:#fff;border:none;border-radius:8px;padding:.5rem 1rem;font-size:.8rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;letter-spacing:.02em;display:none;align-items:center;gap:.4rem;white-space:nowrap">
+                ＋ Add Photo
+              </button>
+            </div>
+
+            <!-- Admin upload panel (hidden by default) -->
+            <div id="galleryAdminPanel" style="display:none;background:var(--off-white);border:1px solid rgba(15,42,92,.1);border-radius:12px;padding:1.25rem;margin-bottom:1.25rem">
+              <div id="galleryAuthArea">
+                <p style="font-size:.85rem;color:var(--text-mid);margin-bottom:.75rem;font-weight:500">Sign in to manage photos:</p>
+                <div style="display:flex;flex-direction:column;gap:.5rem">
+                  <input id="galleryPwInput" type="email" placeholder="Email address" style="padding:.55rem .85rem;border:1px solid rgba(15,42,92,.15);border-radius:7px;font-size:.88rem;font-family:'Inter',sans-serif;outline:none"/>
+                  <input id="galleryPassInput" type="password" placeholder="Password" style="padding:.55rem .85rem;border:1px solid rgba(15,42,92,.15);border-radius:7px;font-size:.88rem;font-family:'Inter',sans-serif;outline:none"/>
+                  <button onclick="galleryAuth()" style="background:var(--red);color:#fff;border:none;border-radius:7px;padding:.55rem 1rem;font-size:.85rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;margin-top:.1rem">Sign In</button>
+                </div>
+                <p id="galleryAuthErr" style="color:var(--red);font-size:.8rem;margin-top:.4rem;display:none">Incorrect email or password.</p>
+              </div>
+              <div id="galleryUploadArea" style="display:none">
+                <p style="font-size:.85rem;font-weight:600;color:var(--navy);margin-bottom:.85rem">Upload a photo directly from your device:</p>
+                <div style="display:flex;flex-direction:column;gap:.6rem">
+                  <input id="galleryFile" type="file" accept="image/*" style="font-size:.83rem;font-family:'Inter',sans-serif;padding:.5rem;border:1px dashed rgba(15,42,92,.25);border-radius:7px;cursor:pointer;background:#fff"/>
+                  <input id="galleryCaption" type="text" placeholder="Caption  e.g. ICAEW Seminar Manchester" style="padding:.55rem .85rem;border:1px solid rgba(15,42,92,.15);border-radius:7px;font-size:.88rem;font-family:'Inter',sans-serif;outline:none"/>
+                  <input id="galleryDate" type="text" placeholder="Date  e.g. June 2025" style="padding:.55rem .85rem;border:1px solid rgba(15,42,92,.15);border-radius:7px;font-size:.88rem;font-family:'Inter',sans-serif;outline:none"/>
+                  <!-- Progress bar -->
+                  <div id="galleryProgress" style="display:none;background:rgba(15,42,92,.08);border-radius:99px;height:6px;overflow:hidden;margin-top:.2rem">
+                    <div class="gal-progress-fill" style="height:100%;width:0%;background:var(--red);border-radius:99px;transition:width .2s"></div>
+                  </div>
+                  <div style="display:flex;gap:.5rem;margin-top:.25rem">
+                    <button onclick="galleryUpload()" style="flex:1;background:var(--red);color:#fff;border:none;border-radius:7px;padding:.6rem;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif">Upload Photo</button>
+                    <button onclick="galleryLock()" style="background:transparent;color:var(--text-mid);border:1px solid rgba(15,42,92,.15);border-radius:7px;padding:.6rem 1rem;font-size:.85rem;cursor:pointer;font-family:'Inter',sans-serif">Lock</button>
+                  </div>
+                  <p id="galleryMsg" style="font-size:.8rem;color:#27ae60;display:none;font-weight:500"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- The gallery grid itself -->
+            <div id="cfaGallery" style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem"></div>
+
+            <!-- Empty state -->
+            <div id="galleryEmpty" style="border:2px dashed rgba(15,42,92,.15);border-radius:14px;padding:2.5rem 1rem;text-align:center">
+              <div style="font-size:2.5rem;margin-bottom:.75rem">📸</div>
+              <p style="color:var(--text-mid);font-size:.9rem;font-weight:500;margin-bottom:.3rem">No photos yet</p>
+              <p style="color:var(--text-light);font-size:.82rem">Click <strong>+ Add Photo</strong> above to upload your first event photo.</p>
+            </div>
+
+          </div>
+          <!-- End right column -->
+
+        </div>
+      </div>
+      <!-- END CORE VALUES + FIRM PHOTOS -->
+
+      <!-- LIGHTBOX -->
+      <div id="cfaLightbox" onclick="lightboxClose()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;flex-direction:column;padding:1.5rem;cursor:zoom-out">
+        <img id="cfaLightboxImg" style="max-width:90vw;max-height:78vh;border-radius:10px;object-fit:contain;box-shadow:0 24px 64px rgba(0,0,0,.6)"/>
+        <div style="margin-top:1rem;text-align:center">
+          <p id="cfaLightboxCaption" style="color:#fff;font-size:1rem;font-weight:600;font-family:'Inter',sans-serif;margin-bottom:.25rem"></p>
+          <p id="cfaLightboxDate" style="color:rgba(255,255,255,.55);font-size:.85rem;font-family:'Inter',sans-serif"></p>
+        </div>
+        <button onclick="lightboxClose(event)" style="position:absolute;top:1.2rem;right:1.5rem;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:1.4rem;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>
+        <div style="display:flex;gap:1rem;margin-top:1.25rem" onclick="event.stopPropagation()">
+          <button id="cfaLbPrev" onclick="lightboxNav(-1)" style="background:rgba(255,255,255,.12);border:none;color:#fff;padding:.5rem 1.2rem;border-radius:8px;cursor:pointer;font-size:.9rem;font-family:'Inter',sans-serif">← Prev</button>
+          <button id="cfaLbNext" onclick="lightboxNav(1)" style="background:rgba(255,255,255,.12);border:none;color:#fff;padding:.5rem 1.2rem;border-radius:8px;cursor:pointer;font-size:.9rem;font-family:'Inter',sans-serif">Next →</button>
+        </div>
+      </div>
+
+      
+
+      <!-- Firebase SDKs -->
+      
+
+      
+      <div class="fade" style="text-align:center;margin-top:3.5rem">
+        <p style="color:var(--text-mid);font-size:1.05rem;margin-bottom:1.5rem">Ready to work with a team that truly cares about your business and our community?</p>
+        <div class="btns" style="justify-content:center"><button class="btn-red" onclick="show('contact')">Book Your Free Consultation</button><button class="btn-ghost" style="color:var(--navy);border-color:rgba(15,42,92,.25)" onclick="show('services')">View All Detailed Services</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-bg">
+    <div class="wrap">
+      <div class="fade" style="text-align:center"><div class="s-label">Knowledge & Insights</div><h2 class="s-title" style="text-align:center">Blogs & Insights</h2><p class="s-sub" style="text-align:center;margin:0 auto">Expert commentary, tax updates, and practical business advice from the CFA team.</p></div>
+      <div class="insights-grid" style="margin-top:3.5rem">
+        <div class="insight-card fade" onclick="show('blog-mileage')">
+          <div class="ic-banner photo-mini"></div>
+          <div class="ic-body">
+            <div class="ic-cat">Tax & HMRC</div>
+            <h3>HMRC Raises Mileage Rate to 55p: What Employers and Sole Traders Should Know</h3>
+            <p>HMRC has increased the Approved Mileage Allowance Payment to 55p per mile for the first time in 15 years. Here's what UK employers, employees and sole traders need to do.</p>
+            <span class="ic-meta">June 2026 &middot; 5 min read</span>
+            <span class="ic-link">Read article &rarr;</span>
+          </div>
+        </div>
+        <div class="insight-card soon fade">
+          <div class="ic-banner" style="background:linear-gradient(135deg,var(--navy-mid),var(--navy-light))">&#128188;</div>
+          <div class="ic-body">
+            <div class="ic-cat">Coming Soon</div>
+            <h3>Blog post title will appear here</h3>
+            <p>A short excerpt or summary of the blog post will be displayed here once content is added.</p>
+          </div>
+        </div>
+        <div class="insight-card soon fade">
+          <div class="ic-banner" style="background:linear-gradient(135deg,#0d2244,var(--navy-mid))">&#128202;</div>
+          <div class="ic-body">
+            <div class="ic-cat">Coming Soon</div>
+            <h3>Blog post title will appear here</h3>
+            <p>A short excerpt or summary of the blog post will be displayed here once content is added.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fade" style="text-align:center;margin-top:2.5rem">
+        <button class="btn-red" onclick="show('insights')">View all insights</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap fade" style="text-align:center">
+      <div class="s-label" style="color:rgba(255,255,255,.45)">Get Started</div>
+      <h2 class="s-title wh" style="text-align:center">Ready to Take Control of Your Finances?</h2>
+      <p style="color:rgba(255,255,255,.65);font-size:1.02rem;max-width:520px;margin:1rem auto 2.5rem;font-weight:300;line-height:1.85">Book a free, no-obligation consultation and discover how CFA Accountants can help your business grow.</p>
+      <button class="btn-red" style="font-size:1rem;padding:1rem 2.5rem" onclick="show('contact')">Book Your Free Consultation</button>
+    </div>
+  </section>
+
+</div>
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="f-brand">
+        <p>Modern, tech-forward accounting and advisory. We take the compliance and paperwork off your plate so you can focus on growth.</p>
+        </div>
+      <div class="f-col">
+        <h4>Services</h4>
+        <a href="/accounting.html">Accounting & Compliance</a>
+        <a href="/advisory.html">Advisory Services</a>
+        <a href="/tax.html">Tax Advice & Planning</a>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <a href="/about.html">About Us</a>
+        <a href="/insights.html">Insights</a>
+        <a href="/faqs.html">FAQs</a>
+        <a href="/about.html">Our Team</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+      </div>
+      <div class="f-col">
+        <h4>Contact</h4>
+        <a style="cursor:default">CFA Accountants</a>
+        <a style="cursor:default">Salford Innovation Forum</a>
+        <a style="cursor:default">51 Frederick Rd, Salford</a>
+        <a style="cursor:default">M6 6FP</a>
+        <a href="tel:+447440290584">+44 7440 290584</a>
+        <a href="mailto:cfa@cfaaccountants.com">cfa@cfaaccountants.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 CFA Accountants Ltd. All rights reserved. &middot; Registered in England, Company No. 16156596.</span>
+      <span><a href="/privacy.html" style="color:rgba(255,255,255,.45);cursor:pointer;text-decoration:none">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+<div class="cfa-chat" id="cfaChat" role="dialog" aria-label="CFA assistant">
+  <div class="cfa-chat-head">
+    <div class="cfa-avatar">💬</div>
+    <div>
+      <h4>CFA Assistant</h4>
+      <p><span class="cfa-dot"></span> Here to help</p>
+    </div>
+    <button class="cfa-chat-close" onclick="cfaToggleChat(false)" aria-label="Close">&times;</button>
+  </div>
+  <div class="cfa-chat-body" id="cfaChatBody"></div>
+  <div class="cfa-chips" id="cfaChips"></div>
+  <div class="cfa-chat-input">
+    <input id="cfaChatInput" type="text" placeholder="Type your question…" onkeydown="if(event.key==='Enter')cfaSend()"/>
+    <button onclick="cfaSend()" aria-label="Send">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="cfa-fab-wrap" id="cfaFabWrap">
+  <button class="cfa-fab cfa-fab-ai" id="cfaFabAi" onclick="cfaToggleChat()" aria-label="Open assistant">
+    <svg class="cfa-ai-open" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg class="cfa-ai-close" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <span class="cfa-fab-badge" id="cfaFabBadge"></span>
+  </button>
+</div>
+<script src="/assets/main.js" defer></script>
+<script src="/assets/assistant.js" defer></script>
+<script type="module" src="/assets/firebase-gallery.js"></script>
+</body>
+</html>
