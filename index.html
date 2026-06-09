@@ -51,12 +51,20 @@
 </nav>
 <div class="mobile-nav" id="mobileNav">
   <a href="/">Home</a>
-  <a href="/services">Services</a>
-  <a href="/accounting" style="padding-left:1.3rem;font-size:.92rem;color:rgba(255,255,255,.65)">— Accounting &amp; Compliance</a>
-  <a href="/advisory" style="padding-left:1.3rem;font-size:.92rem;color:rgba(255,255,255,.65)">— Advisory Services</a>
-  <a href="/tax" style="padding-left:1.3rem;font-size:.92rem;color:rgba(255,255,255,.65)">— Tax Advice &amp; Planning</a>
-  <a href="#">Solutions</a>
-  <a href="/tide" style="padding-left:1.3rem;font-size:.92rem;color:rgba(255,255,255,.65)">— Tide Business Banking</a>
+  <div class="mob-section">
+    <button class="mob-section-toggle" onclick="toggleMobileSection(this)">Services</button>
+    <div class="mob-sub">
+      <a href="/accounting">Accounting &amp; Compliance</a>
+      <a href="/advisory">Advisory Services</a>
+      <a href="/tax">Tax Advice &amp; Planning</a>
+    </div>
+  </div>
+  <div class="mob-section">
+    <button class="mob-section-toggle" onclick="toggleMobileSection(this)">Solutions</button>
+    <div class="mob-sub">
+      <a href="/tide">Tide Business Banking</a>
+    </div>
+  </div>
   <a href="/insights">Insights</a>
   <a href="/faqs">FAQs</a>
   <a href="/about">About</a>
