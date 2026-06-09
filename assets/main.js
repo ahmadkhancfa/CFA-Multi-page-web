@@ -8,6 +8,7 @@ window.addEventListener('scroll',onNavScroll,{passive:true});
 function toggleTax(btn){var c=btn.closest('.tax-card');if(c)c.classList.toggle('open');}
 function toggleFaq(btn){var i=btn.closest('.faq-item');if(i)i.classList.toggle('open');}
 function toggleNav(){var m=document.getElementById('mobileNav');if(m)m.classList.toggle('open');}
+function toggleMobileSection(el){var parent=el.parentElement;parent.classList.toggle('mob-open');}
 function closeMobile(){var m=document.getElementById('mobileNav');if(m)m.classList.remove('open');}
 function cvTab(name){document.querySelectorAll('.cv-tab').forEach(function(b){b.classList.remove('active');});document.querySelectorAll('.cv-tab').forEach(function(b){if(b.getAttribute('onclick')==="cvTab('"+name+"')")b.classList.add('active');});document.querySelectorAll('.cv-panel').forEach(function(p){p.classList.remove('cv-active');});var t=document.getElementById('cvPanel'+name.charAt(0).toUpperCase()+name.slice(1));if(t)t.classList.add('cv-active');}
 function animateFades(){var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:0.08});document.querySelectorAll('.fade:not(.in)').forEach(function(el){obs.observe(el);});}
