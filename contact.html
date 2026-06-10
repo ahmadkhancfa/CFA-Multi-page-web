@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8HMTNP7LM3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8HMTNP7LM3');
-</script>
+
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Contact | CFA Accountants Manchester</title>
@@ -114,17 +107,55 @@
         </div>
         <div class="form-wrap fade">
           <h3>Send Us a Message</h3>
-          <div class="form-row">
-            <div class="fg"><label>First Name</label><input type="text" placeholder="John"/></div>
-            <div class="fg"><label>Last Name</label><input type="text" placeholder="Smith"/></div>
-          </div>
-          <div class="fg"><label>Email Address</label><input type="email" placeholder="john@company.com"/></div>
-          <div class="fg"><label>Phone Number</label><input type="tel" placeholder="07700 000000"/></div>
-          <div class="fg"><label>Service of Interest</label>
-            <select><option value="">Select a service...</option><option>Accounts, Compliance & Tax Advisory</option><option>Bookkeeping & Payroll</option><option>Management Reporting</option><option>Business Advisory</option><option>Corporate Finance</option><option>Other / General Enquiry</option></select>
-          </div>
-          <div class="fg"><label>Message</label><textarea placeholder="Tell us a bit about your business and how we can help..."></textarea></div>
-          <button class="btn-submit" onclick="submitForm(this)">Send Message</button>
+          <form id="cfaContactForm" action="https://formspree.io/f/xzdqabvz" method="POST">
+            <div class="form-row">
+              <div class="fg"><label>First Name</label><input type="text" name="first_name" placeholder="John" required/></div>
+              <div class="fg"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required/></div>
+            </div>
+            <div class="fg"><label>Email Address</label><input type="email" name="email" placeholder="john@company.com" required/></div>
+            <div class="fg"><label>Phone Number</label><input type="tel" name="phone" placeholder="07700 000000"/></div>
+            <div class="fg"><label>Service of Interest</label>
+              <select name="service"><option value="">Select a service...</option><option>Accounts, Compliance &amp; Tax Advisory</option><option>Bookkeeping &amp; Payroll</option><option>Management Reporting</option><option>Business Advisory</option><option>Corporate Finance</option><option>Other / General Enquiry</option></select>
+            </div>
+            <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell us a bit about your business and how we can help..."></textarea></div>
+            <input type="hidden" name="_subject" value="New enquiry from CFA Accountants website"/>
+            <input type="hidden" name="_replyto" value=""/>
+            <button type="submit" class="btn-submit" id="cfaSubmitBtn">Send Message</button>
+            <div id="cfaFormSuccess" style="display:none;margin-top:1rem;padding:1rem;background:rgba(67,160,71,.1);border:1px solid rgba(67,160,71,.3);border-radius:8px;color:#2e7d32;font-size:.92rem;font-weight:500">
+              ✓ Thank you! Your message has been sent. We'll be in touch shortly.
+            </div>
+            <div id="cfaFormError" style="display:none;margin-top:1rem;padding:1rem;background:rgba(231,76,60,.1);border:1px solid rgba(231,76,60,.3);border-radius:8px;color:#c62828;font-size:.92rem;font-weight:500">
+              Something went wrong. Please try again or email us directly at cfa@cfaaccountants.com
+            </div>
+          </form>
+          <script>
+          document.getElementById('cfaContactForm').addEventListener('submit', function(e){
+            e.preventDefault();
+            var btn = document.getElementById('cfaSubmitBtn');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            var form = e.target;
+            fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: {'Accept': 'application/json'}
+            }).then(function(r){
+              if(r.ok){
+                document.getElementById('cfaFormSuccess').style.display = 'block';
+                document.getElementById('cfaFormError').style.display = 'none';
+                form.reset();
+                btn.textContent = 'Sent!';
+              } else {
+                throw new Error('Failed');
+              }
+            }).catch(function(){
+              document.getElementById('cfaFormError').style.display = 'block';
+              document.getElementById('cfaFormSuccess').style.display = 'none';
+              btn.textContent = 'Send Message';
+              btn.disabled = false;
+            });
+          });
+          </script>
         </div>
       </div>
     </div>
@@ -205,5 +236,67 @@
 <script src="/assets/main.js" defer></script>
 <script src="/assets/assistant.js" defer></script>
 
+<!-- Cookie Consent Banner -->
+<style>
+#cfa-cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#fff;border-top:2px solid rgba(15,42,92,.12);box-shadow:0 -4px 24px rgba(4,16,61,.12);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;font-family:'Inter',sans-serif}
+#cfa-cookie-banner p{margin:0;font-size:.88rem;color:#4a5568;line-height:1.6;flex:1;min-width:200px}
+#cfa-cookie-banner a{color:#e74c3c;text-decoration:underline;cursor:pointer}
+.cfa-cookie-btns{display:flex;gap:.75rem;flex-shrink:0}
+.cfa-cookie-accept{background:#04103d;color:#fff;border:none;padding:.65rem 1.5rem;border-radius:6px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s}
+.cfa-cookie-accept:hover{background:#13245c}
+.cfa-cookie-decline{background:transparent;color:#4a5568;border:1.5px solid rgba(15,42,92,.2);padding:.65rem 1.5rem;border-radius:6px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
+.cfa-cookie-decline:hover{border-color:#04103d;color:#04103d}
+@media(max-width:580px){#cfa-cookie-banner{flex-direction:column;align-items:flex-start}.cfa-cookie-btns{width:100%}.cfa-cookie-accept,.cfa-cookie-decline{flex:1;text-align:center}}
+</style>
+<div id="cfa-cookie-banner" style="display:none">
+  <p>We use cookies to analyse site traffic and improve your experience. By clicking <strong>Accept</strong> you consent to our use of analytics cookies. See our <a href="/privacy">Privacy Policy</a> for details.</p>
+  <div class="cfa-cookie-btns">
+    <button class="cfa-cookie-decline" onclick="cfaCookieDecline()">Decline</button>
+    <button class="cfa-cookie-accept" onclick="cfaCookieAccept()">Accept</button>
+  </div>
+</div>
+<script>
+(function(){
+  var consent = localStorage.getItem('cfa_cookie_consent');
+  if(consent === 'accepted'){
+    loadGA();
+  } else if(consent === 'declined'){
+    // do nothing
+  } else {
+    // show banner
+    document.addEventListener('DOMContentLoaded', function(){
+      var b = document.getElementById('cfa-cookie-banner');
+      if(b) b.style.display = 'flex';
+    });
+  }
+
+  function loadGA(){
+    if(window._gaLoaded) return;
+    window._gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8HMTNP7LM3';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config',  + GA_ID + );
+  }
+
+  window.cfaCookieAccept = function(){
+    localStorage.setItem('cfa_cookie_consent','accepted');
+    var b = document.getElementById('cfa-cookie-banner');
+    if(b) b.style.display = 'none';
+    loadGA();
+  };
+
+  window.cfaCookieDecline = function(){
+    localStorage.setItem('cfa_cookie_consent','declined');
+    var b = document.getElementById('cfa-cookie-banner');
+    if(b) b.style.display = 'none';
+  };
+})();
+</script>
 </body>
 </html>
