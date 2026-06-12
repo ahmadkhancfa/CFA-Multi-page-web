@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Analytics 4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8HMTNP7LM3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-8HMTNP7LM3');
-</script>
+
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Ecommerce Accountants in Manchester | Shopify &amp; Amazon Accounting Specialists</title>
@@ -96,6 +89,48 @@
         }
       ]
     }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "CFA Accountants",
+  "url": "https://www.cfaaccountants.com",
+  "logo": "https://www.cfaaccountants.com/assets/img/img_b151954839.webp",
+  "description": "Manchester-based chartered certified accountants offering accounting, bookkeeping, tax planning, self assessment, rental income accounting, payroll and business advisory for sole traders, limited companies, contractors, construction workers, doctors, dentists, mechanics, eco grant companies and warm homes scheme businesses across Salford, Manchester and the North West.",
+  "telephone": "+447440290584",
+  "email": "cfa@cfaaccountants.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "CFA Accountants, 107, Salford Innovation Forum, 51 Frederick Road",
+    "addressLocality": "Salford",
+    "addressRegion": "Greater Manchester",
+    "postalCode": "M6 6FP",
+    "addressCountry": "GB"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 53.4928545,
+    "longitude": -2.2745525
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "areaServed": [
+    "Salford", "Bolton", "Manchester", "Trafford", "Stockport", "Greater Manchester", "North West England"
+  ],
+  "priceRange": "££",
+  "currenciesAccepted": "GBP",
+  "paymentAccepted": "Cash, Bank Transfer, Debit Card, Credit Card",
+  "sameAs": [
+    "https://www.cfaaccountants.com"
   ]
 }
 </script>
@@ -344,5 +379,67 @@
 </div>
 <script src="/assets/main.js" defer></script>
 <script src="/assets/assistant.js" defer></script>
+<!-- Cookie Consent Banner -->
+<style>
+#cfa-cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#fff;border-top:2px solid rgba(15,42,92,.12);box-shadow:0 -4px 24px rgba(4,16,61,.12);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;font-family:'Inter',sans-serif}
+#cfa-cookie-banner p{margin:0;font-size:.88rem;color:#4a5568;line-height:1.6;flex:1;min-width:200px}
+#cfa-cookie-banner a{color:#e74c3c;text-decoration:underline;cursor:pointer}
+.cfa-cookie-btns{display:flex;gap:.75rem;flex-shrink:0}
+.cfa-cookie-accept{background:#04103d;color:#fff;border:none;padding:.65rem 1.5rem;border-radius:6px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s}
+.cfa-cookie-accept:hover{background:#13245c}
+.cfa-cookie-decline{background:transparent;color:#4a5568;border:1.5px solid rgba(15,42,92,.2);padding:.65rem 1.5rem;border-radius:6px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
+.cfa-cookie-decline:hover{border-color:#04103d;color:#04103d}
+@media(max-width:580px){#cfa-cookie-banner{flex-direction:column;align-items:flex-start}.cfa-cookie-btns{width:100%}.cfa-cookie-accept,.cfa-cookie-decline{flex:1;text-align:center}}
+</style>
+<div id="cfa-cookie-banner" style="display:none">
+  <p>We use cookies to analyse site traffic and improve your experience. By clicking <strong>Accept</strong> you consent to our use of analytics cookies. See our <a href="/privacy">Privacy Policy</a> for details.</p>
+  <div class="cfa-cookie-btns">
+    <button class="cfa-cookie-decline" onclick="cfaCookieDecline()">Decline</button>
+    <button class="cfa-cookie-accept" onclick="cfaCookieAccept()">Accept</button>
+  </div>
+</div>
+<script>
+(function(){
+  var consent = localStorage.getItem('cfa_cookie_consent');
+  if(consent === 'accepted'){
+    loadGA();
+  } else if(consent === 'declined'){
+    // do nothing
+  } else {
+    // show banner
+    document.addEventListener('DOMContentLoaded', function(){
+      var b = document.getElementById('cfa-cookie-banner');
+      if(b) b.style.display = 'flex';
+    });
+  }
+
+  function loadGA(){
+    if(window._gaLoaded) return;
+    window._gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8HMTNP7LM3';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config',  + GA_ID + );
+  }
+
+  window.cfaCookieAccept = function(){
+    localStorage.setItem('cfa_cookie_consent','accepted');
+    var b = document.getElementById('cfa-cookie-banner');
+    if(b) b.style.display = 'none';
+    loadGA();
+  };
+
+  window.cfaCookieDecline = function(){
+    localStorage.setItem('cfa_cookie_consent','declined');
+    var b = document.getElementById('cfa-cookie-banner');
+    if(b) b.style.display = 'none';
+  };
+})();
+</script>
 </body>
 </html>
