@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Accountancy Pricing & Packages 2026 | CFA Accountants Manchester</title>
-<meta name="description" content="Transparent, fixed-fee accountancy pricing for sole traders, limited companies and growing businesses across Manchester and the North West. No hidden costs."/>
+<title>About Us | CFA Accountants Manchester</title>
+<meta name="description" content="Transparent fixed-fee accountancy pricing for businesses across Manchester and Salford. No hidden charges."/>
 <link rel="canonical" href="https://www.cfaaccountants.com/pricing"/>
+<meta property="og:title" content="About Us | CFA Accountants Manchester"/>
+<meta property="og:description" content="CFA Accountants is a Manchester firm of chartered certified accountants offering modern, tech-forward accounting and advisory built on trust."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.cfaaccountants.com/about"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="/assets/styles.css"/>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -41,144 +47,71 @@
       "closes": "17:00"
     }
   ],
-  "areaServed": ["Salford","Bolton","Manchester","Trafford","Stockport","Greater Manchester","North West England"],
+  "areaServed": [
+    "Salford", "Bolton", "Manchester", "Trafford", "Stockport", "Greater Manchester", "North West England"
+  ],
   "priceRange": "££",
   "currenciesAccepted": "GBP",
-  "paymentAccepted": "Cash, Bank Transfer, Debit Card, Credit Card"
+  "paymentAccepted": "Cash, Bank Transfer, Debit Card, Credit Card",
+  "sameAs": [
+    "https://www.cfaaccountants.com"
+  ]
 }
 </script>
 <style>
-/* PRICING PAGE STYLES */
-.pricing-hero{background:radial-gradient(60% 95% at 0% 0%,rgba(231,76,60,.16) 0%,transparent 55%),linear-gradient(135deg,#05103a 0%,#050c26 55%,#03081b 100%);padding:8rem 0 5rem;text-align:center;position:relative;overflow:hidden}
-.pricing-hero::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,.07) 0%,transparent 12%)}
-.pricing-hero-inner{position:relative;z-index:2}
-.pricing-note{display:inline-block;background:rgba(231,76,60,.15);border:1px solid rgba(231,76,60,.3);color:#f3a594;font-size:.78rem;font-weight:600;letter-spacing:.06em;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.5rem}
-
-/* TABS */
-.price-tabs{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:3rem}
-.price-tab{background:rgba(15,42,92,.06);border:1px solid rgba(15,42,92,.12);color:var(--text-mid);font-size:.84rem;font-weight:600;padding:.55rem 1.2rem;border-radius:100px;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
-.price-tab:hover{background:rgba(15,42,92,.1);color:var(--navy)}
-.price-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-
-/* SECTION */
-.price-section{display:none}
-.price-section.active{display:block}
-
-/* TABLE */
-.price-table-wrap{overflow:hidden;border-radius:14px;border:1px solid rgba(15,42,92,.1);margin-bottom:2rem}
-.price-table{width:100%;border-collapse:collapse;font-size:.92rem}
-.price-table thead th{background:var(--navy);color:#fff;text-align:left;padding:1rem 1.2rem;font-weight:600;font-size:.82rem;letter-spacing:.02em}
-.price-table thead th:last-child,.price-table thead th:nth-last-child(2){text-align:right}
-.price-table tbody td{padding:.9rem 1.2rem;border-top:1px solid rgba(15,42,92,.07);color:var(--text-mid);font-weight:300;vertical-align:middle}
-.price-table tbody td:first-child{color:var(--text-dark);font-weight:500}
-.price-table tbody td:last-child,.price-table tbody td:nth-last-child(2){text-align:right;font-weight:600;color:var(--navy);white-space:nowrap}
-.price-table tbody tr:nth-child(even){background:var(--off-white)}
-.price-table tbody tr:hover{background:rgba(15,42,92,.04)}
-.bespoke{color:var(--red)!important;font-style:italic;font-weight:500!important}
-.price-sub-head td{background:rgba(15,42,92,.04)!important;font-weight:700!important;color:var(--navy)!important;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;padding:.65rem 1.2rem!important}
-
-/* PACKAGES */
-.package-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.8rem;margin-bottom:2rem}
-.package-card{background:#fff;border:1px solid rgba(15,42,92,.1);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.package-card.featured{border:2px solid var(--red);position:relative}
-.package-card.featured::before{content:'Most Popular';position:absolute;top:1rem;right:1rem;background:var(--red);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .75rem;border-radius:100px}
-.pkg-head{padding:2rem 2rem 1.5rem;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:#fff}
-.pkg-head h3{font-size:1.3rem;font-weight:800;margin:0 0 .3rem;letter-spacing:-.02em}
-.pkg-suited{font-size:.8rem;color:rgba(255,255,255,.6);font-weight:300;line-height:1.6;margin:0}
-.pkg-price{margin-top:1.2rem;display:flex;align-items:baseline;gap:.3rem}
-.pkg-price-num{font-size:2.4rem;font-weight:800;color:#fff;letter-spacing:-.04em}
-.pkg-price-period{font-size:.88rem;color:rgba(255,255,255,.6)}
-.pkg-body{padding:1.5rem 2rem;flex:1}
-.pkg-table{width:100%;border-collapse:collapse;font-size:.84rem;margin-bottom:1.2rem}
-.pkg-table tr{border-bottom:1px solid rgba(15,42,92,.07)}
-.pkg-table tr:last-child{border-bottom:none}
-.pkg-table td{padding:.55rem 0;color:var(--text-mid);font-weight:300}
-.pkg-table td:last-child{text-align:right;font-weight:600;color:var(--navy)}
-.pkg-totals{background:rgba(15,42,92,.04);border-radius:10px;padding:1rem 1.2rem;margin-bottom:1.5rem}
-.pkg-total-row{display:flex;justify-content:space-between;font-size:.86rem;padding:.3rem 0;color:var(--text-mid)}
-.pkg-total-row.gross{font-weight:800;font-size:1rem;color:var(--navy);border-top:1px solid rgba(15,42,92,.15);margin-top:.4rem;padding-top:.6rem}
-.pkg-disclaimer{font-size:.76rem;color:var(--text-light);line-height:1.6;margin-bottom:1.2rem;font-style:italic}
-.pkg-cta{display:block;text-align:center;background:var(--red);color:#fff;padding:.85rem 1.5rem;border-radius:8px;font-size:.9rem;font-weight:700;text-decoration:none;transition:all .2s}
-.pkg-cta:hover{background:var(--red-light);transform:translateY(-1px)}
-.pkg-cta.outline{background:transparent;border:2px solid var(--navy);color:var(--navy)}
-.pkg-cta.outline:hover{background:var(--navy);color:#fff}
-
-/* ENQUIRE TRIGGER */
-.enquire-trigger{display:inline-flex;align-items:center;gap:.4rem;color:var(--red);font-weight:600;font-size:.88rem;cursor:pointer;text-decoration:none}
-.enquire-trigger:hover{text-decoration:underline}
-
-@media(max-width:600px){
-  .price-table thead th:nth-last-child(2){display:none}
-  .price-table tbody td:nth-last-child(2){display:none}
-  .price-tabs{gap:.4rem}
-  .price-tab{font-size:.78rem;padding:.45rem .9rem}
-}
-</style>
-<style>
-/* PRICING PAGE */
-.pricing-hero{background:radial-gradient(60% 95% at 0% 0%,rgba(231,76,60,.16) 0%,transparent 55%),linear-gradient(135deg,#05103a 0%,#050c26 55%,#03081b 100%);padding:8rem 0 5rem;text-align:center;position:relative;overflow:hidden}
-.pricing-note{display:inline-block;background:rgba(231,76,60,.15);border:1px solid rgba(231,76,60,.3);color:#f3a594;font-size:.78rem;font-weight:600;letter-spacing:.06em;padding:.4rem 1rem;border-radius:100px;margin-bottom:1.5rem}
-
-/* PACKAGES */
-.package-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-bottom:2rem}
-.package-card{background:#fff;border:1px solid rgba(15,42,92,.1);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
-.package-card.featured{border:2px solid var(--red);position:relative}
-.package-card.featured::before{content:'Most Popular';position:absolute;top:1rem;right:1rem;background:var(--red);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .65rem;border-radius:100px}
-.pkg-head{padding:1.6rem 1.6rem 1.2rem;background:linear-gradient(135deg,var(--navy),var(--navy-light));color:#fff}
-.pkg-head h3{font-size:1.1rem;font-weight:800;margin:0 0 .25rem;letter-spacing:-.02em}
-.pkg-suited{font-size:.75rem;color:rgba(255,255,255,.55);font-weight:300;line-height:1.5;margin:0}
-.pkg-price{margin-top:1rem;display:flex;align-items:baseline;gap:.25rem}
-.pkg-price-num{font-size:2rem;font-weight:800;color:#fff;letter-spacing:-.04em}
-.pkg-price-period{font-size:.82rem;color:rgba(255,255,255,.6)}
-.pkg-body{padding:1.3rem 1.5rem;flex:1;display:flex;flex-direction:column}
-.pkg-table{width:100%;border-collapse:collapse;font-size:.8rem;margin-bottom:1rem}
-.pkg-table tr{border-bottom:1px solid rgba(15,42,92,.07)}
-.pkg-table tr:last-child{border-bottom:none}
-.pkg-table td{padding:.45rem 0;color:var(--text-mid);font-weight:300;vertical-align:top}
-.pkg-table td:last-child{text-align:right;font-weight:600;color:var(--navy);white-space:nowrap;padding-left:.5rem}
-.pkg-totals{background:rgba(15,42,92,.04);border-radius:8px;padding:.8rem 1rem;margin-bottom:1rem}
-.pkg-total-row{display:flex;justify-content:space-between;font-size:.82rem;padding:.2rem 0;color:var(--text-mid)}
-.pkg-total-row.gross{font-weight:800;font-size:.95rem;color:var(--navy);border-top:1px solid rgba(15,42,92,.15);margin-top:.3rem;padding-top:.5rem}
-.pkg-disclaimer{font-size:.73rem;color:var(--text-light);line-height:1.5;margin-bottom:1rem;font-style:italic;flex:1}
-.pkg-cta{display:block;text-align:center;background:var(--red);color:#fff;padding:.7rem 1rem;border-radius:8px;font-size:.85rem;font-weight:700;text-decoration:none;transition:all .2s}
-.pkg-cta:hover{background:var(--red-light)}
-.pkg-cta.outline{background:transparent;border:2px solid var(--navy);color:var(--navy)}
-.pkg-cta.outline:hover{background:var(--navy);color:#fff}
-
-/* ADDONS */
-.addon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.6rem;margin-top:1rem}
-.addon-item{background:#fff;border:1px solid rgba(15,42,92,.08);border-radius:8px;padding:.7rem 1rem;font-size:.83rem;color:var(--text-mid)}
-.addon-item strong{display:block;color:var(--navy);font-weight:600;margin-bottom:.1rem}
-
-/* JUMP TABS */
-.price-jump-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem;position:sticky;top:70px;background:var(--off-white);padding:1rem 0;z-index:100;border-bottom:1px solid rgba(15,42,92,.08)}
-.price-jump-tab{background:#fff;border:1px solid rgba(15,42,92,.12);color:var(--text-mid);font-size:.8rem;font-weight:600;padding:.45rem 1rem;border-radius:100px;cursor:pointer;text-decoration:none;transition:all .2s;white-space:nowrap}
-.price-jump-tab:hover,.price-jump-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-
-/* FULL PRICE TABLES */
-.price-section-full{margin-bottom:3.5rem;scroll-margin-top:140px}
-.price-section-full h2{font-size:1.4rem;font-weight:800;color:var(--navy);letter-spacing:-.02em;margin:0 0 .3rem}
-.price-section-full .section-desc{font-size:.88rem;color:var(--text-mid);margin:0 0 1rem;font-weight:300}
-.price-table-wrap{overflow:hidden;border-radius:12px;border:1px solid rgba(15,42,92,.1);margin-bottom:1rem}
-.price-table{width:100%;border-collapse:collapse;font-size:.88rem}
-.price-table thead th{background:var(--navy);color:#fff;text-align:left;padding:.85rem 1.1rem;font-weight:600;font-size:.78rem;letter-spacing:.02em}
-.price-table thead th:not(:first-child){text-align:right}
-.price-table tbody td{padding:.8rem 1.1rem;border-top:1px solid rgba(15,42,92,.07);color:var(--text-mid);font-weight:300}
-.price-table tbody td:first-child{color:var(--text-dark);font-weight:500}
-.price-table tbody td:not(:first-child){text-align:right;font-weight:600;color:var(--navy);white-space:nowrap}
-.price-table tbody tr:nth-child(even){background:rgba(15,42,92,.02)}
-.price-table tbody tr:hover{background:rgba(15,42,92,.04)}
-.bespoke{color:var(--red)!important;font-style:italic;font-weight:500!important}
-.price-sub-head td{background:rgba(15,42,92,.05)!important;font-weight:700!important;color:var(--navy)!important;font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;padding:.55rem 1.1rem!important;text-align:left!important}
-.section-divider{border:none;border-top:2px solid rgba(15,42,92,.08);margin:3rem 0}
-.tide-link-cell a{color:#1929d6;font-weight:600;text-decoration:none;font-size:.82rem}
-.tide-link-cell a:hover{text-decoration:underline}
-.price-notes{background:rgba(15,42,92,.03);border:1px solid rgba(15,42,92,.08);border-radius:12px;padding:1.5rem 2rem;margin-top:2rem}
-.price-notes h3{font-size:1rem;font-weight:700;color:var(--navy);margin:0 0 1rem}
-.price-notes ol{margin:0;padding-left:1.3rem;color:var(--text-mid);font-size:.85rem;line-height:2}
-
+.price-hero{background:linear-gradient(135deg,#05103a 0%,#050c26 60%,#03081b 100%);padding:7rem 0 4.5rem;text-align:center}
+.package-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-bottom:2rem}
+.pkg-card{background:#fff;border:1px solid rgba(15,42,92,.1);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.pkg-card.featured{border:2px solid #e74c3c;position:relative}
+.pkg-card.featured::before{content:'Most Popular';position:absolute;top:.8rem;right:.8rem;background:#e74c3c;color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .6rem;border-radius:100px}
+.pkg-head{padding:1.4rem 1.4rem 1rem;background:linear-gradient(135deg,#04103d,#13245c);color:#fff}
+.pkg-head h3{font-size:1.05rem;font-weight:800;margin:0 0 .25rem;letter-spacing:-.01em}
+.pkg-suited{font-size:.73rem;color:rgba(255,255,255,.55);font-weight:300;line-height:1.5;margin:0}
+.pkg-price{margin-top:.9rem;display:flex;align-items:baseline;gap:.2rem}
+.pkg-price-num{font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:-.03em}
+.pkg-price-per{font-size:.8rem;color:rgba(255,255,255,.55)}
+.pkg-body{padding:1.2rem 1.3rem;flex:1;display:flex;flex-direction:column}
+.pkg-rows{width:100%;border-collapse:collapse;font-size:.79rem;margin-bottom:.9rem}
+.pkg-rows tr{border-bottom:1px solid rgba(15,42,92,.07)}
+.pkg-rows tr:last-child{border-bottom:none}
+.pkg-rows td{padding:.4rem 0;color:#4a5568;font-weight:300;vertical-align:top}
+.pkg-rows td:last-child{text-align:right;font-weight:600;color:#04103d;white-space:nowrap;padding-left:.4rem}
+.pkg-total{background:rgba(15,42,92,.05);border-radius:8px;padding:.7rem .9rem;margin-bottom:.9rem;display:flex;justify-content:space-between;font-size:.9rem;font-weight:800;color:#04103d}
+.pkg-note{font-size:.7rem;color:#718096;line-height:1.5;margin-bottom:.9rem;flex:1;font-style:italic}
+.pkg-btn-primary{display:block;text-align:center;background:#e74c3c;color:#fff;padding:.65rem 1rem;border-radius:7px;font-size:.83rem;font-weight:700;text-decoration:none;margin-bottom:.5rem}
+.pkg-btn-outline{display:block;text-align:center;background:transparent;border:1.5px solid rgba(15,42,92,.2);color:#04103d;padding:.6rem 1rem;border-radius:7px;font-size:.78rem;font-weight:600;text-decoration:none}
+.featured .pkg-btn-primary{background:#04103d}
+.featured .pkg-btn-outline{border-color:rgba(231,76,60,.3);color:#e74c3c}
+.price-jump-tabs{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:2rem;position:sticky;top:70px;background:#f8f7f4;padding:.9rem 0;z-index:100;border-bottom:1px solid rgba(15,42,92,.08)}
+.pjt{background:#fff;border:1px solid rgba(15,42,92,.12);color:#4a5568;font-size:.78rem;font-weight:600;padding:.4rem .9rem;border-radius:100px;text-decoration:none;white-space:nowrap;transition:all .2s}
+.pjt:hover,.pjt.active{background:#04103d;color:#fff;border-color:#04103d}
+.psf{margin-bottom:3rem;scroll-margin-top:135px}
+.psf h2{font-size:1.25rem;font-weight:800;color:#04103d;letter-spacing:-.02em;margin:0 0 .25rem}
+.psf p{font-size:.86rem;color:#4a5568;margin:0 0 .9rem;font-weight:300}
+.ptw{overflow:hidden;border-radius:11px;border:1px solid rgba(15,42,92,.1)}
+.pt{width:100%;border-collapse:collapse;font-size:.85rem}
+.pt thead th{background:#04103d;color:#fff;text-align:left;padding:.75rem 1rem;font-size:.75rem;font-weight:600;letter-spacing:.02em}
+.pt thead th:not(:first-child){text-align:right}
+.pt tbody td{padding:.72rem 1rem;border-top:1px solid rgba(15,42,92,.07);color:#4a5568;font-weight:300}
+.pt tbody td:first-child{color:#1a1a2e;font-weight:500}
+.pt tbody td:not(:first-child){text-align:right;font-weight:600;color:#04103d;white-space:nowrap}
+.pt tbody tr:nth-child(even){background:rgba(15,42,92,.02)}
+.pt tbody tr:hover{background:rgba(15,42,92,.04)}
+.bq{color:#e74c3c!important;font-style:italic;font-weight:500!important}
+.psh td{background:rgba(15,42,92,.05)!important;font-weight:700!important;color:#04103d!important;font-size:.73rem;letter-spacing:.06em;text-transform:uppercase;padding:.5rem 1rem!important;text-align:left!important}
+.sdiv{border:none;border-top:2px solid rgba(15,42,92,.08);margin:2.5rem 0}
+.price-notes{background:rgba(15,42,92,.03);border:1px solid rgba(15,42,92,.08);border-radius:11px;padding:1.3rem 1.6rem;margin-top:2rem}
+.price-notes h3{font-size:.95rem;font-weight:700;color:#04103d;margin:0 0 .8rem}
+.price-notes li{font-size:.83rem;color:#4a5568;line-height:1.85;margin-bottom:.2rem}
+.addon-wrap{background:#fff;border:1px solid rgba(15,42,92,.1);border-radius:12px;padding:1.3rem 1.6rem;margin-top:.5rem}
+.addon-wrap h3{font-size:.95rem;font-weight:700;color:#04103d;margin:0 0 .9rem}
+.addon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.5rem}
+.addon-item{background:#f8f7f4;border-radius:7px;padding:.6rem .9rem;font-size:.8rem;color:#4a5568}
+.addon-item strong{display:block;color:#04103d;font-weight:600;margin-bottom:.1rem;font-size:.82rem}
+.tide-lnk{color:#1929d6;font-weight:600;text-decoration:none;font-size:.8rem}
+.tide-lnk:hover{text-decoration:underline}
 @media(max-width:960px){.package-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:580px){.package-grid{grid-template-columns:1fr}.price-jump-tabs{top:60px}}
+@media(max-width:560px){.package-grid{grid-template-columns:1fr}.price-jump-tabs{top:60px}}
 </style>
 </head>
 <body>
@@ -205,9 +138,10 @@
           <a href="/tide"><span class="dd-t">Tide Business Banking</span><span class="dd-s">Our banking partner.</span></a>
         </div>
       </div>
+      <a href="/pricing" id="nav-pricing">Pricing</a>
       <a href="/insights" id="nav-insights">Insights</a>
       <a href="/faqs" id="nav-faqs">FAQs</a>
-      <a href="/about" id="nav-about">About</a>
+      <a href="/about" class="active" id="nav-about">About</a>
       <a href="/contact" class="nav-cta" id="nav-contact">Get in Touch</a>
     </div>
     <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
@@ -231,68 +165,63 @@
       <a href="/tide">Tide Business Banking</a>
     </div>
   </div>
+  <a href="/pricing">Pricing</a>
   <a href="/insights">Insights</a>
   <a href="/faqs">FAQs</a>
   <a href="/about">About</a>
   <a href="/contact">Get in Touch</a>
+</div>
 
 
-<script>document.getElementById('mainNav').classList.add('scrolled');</script>
-<!-- HERO -->
-<div class="pricing-hero">
-  <div class="wrap" style="position:relative;z-index:2;text-align:center">
-    <h1 style="font-family:'Inter',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#fff;letter-spacing:-0.03em;margin:0 0 1.2rem">Transparent, Fixed-Fee Pricing</h1>
-    <p style="color:rgba(255,255,255,.75);font-size:1.05rem;max-width:620px;margin:0 auto 2rem;font-weight:300;line-height:1.85">We take pride in a clear, transparent pricing model that puts you in the driver's seat. View everything we have to offer and hand-pick exactly what you need, ensuring you only ever pay for the specific support your scale-up requires.</p>
-    <a href="/contact" class="btn-red" style="display:inline-block;text-decoration:none;font-size:.95rem;padding:.9rem 2rem">Book a Free Consultation</a>
+<div class="price-hero">
+  <div class="wrap">
+    <h1 style="font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;color:#fff;letter-spacing:-.03em;margin:0 0 1.1rem;line-height:1.1">Transparent, Fixed-Fee Pricing</h1>
+    <p style="color:rgba(255,255,255,.72);font-size:1rem;max-width:600px;margin:0 auto 2rem;font-weight:300;line-height:1.85">We take pride in a clear, transparent pricing model that puts you in the driver's seat. View everything we have to offer and hand-pick exactly what you need, ensuring you only ever pay for the specific support your scale-up requires.</p>
+    <a href="/contact" style="display:inline-block;background:#e74c3c;color:#fff;padding:.85rem 2rem;border-radius:6px;font-size:.95rem;font-weight:700;text-decoration:none">Book a Free Consultation</a>
   </div>
 </div>
 
 <main>
 
-<!-- ═══ PACKAGES ═══════════════════════════════════════════════════════════ -->
-<section style="background:var(--off-white)">
+<section style="background:#f8f7f4;padding:4rem 0">
   <div class="wrap">
-    <div style="text-align:center;max-width:700px;margin:0 auto 2.5rem">
-      <div class="s-label">Monthly Fee Packages</div>
-      <h2 class="s-title" style="text-align:center">Example Fee Packages</h2>
-      <p class="s-sub" style="margin:0 auto;text-align:center">At CFA Accountants, we don't believe in one-size-fits-all. Every ambitious scale-up is unique, and so is our pricing. Because all of our service lines are completely optional, your final fee is always bespoke and tailored entirely to your current stage and future goals. The packages below are illustrative examples of how fees typically build as a business grows.</p>
+    <div style="text-align:center;max-width:680px;margin:0 auto 2.5rem">
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#e74c3c;margin-bottom:.6rem">Monthly Fee Packages</div>
+      <h2 style="font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:800;color:#04103d;letter-spacing:-.03em;margin:0 0 .8rem">Example Fee Packages</h2>
+      <p style="color:#4a5568;font-size:.95rem;line-height:1.85;font-weight:300;margin:0">At CFA Accountants, we don't believe in one-size-fits-all. Every ambitious scale-up is unique, and so is our pricing. Because all of our service lines are completely optional, your final fee is always bespoke and tailored entirely to your current stage and future goals.</p>
     </div>
     <div class="package-grid">
 
-      <!-- BASIC -->
-      <div class="package-card">
+      <div class="pkg-card">
         <div class="pkg-head">
           <h3>Basic</h3>
-          <p class="pkg-suited">Newly formed small company, client maintains own bookkeeping records, single director</p>
-          <div class="pkg-price"><span class="pkg-price-num">£96</span><span class="pkg-price-period">/month</span></div>
+          <p class="pkg-suited">Newly formed small company, client maintains own bookkeeping, single director</p>
+          <div class="pkg-price"><span class="pkg-price-num">£96</span><span class="pkg-price-per">/month</span></div>
         </div>
         <div class="pkg-body">
-          <table class="pkg-table">
+          <table class="pkg-rows">
             <tr><td>Annual Accounts &amp; Corporation Tax</td><td>£50</td></tr>
             <tr><td>Director Only Payroll + 1 Employee</td><td>£15</td></tr>
             <tr><td>Basic Self Assessment (1 Director)</td><td>£12</td></tr>
             <tr><td>Company Secretarial Work</td><td>£13</td></tr>
             <tr><td>Confirmation Statement Filing</td><td>£6</td></tr>
           </table>
-          <div class="pkg-totals">
-            <div class="pkg-total-row gross"><span>Package Total</span><span>£96/month</span></div>
-          </div>
-          <p class="pkg-disclaimer">Guide rates only. Final fees confirmed after free consultation. Software costs billed separately.</p>
-          <a href="/contact" class="pkg-cta outline" style="margin-bottom:.6rem;display:block;text-align:center;text-decoration:none">Book a consultation</a>
-          <a href="/cfa-fee-packages-2026.pdf" target="_blank" rel="noopener" style="display:block;text-align:center;border:1.5px solid rgba(15,42,92,.2);color:var(--navy);font-size:.8rem;font-weight:600;padding:.55rem 1rem;border-radius:8px;text-decoration:none;transition:all .2s">&#x2193; See example breakdown</a>
+          <div class="pkg-total"><span>Package Total</span><span>£96/month</span></div>
+          <p class="pkg-note">Guide rates only. Final fees confirmed after free consultation. Software costs billed separately.</p>
+          <a href="/contact" class="pkg-btn-primary">Book a consultation</a>
+          <a href="/cfa-fee-packages-2026.pdf" target="_blank" rel="noopener" class="pkg-btn-outline">&#8595; See example breakdown</a>
         </div>
       </div>
 
-      <!-- STARTUP -->
-      <div class="package-card">
+      <div class="pkg-card">
         <div class="pkg-head">
           <h3>Startup</h3>
           <p class="pkg-suited">New limited company, VAT-registered, 2–5 employees, auto-enrolment applies</p>
-          <div class="pkg-price"><span class="pkg-price-num">£155</span><span class="pkg-price-period">/month</span></div>
+          <div class="pkg-price"><span class="pkg-price-num">£155</span><span class="pkg-price-per">/month</span></div>
         </div>
         <div class="pkg-body">
-          <table class="pkg-table">
-            <tr><td>Annual Accounts &amp; Corporation Tax (up to £250k)</td><td>£60</td></tr>
+          <table class="pkg-rows">
+            <tr><td>Annual Accounts &amp; Corp Tax (up to £250k)</td><td>£60</td></tr>
             <tr><td>Digital VAT Returns (up to £250k)</td><td>£30</td></tr>
             <tr><td>Payroll Monthly (2–5 employees)</td><td>£28</td></tr>
             <tr><td>Pension Filing</td><td>£6</td></tr>
@@ -300,26 +229,23 @@
             <tr><td>Company Secretarial Work</td><td>£13</td></tr>
             <tr><td>Confirmation Statement Filing</td><td>£6</td></tr>
           </table>
-          <div class="pkg-totals">
-            <div class="pkg-total-row gross"><span>Package Total</span><span>£155/month</span></div>
-          </div>
-          <p class="pkg-disclaimer">Guide rates only. Final fees confirmed after free consultation. Software costs billed separately.</p>
-          <a href="/contact" class="pkg-cta outline" style="margin-bottom:.6rem;display:block;text-align:center;text-decoration:none">Book a consultation</a>
-          <a href="/cfa-fee-packages-2026.pdf" target="_blank" rel="noopener" style="display:block;text-align:center;border:1.5px solid rgba(15,42,92,.2);color:var(--navy);font-size:.8rem;font-weight:600;padding:.55rem 1rem;border-radius:8px;text-decoration:none;transition:all .2s">&#x2193; See example breakdown</a>
+          <div class="pkg-total"><span>Package Total</span><span>£155/month</span></div>
+          <p class="pkg-note">Guide rates only. Final fees confirmed after free consultation. Software costs billed separately.</p>
+          <a href="/contact" class="pkg-btn-primary">Book a consultation</a>
+          <a href="/cfa-fee-packages-2026.pdf" target="_blank" rel="noopener" class="pkg-btn-outline">&#8595; See example breakdown</a>
         </div>
       </div>
 
-      <!-- SCALE-UP -->
-      <div class="package-card featured">
+      <div class="pkg-card featured">
         <div class="pkg-head">
           <h3>Scale-up</h3>
           <p class="pkg-suited">Growing SME, 6–10 employees, 2 directors, CFA maintains bookkeeping records</p>
-          <div class="pkg-price"><span class="pkg-price-num">£356</span><span class="pkg-price-period">/month</span></div>
+          <div class="pkg-price"><span class="pkg-price-num">£356</span><span class="pkg-price-per">/month</span></div>
         </div>
         <div class="pkg-body">
-          <table class="pkg-table">
-            <tr><td>Annual Accounts &amp; Corporation Tax (£250k–£500k)</td><td>£100</td></tr>
-            <tr><td>Digital VAT Returns (£250k–£500k, review level)</td><td>£55</td></tr>
+          <table class="pkg-rows">
+            <tr><td>Annual Accounts &amp; Corp Tax (£250k–£500k)</td><td>£100</td></tr>
+            <tr><td>Digital VAT Returns (£250k–£500k)</td><td>£55</td></tr>
             <tr><td>Payroll Monthly (6–10 employees)</td><td>£48</td></tr>
             <tr><td>Pension Filing</td><td>£6</td></tr>
             <tr><td>Directors' Tax Returns (2 Directors)</td><td>£24</td></tr>
@@ -328,25 +254,22 @@
             <tr><td>Quarterly Management Accounts</td><td>£50</td></tr>
             <tr><td>Bookkeeping (up to 100 transactions)</td><td>£52</td></tr>
           </table>
-          <div class="pkg-totals">
-            <div class="pkg-total-row gross"><span>Package Total</span><span>£356/month</span></div>
-          </div>
-          <p class="pkg-disclaimer">Guide rates only. Final fees confirmed after free consultation. Software costs billed separately.</p>
-          <a href="/contact" class="pkg-cta" style="margin-bottom:.6rem;display:block;text-align:center;text-decoration:none">Book a consultation</a>
-          <a href="/cfa-fee-packages-2026.pdf" target="_blank" rel="noopener" style="display:block;text-align:center;border:1.5px solid rgba(231,76,60,.35);color:var(--red);font-size:.8rem;font-weight:600;padding:.55rem 1rem;border-radius:8px;text-decoration:none;transition:all .2s">&#x2193; See example breakdown</a>
+          <div class="pkg-total"><span>Package Total</span><span>£356/month</span></div>
+          <p class="pkg-note">Guide rates only. Final fees confirmed after free consultation. Software costs billed separately.</p>
+          <a href="/contact" class="pkg-btn-primary">Book a consultation</a>
+          <a href="/cfa-fee-packages-2026.pdf" target="_blank" rel="noopener" class="pkg-btn-outline">&#8595; See example breakdown</a>
         </div>
       </div>
 
-      <!-- GROWTH -->
-      <div class="package-card">
+      <div class="pkg-card">
         <div class="pkg-head">
           <h3>Growth</h3>
           <p class="pkg-suited">Established SME, 11–20 employees, 3 directors, £500k–£1m turnover with Outsourced FD</p>
-          <div class="pkg-price"><span class="pkg-price-num">£562</span><span class="pkg-price-period">/month</span></div>
+          <div class="pkg-price"><span class="pkg-price-num">£562</span><span class="pkg-price-per">/month</span></div>
         </div>
         <div class="pkg-body">
-          <table class="pkg-table">
-            <tr><td>Annual Accounts &amp; Corporation Tax (£500k–£1m)</td><td>£163</td></tr>
+          <table class="pkg-rows">
+            <tr><td>Annual Accounts &amp; Corp Tax (£500k–£1m)</td><td>£163</td></tr>
             <tr><td>Digital VAT Returns (£500k+)</td><td>£64</td></tr>
             <tr><td>Payroll Monthly (11–20 employees)</td><td>£76</td></tr>
             <tr><td>Pension Filing</td><td>£6</td></tr>
@@ -357,389 +280,342 @@
             <tr><td>Bookkeeping (up to 100 transactions)</td><td>£52</td></tr>
             <tr><td>Outsourced FD Support (~1 hr/month)</td><td>£81</td></tr>
           </table>
-          <div class="pkg-totals">
-            <div class="pkg-total-row gross"><span>Package Total</span><span>£562/month</span></div>
-          </div>
-          <p class="pkg-disclaimer">Guide rates only. Final fees confirmed after free consultation. Software costs billed separately.</p>
-          <a href="/contact" class="pkg-cta outline" style="margin-bottom:.6rem;display:block;text-align:center;text-decoration:none">Book a consultation</a>
-          <a href="/cfa-fee-packages-2026.pdf" target="_blank" rel="noopener" style="display:block;text-align:center;border:1.5px solid rgba(15,42,92,.2);color:var(--navy);font-size:.8rem;font-weight:600;padding:.55rem 1rem;border-radius:8px;text-decoration:none;transition:all .2s">&#x2193; See example breakdown</a>
+          <div class="pkg-total"><span>Package Total</span><span>£562/month</span></div>
+          <p class="pkg-note">Guide rates only. Final fees confirmed after free consultation. Software costs billed separately.</p>
+          <a href="/contact" class="pkg-btn-primary">Book a consultation</a>
+          <a href="/cfa-fee-packages-2026.pdf" target="_blank" rel="noopener" class="pkg-btn-outline">&#8595; See example breakdown</a>
         </div>
       </div>
 
     </div>
 
-    <!-- ADD-ONS -->
-    <div style="background:#fff;border:1px solid rgba(15,42,92,.1);border-radius:14px;padding:1.5rem 2rem;margin-top:.5rem">
-      <h3 style="font-size:1rem;font-weight:700;color:var(--navy);margin:0 0 1rem">Optional Add-Ons</h3>
+    <div class="addon-wrap">
+      <h3>Optional Add-Ons</h3>
       <div class="addon-grid">
         <div class="addon-item"><strong>CIS Contractor Package</strong>From £75/month</div>
         <div class="addon-item"><strong>Additional Employees</strong>Per payroll tariff</div>
         <div class="addon-item"><strong>Extra Director Tax Return</strong>From £12/month</div>
         <div class="addon-item"><strong>Software Support</strong>From £25/month</div>
         <div class="addon-item"><strong>Registered Office Address</strong>£10/month</div>
-        <div class="addon-item"><strong>Outsourced FD</strong>From £650/day</div>
-        <div class="addon-item"><strong>Outsourced FC</strong>From £350/day</div>
+        <div class="addon-item"><strong>Outsourced Finance Director</strong>From £650/day</div>
+        <div class="addon-item"><strong>Outsourced Financial Controller</strong>From £350/day</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ INDIVIDUAL PRICING ════════════════════════════════════════════════ -->
-<section style="background:var(--off-white)">
+<section style="background:#f8f7f4;padding:4rem 0">
   <div class="wrap">
-    <div style="text-align:center;max-width:620px;margin:0 auto 2rem">
-      <div class="s-label">Individual Services</div>
-      <h2 class="s-title" style="text-align:center">Full Price List 2026</h2>
-      <p class="s-sub" style="margin:0 auto;text-align:center">All fees exclude VAT at 20%. Click a section below to jump straight to it.</p>
+    <div style="text-align:center;max-width:580px;margin:0 auto 2rem">
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#e74c3c;margin-bottom:.6rem">Individual Services</div>
+      <h2 style="font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:800;color:#04103d;letter-spacing:-.03em;margin:0 0 .6rem">Full Price List</h2>
+      <p style="color:#4a5568;font-size:.9rem;line-height:1.8;font-weight:300;margin:0">Click a section to jump straight to it, or scroll through the full list below.</p>
     </div>
 
-    <!-- JUMP TABS -->
     <div class="price-jump-tabs">
-      <a href="#advisory" class="price-jump-tab">Advisory &amp; Finance</a>
-      <a href="#mgmt" class="price-jump-tab">Management Accounts</a>
-      <a href="#annual" class="price-jump-tab">Annual Accounts</a>
-      <a href="#secretarial" class="price-jump-tab">Company Secretarial</a>
-      <a href="#vat" class="price-jump-tab">VAT</a>
-      <a href="#payroll" class="price-jump-tab">Payroll</a>
-      <a href="#cis" class="price-jump-tab">CIS</a>
-      <a href="#bookkeeping" class="price-jump-tab">Bookkeeping</a>
-      <a href="#selfassessment" class="price-jump-tab">Self Assessment</a>
-      <a href="#software" class="price-jump-tab">Software</a>
-      <a href="#startup" class="price-jump-tab">Business Startup</a>
-      <a href="#additional" class="price-jump-tab">Additional Services</a>
+      <a href="#advisory" class="pjt">Advisory &amp; Finance</a>
+      <a href="#mgmt" class="pjt">Management Accounts</a>
+      <a href="#annual" class="pjt">Annual Accounts</a>
+      <a href="#secretarial" class="pjt">Company Secretarial</a>
+      <a href="#vat" class="pjt">VAT</a>
+      <a href="#payroll" class="pjt">Payroll</a>
+      <a href="#cis" class="pjt">CIS</a>
+      <a href="#bookkeeping" class="pjt">Bookkeeping</a>
+      <a href="#selfassessment" class="pjt">Self Assessment</a>
+      <a href="#software" class="pjt">Software</a>
+      <a href="#startup" class="pjt">Business Startup</a>
+      <a href="#additional" class="pjt">Additional Services</a>
     </div>
 
-    <!-- ADVISORY -->
-    <div class="price-section-full" id="advisory">
+    <div class="psf" id="advisory">
       <h2>Advisory &amp; Finance Services</h2>
-      <p class="section-desc">Strategic financial support from qualified accountants.</p>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead><tr><th>Service</th><th>Monthly</th><th>Annual</th></tr></thead>
-          <tbody>
-            <tr><td>Monthly Business Review — Finance Director</td><td>£99</td><td>£1,188</td></tr>
-            <tr><td>Monthly Business Review — Financial Controller</td><td>£61</td><td>£732</td></tr>
-            <tr><td>Monthly Strategic Meeting</td><td>£25</td><td>£300</td></tr>
-            <tr><td>Quarterly Strategic Review Meeting</td><td>£15</td><td>£180</td></tr>
-            <tr><td>Pre-Year-End Tax Planning Review</td><td>—</td><td>£150</td></tr>
-            <tr><td>Remuneration Planning</td><td>—</td><td>£100 per shareholder</td></tr>
-            <tr><td>Budgeting &amp; Cashflow Forecasting</td><td>From £25</td><td>From £300</td></tr>
-            <tr><td>Business Plan &amp; Financial Projections</td><td>—</td><td>From £400</td></tr>
-            <tr class="price-sub-head"><td colspan="3">Outsourced Finance Function</td></tr>
-            <tr><td>Outsourced Finance Director</td><td class="bespoke">From £650/day</td><td class="bespoke">Bespoke</td></tr>
-            <tr><td>Outsourced Financial Controller</td><td class="bespoke">From £350/day</td><td class="bespoke">Bespoke</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>Strategic financial support from qualified accountants.</p>
+      <div class="ptw"><table class="pt">
+        <thead><tr><th>Service</th><th>Monthly</th><th>Annual</th></tr></thead>
+        <tbody>
+          <tr><td>Monthly Business Review — Finance Director</td><td>£99</td><td>£1,188</td></tr>
+          <tr><td>Monthly Business Review — Financial Controller</td><td>£61</td><td>£732</td></tr>
+          <tr><td>Monthly Strategic Meeting</td><td>£25</td><td>£300</td></tr>
+          <tr><td>Quarterly Strategic Review Meeting</td><td>£15</td><td>£180</td></tr>
+          <tr><td>Pre-Year-End Tax Planning Review</td><td>—</td><td>£150</td></tr>
+          <tr><td>Remuneration Planning</td><td>—</td><td>£100 per shareholder</td></tr>
+          <tr><td>Budgeting &amp; Cashflow Forecasting</td><td>From £25</td><td>From £300</td></tr>
+          <tr><td>Business Plan &amp; Financial Projections</td><td>—</td><td>From £400</td></tr>
+          <tr class="psh"><td colspan="3">Outsourced Finance Function</td></tr>
+          <tr><td>Outsourced Finance Director</td><td class="bq">From £650/day</td><td class="bq">Bespoke</td></tr>
+          <tr><td>Outsourced Financial Controller</td><td class="bq">From £350/day</td><td class="bq">Bespoke</td></tr>
+        </tbody>
+      </table></div>
     </div>
+    <hr class="sdiv"/>
 
-    <hr class="section-divider"/>
-
-    <!-- MANAGEMENT ACCOUNTS -->
-    <div class="price-section-full" id="mgmt">
+    <div class="psf" id="mgmt">
       <h2>Monthly Management Accounts</h2>
-      <p class="section-desc">Includes P&amp;L, Balance Sheet, KPI Reporting, Management Commentary &amp; Cashflow Reporting.</p>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead><tr><th>Business Turnover</th><th>Monthly</th><th>Annual</th></tr></thead>
-          <tbody>
-            <tr><td>Up to £250,000</td><td>£150</td><td>£1,800</td></tr>
-            <tr><td>£250,000 – £500,000</td><td>£225</td><td>£2,700</td></tr>
-            <tr><td>£500,000 – £1,000,000</td><td>£375</td><td>£4,500</td></tr>
-            <tr><td>£1,000,000 – £2,000,000</td><td>£500</td><td>£6,000</td></tr>
-            <tr><td>£2,000,000 – £6,500,000</td><td>£750</td><td>£9,000</td></tr>
-            <tr><td>£6,500,000+</td><td class="bespoke">Bespoke</td><td class="bespoke">Bespoke</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>Includes P&amp;L, Balance Sheet, KPI Reporting, Management Commentary &amp; Cashflow Reporting.</p>
+      <div class="ptw"><table class="pt">
+        <thead><tr><th>Business Turnover</th><th>Monthly</th><th>Annual</th></tr></thead>
+        <tbody>
+          <tr><td>Up to £250,000</td><td>£150</td><td>£1,800</td></tr>
+          <tr><td>£250,000 – £500,000</td><td>£225</td><td>£2,700</td></tr>
+          <tr><td>£500,000 – £1,000,000</td><td>£375</td><td>£4,500</td></tr>
+          <tr><td>£1,000,000 – £2,000,000</td><td>£500</td><td>£6,000</td></tr>
+          <tr><td>£2,000,000 – £6,500,000</td><td>£750</td><td>£9,000</td></tr>
+          <tr><td>£6,500,000+</td><td class="bq">Bespoke</td><td class="bq">Bespoke</td></tr>
+        </tbody>
+      </table></div>
     </div>
+    <hr class="sdiv"/>
 
-    <hr class="section-divider"/>
-
-    <!-- ANNUAL ACCOUNTS -->
-    <div class="price-section-full" id="annual">
+    <div class="psf" id="annual">
       <h2>Annual Accounts &amp; Corporation Tax</h2>
-      <p class="section-desc">Statutory accounts, CT600 filing and corporation tax computation.</p>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead><tr><th>Business Turnover</th><th>Monthly Equivalent</th><th>Annual Fee</th></tr></thead>
-          <tbody>
-            <tr><td>Dormant Company</td><td>£25</td><td>£300</td></tr>
-            <tr><td>Up to £75,000</td><td>£60</td><td>£720</td></tr>
-            <tr><td>£75,000 – £250,000</td><td>£75</td><td>£900</td></tr>
-            <tr><td>£250,000 – £500,000</td><td>£125</td><td>£1,500</td></tr>
-            <tr><td>£500,000 – £1,000,000</td><td>£200</td><td>£2,400</td></tr>
-            <tr><td>£1,000,000 – £2,000,000</td><td>£250</td><td>£3,000</td></tr>
-            <tr><td>£2,000,000 – £6,500,000</td><td>£320</td><td>£3,840</td></tr>
-            <tr><td>£6,500,000+</td><td class="bespoke">Bespoke</td><td class="bespoke">Bespoke</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>Statutory accounts, CT600 filing and corporation tax computation.</p>
+      <div class="ptw"><table class="pt">
+        <thead><tr><th>Business Turnover</th><th>Monthly Equivalent</th><th>Annual Fee</th></tr></thead>
+        <tbody>
+          <tr><td>Dormant Company</td><td>£25</td><td>£300</td></tr>
+          <tr><td>Up to £75,000</td><td>£60</td><td>£720</td></tr>
+          <tr><td>£75,000 – £250,000</td><td>£75</td><td>£900</td></tr>
+          <tr><td>£250,000 – £500,000</td><td>£125</td><td>£1,500</td></tr>
+          <tr><td>£500,000 – £1,000,000</td><td>£200</td><td>£2,400</td></tr>
+          <tr><td>£1,000,000 – £2,000,000</td><td>£250</td><td>£3,000</td></tr>
+          <tr><td>£2,000,000 – £6,500,000</td><td>£320</td><td>£3,840</td></tr>
+          <tr><td>£6,500,000+</td><td class="bq">Bespoke</td><td class="bq">Bespoke</td></tr>
+        </tbody>
+      </table></div>
     </div>
+    <hr class="sdiv"/>
 
-    <hr class="section-divider"/>
-
-    <!-- COMPANY SECRETARIAL -->
-    <div class="price-section-full" id="secretarial">
+    <div class="psf" id="secretarial">
       <h2>Company Secretarial Services</h2>
-      <p class="section-desc">Keeping your company compliant at Companies House.</p>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead><tr><th>Service</th><th>Monthly</th><th>Annual</th></tr></thead>
-          <tbody>
-            <tr><td>Confirmation Statement Filing (inc. filing fee)</td><td>—</td><td>£75</td></tr>
-            <tr><td>Full Company Secretarial Service</td><td>£25</td><td>£300</td></tr>
-            <tr><td>Companies House Registered Office Address</td><td>£10</td><td>£120</td></tr>
-            <tr class="price-sub-head"><td colspan="3">One-Off Services</td></tr>
-            <tr><td>Company Formation (Basic)</td><td>—</td><td>£100</td></tr>
-            <tr><td>Company Formation + UTR + PAYE Registration</td><td>—</td><td>£175</td></tr>
-            <tr><td>Complete Company Setup Package</td><td>—</td><td>£250</td></tr>
-            <tr><td>Director Appointment / Resignation</td><td>—</td><td>£45</td></tr>
-            <tr><td>Shareholder Changes</td><td>—</td><td>£45</td></tr>
-            <tr><td>Dividend Vouchers &amp; Board Minutes</td><td>—</td><td>£40</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>Keeping your company compliant at Companies House.</p>
+      <div class="ptw"><table class="pt">
+        <thead><tr><th>Service</th><th>Monthly</th><th>Annual / One-off</th></tr></thead>
+        <tbody>
+          <tr><td>Confirmation Statement Filing (inc. filing fee)</td><td>—</td><td>£75</td></tr>
+          <tr><td>Full Company Secretarial Service</td><td>£25</td><td>£300</td></tr>
+          <tr><td>Companies House Registered Office Address</td><td>£10</td><td>£120</td></tr>
+          <tr class="psh"><td colspan="3">One-Off Services</td></tr>
+          <tr><td>Company Formation (Basic)</td><td>—</td><td>£100</td></tr>
+          <tr><td>Company Formation + UTR + PAYE Registration</td><td>—</td><td>£175</td></tr>
+          <tr><td>Complete Company Setup Package</td><td>—</td><td>£250</td></tr>
+          <tr><td>Director Appointment / Resignation</td><td>—</td><td>£45</td></tr>
+          <tr><td>Shareholder Changes</td><td>—</td><td>£45</td></tr>
+          <tr><td>Dividend Vouchers &amp; Board Minutes</td><td>—</td><td>£40</td></tr>
+        </tbody>
+      </table></div>
     </div>
+    <hr class="sdiv"/>
 
-    <hr class="section-divider"/>
-
-    <!-- VAT -->
-    <div class="price-section-full" id="vat">
+    <div class="psf" id="vat">
       <h2>VAT Services</h2>
-      <p class="section-desc">MTD-compliant VAT returns, registration and specialist advice.</p>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead><tr><th>Service</th><th>Monthly</th><th>Annual</th></tr></thead>
-          <tbody>
-            <tr><td>VAT Returns Only (up to £250k turnover)</td><td>£45</td><td>£540</td></tr>
-            <tr><td>VAT Returns + Review (£250k–£500k turnover)</td><td>£70</td><td>£840</td></tr>
-            <tr><td>VAT Returns (£500k+ turnover)</td><td class="bespoke">Bespoke</td><td class="bespoke">Bespoke</td></tr>
-            <tr class="price-sub-head"><td colspan="3">One-Off VAT Services</td></tr>
-            <tr><td>VAT Registration</td><td>—</td><td>£85</td></tr>
-            <tr><td>VAT Deregistration</td><td>—</td><td>£75</td></tr>
-            <tr><td>Making Tax Digital Setup</td><td>—</td><td>£95</td></tr>
-            <tr><td>Complex VAT / Partial Exemption</td><td class="bespoke">Bespoke</td><td class="bespoke">Bespoke</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>MTD-compliant VAT returns, registration and specialist advice.</p>
+      <div class="ptw"><table class="pt">
+        <thead><tr><th>Service</th><th>Monthly</th><th>Annual / One-off</th></tr></thead>
+        <tbody>
+          <tr><td>VAT Returns Only (up to £250k turnover)</td><td>£45</td><td>£540</td></tr>
+          <tr><td>VAT Returns + Review (£250k–£500k turnover)</td><td>£70</td><td>£840</td></tr>
+          <tr><td>VAT Returns (£500k+ turnover)</td><td class="bq">Bespoke</td><td class="bq">Bespoke</td></tr>
+          <tr class="psh"><td colspan="3">One-Off VAT Services</td></tr>
+          <tr><td>VAT Registration</td><td>—</td><td>£85</td></tr>
+          <tr><td>VAT Deregistration</td><td>—</td><td>£75</td></tr>
+          <tr><td>Making Tax Digital Setup</td><td>—</td><td>£95</td></tr>
+          <tr><td>Complex VAT / Partial Exemption</td><td class="bq">Bespoke</td><td class="bq">Bespoke</td></tr>
+        </tbody>
+      </table></div>
     </div>
+    <hr class="sdiv"/>
 
-    <hr class="section-divider"/>
-
-    <!-- PAYROLL -->
-    <div class="price-section-full" id="payroll">
+    <div class="psf" id="payroll">
       <h2>Payroll Services</h2>
-      <p class="section-desc">RTI-compliant payroll, auto enrolment and PAYE management.</p>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead><tr><th>Service</th><th>Monthly Fee</th><th></th></tr></thead>
-          <tbody>
-            <tr><td>Director Only Payroll</td><td>£20</td><td></td></tr>
-            <tr><td>2–5 Employees</td><td>£35</td><td></td></tr>
-            <tr><td>6–10 Employees</td><td>£60</td><td></td></tr>
-            <tr><td>11–20 Employees</td><td>£95</td><td></td></tr>
-            <tr><td>21–50 Employees</td><td>£175</td><td></td></tr>
-            <tr><td>50+ Employees</td><td class="bespoke">Bespoke</td><td></td></tr>
-            <tr class="price-sub-head"><td colspan="3">Alternative Per Payslip Pricing</td></tr>
-            <tr><td>2–10 Employees</td><td>£7.25 per payslip</td><td></td></tr>
-            <tr><td>11–20 Employees</td><td>£6.75 per payslip</td><td></td></tr>
-            <tr><td>21–30 Employees</td><td>£6.25 per payslip</td><td></td></tr>
-            <tr><td>30+ Employees</td><td>£5.75 per payslip</td><td></td></tr>
-            <tr class="price-sub-head"><td colspan="3">Auto Enrolment</td></tr>
-            <tr><td>Pension Filing</td><td>£6.50</td><td></td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>RTI-compliant payroll, auto enrolment and PAYE management.</p>
+      <div class="ptw"><table class="pt">
+        <thead><tr><th>Service</th><th>Monthly Fee</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Director Only Payroll</td><td>£20</td><td></td></tr>
+          <tr><td>2–5 Employees</td><td>£35</td><td></td></tr>
+          <tr><td>6–10 Employees</td><td>£60</td><td></td></tr>
+          <tr><td>11–20 Employees</td><td>£95</td><td></td></tr>
+          <tr><td>21–50 Employees</td><td>£175</td><td></td></tr>
+          <tr><td>50+ Employees</td><td class="bq">Bespoke</td><td></td></tr>
+          <tr class="psh"><td colspan="3">Per Payslip Pricing</td></tr>
+          <tr><td>2–10 Employees</td><td>£7.25 per payslip</td><td></td></tr>
+          <tr><td>11–20 Employees</td><td>£6.75 per payslip</td><td></td></tr>
+          <tr><td>21–30 Employees</td><td>£6.25 per payslip</td><td></td></tr>
+          <tr><td>30+ Employees</td><td>£5.75 per payslip</td><td></td></tr>
+          <tr class="psh"><td colspan="3">Auto Enrolment</td></tr>
+          <tr><td>Pension Filing</td><td>£6.50</td><td></td></tr>
+        </tbody>
+      </table></div>
     </div>
+    <hr class="sdiv"/>
 
-    <hr class="section-divider"/>
-
-    <!-- CIS -->
-    <div class="price-section-full" id="cis">
+    <div class="psf" id="cis">
       <h2>CIS Services</h2>
-      <p class="section-desc">Construction Industry Scheme returns, contractor and subcontractor support.</p>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead><tr><th>Service</th><th>Monthly</th><th>Annual</th></tr></thead>
-          <tbody>
-            <tr><td>CIS Monthly Return Only</td><td>£35</td><td>£420</td></tr>
-            <tr><td>CIS Sole Trader Support Package</td><td>£35</td><td>£420</td></tr>
-            <tr><td>CIS Contractor Package</td><td>£75</td><td>£900</td></tr>
-            <tr><td>CIS + Payroll</td><td>£45</td><td>£540</td></tr>
-            <tr><td>CIS + VAT</td><td>£70</td><td>£840</td></tr>
-            <tr><td>Full CIS Contractor Package</td><td>From £130</td><td>From £1,560</td></tr>
-            <tr class="price-sub-head"><td colspan="3">CIS Tax Return Services</td></tr>
-            <tr><td>Basic CIS Tax Return</td><td>—</td><td>£150</td></tr>
-            <tr><td>CIS + Expenses Review</td><td>—</td><td>£200</td></tr>
-            <tr><td>CIS + Multiple Income Sources</td><td>—</td><td>From £275</td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>Construction Industry Scheme returns, contractor and subcontractor support.</p>
+      <div class="ptw"><table class="pt">
+        <thead><tr><th>Service</th><th>Monthly</th><th>Annual</th></tr></thead>
+        <tbody>
+          <tr><td>CIS Monthly Return Only</td><td>£35</td><td>£420</td></tr>
+          <tr><td>CIS Sole Trader Support Package</td><td>£35</td><td>£420</td></tr>
+          <tr><td>CIS Contractor Package</td><td>£75</td><td>£900</td></tr>
+          <tr><td>CIS + Payroll</td><td>£45</td><td>£540</td></tr>
+          <tr><td>CIS + VAT</td><td>£70</td><td>£840</td></tr>
+          <tr><td>Full CIS Contractor Package</td><td>From £130</td><td>From £1,560</td></tr>
+          <tr class="psh"><td colspan="3">CIS Tax Return Services</td></tr>
+          <tr><td>Basic CIS Tax Return</td><td>—</td><td>£150</td></tr>
+          <tr><td>CIS + Expenses Review</td><td>—</td><td>£200</td></tr>
+          <tr><td>CIS + Multiple Income Sources</td><td>—</td><td>From £275</td></tr>
+        </tbody>
+      </table></div>
     </div>
+    <hr class="sdiv"/>
 
-    <hr class="section-divider"/>
-
-    <!-- BOOKKEEPING -->
-    <div class="price-section-full" id="bookkeeping">
+    <div class="psf" id="bookkeeping">
       <h2>Bookkeeping Services</h2>
-      <p class="section-desc">Digital bookkeeping using Xero, QuickBooks or FreeAgent.</p>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead><tr><th>Monthly Transaction Volume</th><th>Monthly Fee</th><th></th></tr></thead>
-          <tbody>
-            <tr><td>Up to 100 Transactions</td><td>£75</td><td></td></tr>
-            <tr><td>101–300 Transactions</td><td>£125</td><td></td></tr>
-            <tr><td>301–600 Transactions</td><td>£200</td><td></td></tr>
-            <tr><td>601+ Transactions</td><td class="bespoke">Bespoke</td><td></td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>Digital bookkeeping using Xero, QuickBooks or FreeAgent.</p>
+      <div class="ptw"><table class="pt">
+        <thead><tr><th>Monthly Transaction Volume</th><th>Monthly Fee</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Up to 100 Transactions</td><td>£75</td><td></td></tr>
+          <tr><td>101–300 Transactions</td><td>£125</td><td></td></tr>
+          <tr><td>301–600 Transactions</td><td>£200</td><td></td></tr>
+          <tr><td>601+ Transactions</td><td class="bq">Bespoke</td><td></td></tr>
+        </tbody>
+      </table></div>
     </div>
+    <hr class="sdiv"/>
 
-    <hr class="section-divider"/>
-
-    <!-- SELF ASSESSMENT -->
-    <div class="price-section-full" id="selfassessment">
+    <div class="psf" id="selfassessment">
       <h2>Self Assessment Services</h2>
-      <p class="section-desc">Personal tax returns for sole traders, landlords, directors and individuals with complex income.</p>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead><tr><th>Service</th><th>Annual Fee</th><th></th></tr></thead>
-          <tbody>
-            <tr><td>Basic Self Assessment</td><td>£140</td><td></td></tr>
-            <tr><td>Self Employed Tax Return</td><td>£200–£350</td><td></td></tr>
-            <tr><td>Landlord Tax Return</td><td>£220–£400</td><td></td></tr>
-            <tr><td>Multiple Income Sources</td><td>From £350</td><td></td></tr>
-            <tr><td>Capital Gains Tax Return</td><td>From £220</td><td></td></tr>
-            <tr><td>Foreign Income Tax Return</td><td>From £400</td><td></td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>Personal tax returns for sole traders, landlords, directors and individuals with complex income.</p>
+      <div class="ptw"><table class="pt">
+        <thead><tr><th>Service</th><th>Annual Fee</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Basic Self Assessment</td><td>£140</td><td></td></tr>
+          <tr><td>Self Employed Tax Return</td><td>£200–£350</td><td></td></tr>
+          <tr><td>Landlord Tax Return</td><td>£220–£400</td><td></td></tr>
+          <tr><td>Multiple Income Sources</td><td>From £350</td><td></td></tr>
+          <tr><td>Capital Gains Tax Return</td><td>From £220</td><td></td></tr>
+          <tr><td>Foreign Income Tax Return</td><td>From £400</td><td></td></tr>
+        </tbody>
+      </table></div>
     </div>
+    <hr class="sdiv"/>
 
-    <hr class="section-divider"/>
-
-    <!-- SOFTWARE -->
-    <div class="price-section-full" id="software">
+    <div class="psf" id="software">
       <h2>Software &amp; Cloud Accounting</h2>
-      <p class="section-desc">Setup, migration, training and ongoing support for cloud accounting platforms.</p>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead><tr><th>Service</th><th>Fee</th><th></th></tr></thead>
-          <tbody>
-            <tr><td>Xero / QuickBooks / FreeAgent Setup</td><td>£150</td><td></td></tr>
-            <tr><td>Software Migration</td><td>£450–£750</td><td></td></tr>
-            <tr><td>Complex Data Migration</td><td>From £1,200</td><td></td></tr>
-            <tr><td>Software Training Session (1 hour)</td><td>£150</td><td></td></tr>
-            <tr><td>Half Day Software Training</td><td>£300</td><td></td></tr>
-            <tr><td>Software Support</td><td>From £25/month</td><td></td></tr>
-            <tr><td>MTD Software Setup</td><td>£95</td><td></td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>Setup, migration, training and ongoing support for cloud accounting platforms.</p>
+      <div class="ptw"><table class="pt">
+        <thead><tr><th>Service</th><th>Fee</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Xero / QuickBooks / FreeAgent Setup</td><td>£150</td><td></td></tr>
+          <tr><td>Software Migration</td><td>£450–£750</td><td></td></tr>
+          <tr><td>Complex Data Migration</td><td>From £1,200</td><td></td></tr>
+          <tr><td>Software Training Session (1 hour)</td><td>£150</td><td></td></tr>
+          <tr><td>Half Day Software Training</td><td>£300</td><td></td></tr>
+          <tr><td>Software Support</td><td>From £25/month</td><td></td></tr>
+          <tr><td>MTD Software Setup</td><td>£95</td><td></td></tr>
+        </tbody>
+      </table></div>
     </div>
+    <hr class="sdiv"/>
 
-    <hr class="section-divider"/>
-
-    <!-- STARTUP -->
-    <div class="price-section-full" id="startup">
+    <div class="psf" id="startup">
       <h2>Business Startup Services</h2>
-      <p class="section-desc">Everything you need to get your business up and running correctly.</p>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead><tr><th>Service</th><th>Fee</th><th></th></tr></thead>
-          <tbody>
-            <tr><td>Company Formation via Tide <span class="tide-link-cell"><a href="https://www.tide.co/partners-company-formation/?ref=CFAACTSF2F" target="_blank" rel="noopener">→ Form via Tide</a></span></td><td>£14.99</td><td></td></tr>
-            <tr><td>UTR Registration</td><td>£50</td><td></td></tr>
-            <tr><td>PAYE Registration</td><td>£50</td><td></td></tr>
-            <tr><td>VAT Registration</td><td>£85</td><td></td></tr>
-            <tr><td>Startup Planning Session</td><td>£95</td><td></td></tr>
-            <tr><td>Shareholder Agreement Support</td><td>From £200</td><td></td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>Everything you need to get your business up and running correctly.</p>
+      <div class="ptw"><table class="pt">
+        <thead><tr><th>Service</th><th>Fee</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Company Formation via Tide &nbsp;<a href="https://www.tide.co/partners-company-formation/?ref=CFAACTSF2F" target="_blank" class="tide-lnk">&#8594; Form via Tide</a></td><td>£14.99</td><td></td></tr>
+          <tr><td>UTR Registration</td><td>£50</td><td></td></tr>
+          <tr><td>PAYE Registration</td><td>£50</td><td></td></tr>
+          <tr><td>VAT Registration</td><td>£85</td><td></td></tr>
+          <tr><td>Startup Planning Session</td><td>£95</td><td></td></tr>
+          <tr><td>Shareholder Agreement Support</td><td>From £200</td><td></td></tr>
+        </tbody>
+      </table></div>
     </div>
+    <hr class="sdiv"/>
 
-    <hr class="section-divider"/>
-
-    <!-- ADDITIONAL SERVICES -->
-    <div class="price-section-full" id="additional">
+    <div class="psf" id="additional">
       <h2>Additional Business Support Services</h2>
-      <p class="section-desc">Specialist support when you need it most.</p>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead><tr><th>Service</th><th>Fee</th><th></th></tr></thead>
-          <tbody>
-            <tr><td>Credit Control Support</td><td>From £75/month</td><td></td></tr>
-            <tr><td>HMRC Time To Pay Arrangement Assistance</td><td>From £150</td><td></td></tr>
-            <tr><td>Finance Application Support</td><td>From £250</td><td></td></tr>
-            <tr><td>Business Loan Support</td><td>From £250</td><td></td></tr>
-            <tr><td>HMRC Enquiry Support</td><td>From £135/hour</td><td></td></tr>
-            <tr><td>Ad-Hoc Advisory Work</td><td>From £120/hour</td><td></td></tr>
-          </tbody>
-        </table>
-      </div>
+      <p>Specialist support when you need it most.</p>
+      <div class="ptw"><table class="pt">
+        <thead><tr><th>Service</th><th>Fee</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Credit Control Support</td><td>From £75/month</td><td></td></tr>
+          <tr><td>HMRC Time To Pay Arrangement Assistance</td><td>From £150</td><td></td></tr>
+          <tr><td>Finance Application Support</td><td>From £250</td><td></td></tr>
+          <tr><td>Business Loan Support</td><td>From £250</td><td></td></tr>
+          <tr><td>HMRC Enquiry Support</td><td>From £135/hour</td><td></td></tr>
+          <tr><td>Ad-Hoc Advisory Work</td><td>From £120/hour</td><td></td></tr>
+        </tbody>
+      </table></div>
     </div>
 
-    <!-- NOTES -->
     <div class="price-notes">
       <h3>Important Notes</h3>
       <ol>
         <li>All fees are exclusive of VAT at the prevailing rate.</li>
-        <li>Prices are guide rates only — final fees are confirmed following a free consultation.</li>
+        <li>Prices are guide rates only — final fees confirmed following a free consultation.</li>
         <li>Fixed monthly fees are payable by Direct Debit.</li>
         <li>Fees may be reviewed where transaction volumes or complexity differ from initial estimates.</li>
         <li>Startup and referral discounts may be available.</li>
         <li>HMRC enquiries, investigations and specialist advisory work are charged separately unless specifically included.</li>
-        <li>Bespoke pricing is available for larger businesses, group structures, law firms, charities and specialist sectors.</li>
+        <li>Bespoke pricing available for larger businesses, group structures, law firms, charities and specialist sectors.</li>
         <li>All packages and services can be tailored to meet individual client requirements.</li>
       </ol>
     </div>
-
   </div>
 </section>
 
-<!-- CTA BAND -->
-<section class="cta-band">
-  <div class="wrap fade" style="text-align:center">
-    <div class="s-label" style="color:rgba(255,255,255,.45)">Get Started</div>
-    <h2 class="s-title wh" style="text-align:center">Not sure which package suits you?</h2>
-    <p style="color:rgba(255,255,255,.65);font-size:1rem;max-width:500px;margin:1rem auto 2.5rem;font-weight:300;line-height:1.85">Book a free, no-obligation consultation. We'll review your needs and give you a clear fixed monthly price.</p>
-    <a href="/contact" class="btn-red" style="display:inline-block;text-decoration:none;font-size:1rem;padding:1rem 2.5rem">Book a Free Consultation</a>
+<section style="background:linear-gradient(135deg,#05103a 0%,#050c26 55%,#03081b 100%);padding:5rem 0;text-align:center">
+  <div class="wrap">
+    <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.6rem">Get Started</div>
+    <h2 style="font-size:clamp(1.6rem,2.8vw,2.2rem);font-weight:800;color:#fff;letter-spacing:-.03em;margin:0 0 .8rem">Not sure which package suits you?</h2>
+    <p style="color:rgba(255,255,255,.65);font-size:.98rem;max-width:480px;margin:0 auto 2rem;font-weight:300;line-height:1.85">Book a free, no-obligation consultation. We'll review your needs and give you a clear fixed monthly price.</p>
+    <a href="/contact" style="display:inline-block;background:#e74c3c;color:#fff;padding:.9rem 2.5rem;border-radius:6px;font-size:.95rem;font-weight:700;text-decoration:none">Book a Free Consultation</a>
   </div>
 </section>
 
 </main>
 
 <script>
-// Highlight active jump tab on scroll
 (function(){
-  var tabs = document.querySelectorAll('.price-jump-tab');
-  var sections = document.querySelectorAll('.price-section-full');
-  function onScroll(){
-    var scrollY = window.scrollY + 200;
+  var tabs = document.querySelectorAll('.pjt');
+  var sections = document.querySelectorAll('.psf');
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY + 180;
     sections.forEach(function(s){
-      if(s.offsetTop <= scrollY){
+      if(s.offsetTop <= y){
         tabs.forEach(function(t){t.classList.remove('active')});
-        var match = document.querySelector('.price-jump-tab[href="#'+s.id+'"]');
-        if(match) match.classList.add('active');
+        var m = document.querySelector('.pjt[href="#'+s.id+'"]');
+        if(m) m.classList.add('active');
       }
     });
-  }
-  window.addEventListener('scroll', onScroll);
+  });
 })();
 </script>
 <footer>
   <div class="wrap">
     <div class="footer-grid">
-      <div class="f-brand"><p>Modern, tech-forward accounting and advisory. We take the compliance and paperwork off your plate so you can focus on growth.</p></div>
+      <div class="f-brand">
+        <p>Modern, tech-forward accounting and advisory. We take the compliance and paperwork off your plate so you can focus on growth.</p>
+        </div>
       <div class="f-col">
         <h4>Services</h4>
-        <a href="/accounting">Accounting &amp; Compliance</a>
+        <a href="/accounting">Accounting & Compliance</a>
         <a href="/advisory">Advisory Services</a>
-        <a href="/tax">Tax Advice &amp; Planning</a>
-        <a href="/pricing">Pricing</a>
+        <a href="/tax">Tax Advice & Planning</a>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <a href="/about">About Us</a>
+        <a href="/insights">Insights</a>
+        <a href="/faqs">FAQs</a>
+        <a href="/about">Our Team</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
       </div>
       <div class="f-col">
         <h4>Industries</h4>
@@ -750,15 +626,8 @@
         <a href="/property-accountants-manchester">Property Investors</a>
       </div>
       <div class="f-col">
-        <h4>Company</h4>
-        <a href="/about">About Us</a>
-        <a href="/insights">Insights</a>
-        <a href="/faqs">FAQs</a>
-        <a href="/contact">Contact</a>
-        <a href="/privacy">Privacy Policy</a>
-      </div>
-      <div class="f-col">
         <h4>Contact</h4>
+        <a style="cursor:default">CFA Accountants</a>
         <a style="cursor:default">CFA Accountants, 107</a>
         <a style="cursor:default">Salford Innovation Forum</a>
         <a style="cursor:default">51 Frederick Rd, Salford</a>
@@ -773,11 +642,13 @@
     </div>
   </div>
 </footer>
-
 <div class="cfa-chat" id="cfaChat" role="dialog" aria-label="CFA assistant">
   <div class="cfa-chat-head">
     <div class="cfa-avatar">💬</div>
-    <div><h4>CFA Assistant</h4><p><span class="cfa-dot"></span> Here to help</p></div>
+    <div>
+      <h4>CFA Assistant</h4>
+      <p><span class="cfa-dot"></span> Here to help</p>
+    </div>
     <button class="cfa-chat-close" onclick="cfaToggleChat(false)" aria-label="Close">&times;</button>
   </div>
   <div class="cfa-chat-body" id="cfaChatBody"></div>
@@ -789,6 +660,7 @@
     </button>
   </div>
 </div>
+
 <div class="cfa-fab-wrap" id="cfaFabWrap">
   <button class="cfa-fab cfa-fab-ai" id="cfaFabAi" onclick="cfaToggleChat()" aria-label="Open assistant">
     <svg class="cfa-ai-open" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -796,29 +668,6 @@
     <span class="cfa-fab-badge" id="cfaFabBadge"></span>
   </button>
 </div>
-
-<script>
-function showTab(id, updateHash){
-  document.querySelectorAll('.price-section').forEach(function(s){s.classList.remove('active')});
-  document.querySelectorAll('.price-tab').forEach(function(t){t.classList.remove('active')});
-  var section = document.getElementById('tab-'+id);
-  if(section) section.classList.add('active');
-  document.querySelectorAll('.price-tab').forEach(function(t){
-    if(t.getAttribute('onclick') && t.getAttribute('onclick').indexOf("'"+id+"'") > -1) t.classList.add('active');
-  });
-  if(updateHash !== false) history.replaceState(null,null,'#'+id);
-}
-// Open correct tab from URL hash on page load
-document.addEventListener('DOMContentLoaded', function(){
-  var hash = window.location.hash.replace('#','');
-  var valid = ['advisory','mgmt','annual','secretarial','vat','payroll','cis','bookkeeping','selfassessment','software','startup'];
-  if(hash && valid.indexOf(hash) > -1){
-    showTab(hash, false);
-    var tabsEl = document.querySelector('.price-tabs');
-    if(tabsEl) tabsEl.scrollIntoView({behavior:'smooth', block:'nearest'});
-  }
-});
-</script>
 <script src="/assets/main.js" defer></script>
 <script src="/assets/assistant.js" defer></script>
 
@@ -843,15 +692,46 @@ document.addEventListener('DOMContentLoaded', function(){
 </div>
 <script>
 (function(){
-  var consent=localStorage.getItem('cfa_cookie_consent');
-  if(consent==='accepted'){loadGA();}
-  else if(consent==='declined'){}
-  else{document.addEventListener('DOMContentLoaded',function(){var b=document.getElementById('cfa-cookie-banner');if(b)b.style.display='flex';});}
-  function loadGA(){if(window._gaLoaded)return;window._gaLoaded=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-8HMTNP7LM3';document.head.appendChild(s);window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-8HMTNP7LM3');}
-  window.cfaCookieAccept=function(){localStorage.setItem('cfa_cookie_consent','accepted');var b=document.getElementById('cfa-cookie-banner');if(b)b.style.display='none';loadGA();};
-  window.cfaCookieDecline=function(){localStorage.setItem('cfa_cookie_consent','declined');var b=document.getElementById('cfa-cookie-banner');if(b)b.style.display='none';};
+  var consent = localStorage.getItem('cfa_cookie_consent');
+  if(consent === 'accepted'){
+    loadGA();
+  } else if(consent === 'declined'){
+    // do nothing
+  } else {
+    // show banner
+    document.addEventListener('DOMContentLoaded', function(){
+      var b = document.getElementById('cfa-cookie-banner');
+      if(b) b.style.display = 'flex';
+    });
+  }
+
+  function loadGA(){
+    if(window._gaLoaded) return;
+    window._gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8HMTNP7LM3';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config',  + GA_ID + );
+  }
+
+  window.cfaCookieAccept = function(){
+    localStorage.setItem('cfa_cookie_consent','accepted');
+    var b = document.getElementById('cfa-cookie-banner');
+    if(b) b.style.display = 'none';
+    loadGA();
+  };
+
+  window.cfaCookieDecline = function(){
+    localStorage.setItem('cfa_cookie_consent','declined');
+    var b = document.getElementById('cfa-cookie-banner');
+    if(b) b.style.display = 'none';
+  };
 })();
 </script>
-
 </body>
 </html>
