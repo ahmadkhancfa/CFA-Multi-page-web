@@ -593,3 +593,15 @@ footer{background:#050b22;padding:4rem 0 2rem}
 .cfa-chat-input button{background:var(--navy);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center}
 .cfa-chat-input button svg{width:18px;height:18px}
 @media(max-width:480px){.cfa-chat{bottom:6.4rem;height:70vh}}
+
+/* ===== Services mega-menu ===== */
+.nav-mega{position:absolute;top:calc(100% + 16px);left:0;width:min(700px,calc(100vw - 40px));background:rgba(9,16,40,.97);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.3rem;box-shadow:0 26px 64px rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s ease,transform .25s ease;z-index:1001;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.nav-mega::before{content:'';position:absolute;top:-18px;left:0;right:0;height:18px}
+.nav-dd:hover .nav-mega{opacity:1;visibility:visible;transform:translateY(0)}
+.mega-col-head{display:block;color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;margin-bottom:.35rem;padding:0 .55rem .5rem;border-bottom:1px solid rgba(255,255,255,.13)}
+.mega-col-head:hover{color:#f3a594}
+.mega-col-head .ar{color:#e74c3c;margin-left:.3rem}
+.nav-mega a.mi{display:block!important;color:rgba(255,255,255,.82)!important;font-size:.82rem;padding:.38rem .55rem;border-radius:9px;text-decoration:none;transition:background .2s,color .2s}
+.nav-mega a.mi:hover{background:rgba(231,76,60,.16);color:#fff!important}
+.nav-mega a.mi.more{color:#e74c3c!important;font-weight:600}
+.mob-grouphead{font-weight:700!important;color:#fff!important;margin-top:.5rem}
