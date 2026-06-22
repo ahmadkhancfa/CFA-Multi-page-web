@@ -605,3 +605,10 @@ footer{background:#050b22;padding:4rem 0 2rem}
 .nav-mega a.mi:hover{background:rgba(231,76,60,.16);color:#fff!important}
 .nav-mega a.mi.more{color:#e74c3c!important;font-weight:600}
 .mob-grouphead{font-weight:700!important;color:#fff!important;margin-top:.5rem}
+
+
+/* glossy CTA button */
+.btn-glossy{position:relative;display:inline-block;background:linear-gradient(180deg,#3a4a8f 0%,#1b2a63 52%,#0c1844 100%);color:#fff;padding:.9rem 2rem;border-radius:6px;font-size:.95rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.18);cursor:pointer;transition:transform .2s,box-shadow .2s;font-family:var(--font-body);box-shadow:0 6px 18px rgba(4,16,61,.42),inset 0 1px 0 rgba(255,255,255,.35);overflow:hidden}
+.btn-glossy::after{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,0));border-radius:6px 6px 0 0;pointer-events:none}
+.btn-glossy:hover{transform:translateY(-2px);box-shadow:0 11px 28px rgba(4,16,61,.52),inset 0 1px 0 rgba(255,255,255,.42)}
+.btn-glossy span{position:relative;z-index:1}
