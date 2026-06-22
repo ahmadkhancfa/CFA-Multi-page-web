@@ -16,3 +16,6 @@ function submitForm(btn){btn.textContent='Message Sent! \u2713';btn.style.backgr
 function checkAdminHash(){var btn=document.getElementById('galleryAdminBtn');if(!btn)return;if(window.location.hash==='#gallery-admin'){btn.style.display='flex';}else{btn.style.display='none';var p=document.getElementById('galleryAdminPanel');if(p)p.style.display='none';}}
 function handleServiceHash(){var id=location.hash.replace('#','');if(!id)return;var el=document.getElementById(id);if(!el)return;el.classList.add('in');if(el.classList.contains('tax-card'))el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('flash');setTimeout(function(){el.classList.remove('flash');},1900);}
 document.addEventListener('DOMContentLoaded',function(){onNavScroll();setTimeout(animateFades,150);if(document.querySelector('.cv-tab'))cvTab('values');checkAdminHash();window.addEventListener('hashchange',checkAdminHash);setTimeout(handleServiceHash,400);});
+
+/* open a targeted <details> card when arriving via #hash */
+window.addEventListener('load',function(){try{if(location.hash){var el=document.querySelector('details'+location.hash);if(el){el.open=true;el.scrollIntoView({block:'center'});}}}catch(e){}});
