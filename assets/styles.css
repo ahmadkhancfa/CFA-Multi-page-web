@@ -652,3 +652,5 @@ footer{background:#050b22;padding:4rem 0 2rem}
 .adv-card-link:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(4,16,61,.08)}
 .adv-card-link .st-title{font-weight:700;color:var(--navy);font-size:.93rem}
 .adv-card-link .adv-card-toggle{color:var(--red);font-weight:700;font-size:1.05rem}
+
+#industries{scroll-margin-top:90px}
