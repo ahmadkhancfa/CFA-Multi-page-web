@@ -612,3 +612,10 @@ footer{background:#050b22;padding:4rem 0 2rem}
 .btn-glossy::after{content:'';position:absolute;top:0;left:0;right:0;height:50%;background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,0));border-radius:6px 6px 0 0;pointer-events:none}
 .btn-glossy:hover{transform:translateY(-2px);box-shadow:0 11px 28px rgba(4,16,61,.52),inset 0 1px 0 rgba(255,255,255,.42)}
 .btn-glossy span{position:relative;z-index:1}
+
+
+/* service tile (category pages) */
+.svc-tile{display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid rgba(15,42,92,.1);border-radius:12px;padding:.9rem 1.1rem;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.svc-tile:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(4,16,61,.09)}
+.svc-tile .st-title{font-weight:700;color:var(--navy);font-size:.95rem;line-height:1.3}
+.svc-tile .st-link{color:var(--red);font-weight:600;font-size:.78rem;margin-top:.2rem}
