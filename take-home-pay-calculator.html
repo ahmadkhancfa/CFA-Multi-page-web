@@ -4,59 +4,74 @@
 
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>About Us | CFA Accountants Manchester</title>
-<meta name="description" content="CFA Accountants is a Manchester firm of chartered certified accountants offering modern, tech-forward accounting and advisory built on trust."/>
-<link rel="canonical" href="https://www.cfaaccountants.com/about"/>
-<meta property="og:title" content="About Us | CFA Accountants Manchester"/>
-<meta property="og:description" content="CFA Accountants is a Manchester firm of chartered certified accountants offering modern, tech-forward accounting and advisory built on trust."/>
+<title>Take-Home Pay Calculator | CFA Accountants</title>
+<meta name="description" content="Free UK take-home pay calculator (2025/26). See your salary after Income Tax, National Insurance, pension and student loan, monthly or yearly."/>
+<link rel="canonical" href="https://www.cfaaccountants.com/take-home-pay-calculator"/>
+<meta property="og:title" content="Take-Home Pay Calculator | CFA Accountants"/>
+<meta property="og:description" content="Free UK take-home pay calculator (2025/26). See your salary after Income Tax, National Insurance, pension and student loan, monthly or yearly."/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://www.cfaaccountants.com/about"/>
+<meta property="og:url" content="https://www.cfaaccountants.com/take-home-pay-calculator"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="/assets/styles.css"/>
 
+
+<style>
+.c-hero{background:radial-gradient(60% 95% at 0% 0%,rgba(231,76,60,.16) 0%,transparent 55%),linear-gradient(135deg,#05103a 0%,#050c26 55%,#03081b 100%);color:#fff;padding:7rem 1.5rem 6rem;text-align:center;position:relative;overflow:hidden}
+.c-tag{display:inline-block;border:1px solid rgba(231,76,60,.5);color:#f3a594;font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:.45rem 1rem;border-radius:30px;margin-bottom:1.3rem}
+.c-hero h1{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1.1}
+.c-hero p{color:rgba(255,255,255,.66);max-width:580px;margin:1rem auto 0;font-weight:300;line-height:1.8}
+.c-wrap{max-width:1020px;margin:-4rem auto 0;padding:0 1.5rem 1rem;position:relative;z-index:2}
+.c-calc{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:820px){.c-calc{grid-template-columns:1fr}}
+.c-card{background:#fff;border:1px solid rgba(15,42,92,.1);border-radius:18px;padding:2rem;box-shadow:0 24px 60px rgba(4,16,61,.1)}
+.c-card h2{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#e74c3c;margin-bottom:1.5rem}
+.c-fld{margin-bottom:1.4rem}
+.c-fld label{display:block;font-size:.86rem;font-weight:600;color:#0e1730;margin-bottom:.55rem}
+.c-money{display:flex;align-items:center;border:1.5px solid rgba(15,42,92,.1);border-radius:11px;overflow:hidden;transition:border-color .2s}
+.c-money:focus-within{border-color:#04103d}
+.c-money span{padding:0 .5rem 0 1rem;color:#5a6478;font-weight:600}
+.c-money input{flex:1;border:none;outline:none;padding:.85rem 1rem .85rem .2rem;font-size:1.15rem;font-weight:700;color:#04103d;width:100%;background:transparent}
+.c-range{width:100%;margin-top:1rem;accent-color:#e74c3c;height:4px}
+.c-row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.c-card select,.c-pct input{width:100%;border:1.5px solid rgba(15,42,92,.1);border-radius:11px;padding:.8rem 1rem;font-size:.95rem;font-weight:600;color:#04103d;outline:none;background:#fff;transition:border-color .2s}
+.c-card select:focus,.c-pct input:focus{border-color:#04103d}
+.c-pct{display:flex;align-items:center;border:1.5px solid rgba(15,42,92,.1);border-radius:11px;overflow:hidden}
+.c-pct input{border:none}
+.c-pct span{padding:0 1rem;color:#5a6478;font-weight:600}
+.c-check{display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:#0e1730;font-weight:500;cursor:pointer}
+.c-check input{width:18px;height:18px;accent-color:#e74c3c}
+.c-toggle{display:inline-flex;background:#f7f6f3;border-radius:10px;padding:.25rem;gap:.25rem;margin-bottom:1.6rem}
+.c-toggle button{border:none;background:none;padding:.5rem 1.1rem;border-radius:8px;font-weight:600;font-size:.85rem;color:#5a6478;cursor:pointer;transition:all .2s;font-family:inherit}
+.c-toggle button.on{background:#fff;color:#04103d;box-shadow:0 2px 8px rgba(4,16,61,.1)}
+.c-big{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#e74c3c;margin-bottom:.4rem}
+.c-take{font-size:clamp(2.2rem,5.5vw,3rem);font-weight:800;color:#04103d;letter-spacing:-.03em;line-height:1}
+.c-take .c-per{font-size:1rem;font-weight:600;color:#5a6478}
+.c-bar{display:flex;height:14px;border-radius:8px;overflow:hidden;margin:1.6rem 0 1.3rem;background:#f7f6f3}
+.c-bar i{display:block;height:100%;transition:width .4s ease}
+.c-lrow{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0;border-bottom:1px solid rgba(15,42,92,.1);font-size:.92rem}
+.c-lrow:last-child{border-bottom:none}
+.c-lrow .c-l{display:flex;align-items:center;gap:.6rem;color:#5a6478;font-weight:500}
+.c-dot{width:11px;height:11px;border-radius:3px;flex-shrink:0}
+.c-lrow .c-v{font-weight:700;color:#0e1730}
+.c-lrow.sub .c-l,.c-lrow.sub .c-v{color:#04103d;font-weight:700}
+.c-lrow.net{margin-top:.3rem;padding-top:1rem;border-top:2px solid #04103d;border-bottom:none}
+.c-lrow.net .c-l,.c-lrow.net .c-v{color:#04103d;font-weight:800;font-size:1.05rem}
+.c-rate{font-size:.78rem;color:#5a6478;margin-top:1.3rem;line-height:1.6}
+.c-compare{background:#f7f6f3;border-radius:12px;padding:1.1rem 1.2rem;margin-top:1.3rem;font-size:.88rem;color:#0e1730;line-height:1.6}
+.c-compare b{color:#04103d}
+.c-cta{display:block;text-align:center;background:#e74c3c;color:#fff;text-decoration:none;font-weight:700;padding:1rem;border-radius:11px;margin-top:1.4rem;transition:transform .2s}
+.c-cta:hover{transform:translateY(-2px)}
+.c-note{max-width:1020px;margin:0 auto;padding:1.5rem 1.5rem 4rem;color:#5a6478;font-size:.8rem;line-height:1.7;text-align:center}
+.c-xlinks{max-width:1020px;margin:0 auto;padding:0 1.5rem 4rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.c-xlink{flex:1;min-width:240px;background:#fff;border:1px solid rgba(15,42,92,.1);border-radius:12px;padding:1.1rem 1.3rem;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.c-xlink:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(4,16,61,.08)}
+.c-xlink .t{font-weight:700;color:#04103d;font-size:.95rem}
+.c-xlink .s{color:#e74c3c;font-weight:600;font-size:.78rem;margin-top:.2rem}
+</style>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AccountingService",
-  "name": "CFA Accountants",
-  "url": "https://www.cfaaccountants.com",
-  "logo": "https://www.cfaaccountants.com/assets/img/img_b151954839.webp",
-  "description": "Manchester-based chartered certified accountants offering accounting, bookkeeping, tax planning, self assessment, rental income accounting, payroll and business advisory for sole traders, limited companies, contractors, construction workers, doctors, dentists, mechanics, eco grant companies and warm homes scheme businesses across Salford, Manchester and the North West.",
-  "telephone": "+447440290584",
-  "email": "cfa@cfaaccountants.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "CFA Accountants, 107, Salford Innovation Forum, 51 Frederick Road",
-    "addressLocality": "Salford",
-    "addressRegion": "Greater Manchester",
-    "postalCode": "M6 6FP",
-    "addressCountry": "GB"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 53.4928545,
-    "longitude": -2.2745525
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "17:00"
-    }
-  ],
-  "areaServed": [
-    "Salford", "Bolton", "Manchester", "Trafford", "Stockport", "Greater Manchester", "North West England"
-  ],
-  "priceRange": "££",
-  "currenciesAccepted": "GBP",
-  "paymentAccepted": "Cash, Bank Transfer, Debit Card, Credit Card",
-  "sameAs": [
-    "https://www.cfaaccountants.com"
-  ]
-}
+{"@context":"https://schema.org","@type":"WebApplication","name":"Take-Home Pay Calculator","url":"https://www.cfaaccountants.com/take-home-pay-calculator","applicationCategory":"FinanceApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"provider":{"@type":"AccountingService","name":"CFA Accountants","url":"https://www.cfaaccountants.com"},"description":"Free UK take-home pay calculator for the 2025/26 tax year. Calculate your salary after Income Tax, National Insurance, pension and student loan."}
 </script>
 </head>
 <body>
@@ -128,7 +143,7 @@
       <a href="/pricing" id="nav-pricing">Pricing</a>
       <a href="/insights" id="nav-insights">Insights</a>
       <a href="/faqs" id="nav-faqs">FAQs</a>
-      <a href="/about" class="active" id="nav-about">About</a>
+      <a href="/about" id="nav-about">About</a>
       <a href="/contact" class="nav-cta" id="nav-contact">Get in Touch</a>
     </div>
     <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
@@ -194,39 +209,49 @@
   <a href="/contact">Get in Touch</a>
 </div>
 
-<div id="page-about" class="page active">
-  <div class="page-hero">
-    <div class="page-hero-inner wrap">
-      <div class="badge" style="display:inline-flex;margin-bottom:1.5rem"><span class="badge-dot"></span>About CFA</div>
-      <h1>Manchester's Trusted Financial Architects</h1>
-      <p>Founded on the principles of integrity and technical excellence, CFA Accountants has become a cornerstone of Manchester's professional services sector. Our team consists of senior ACCA-accredited professionals who bring decades of combined experience across diverse industries including tech, hospitality, real estate, solicitors firms and construction.</p>
+
+<!-- HERO -->
+<section class="c-hero">
+  <div class="c-tag">● Free Tax Tools</div>
+  <h1>Take-Home Pay Calculator</h1>
+  <p>See exactly what lands in your account after Income Tax, National Insurance, pension and student loan — for the 2025/26 tax year.</p>
+</section>
+<div class="c-wrap"><div class="c-calc">
+  <div class="c-card">
+    <h2>Your Details</h2>
+    <div class="c-fld"><label for="salary">Annual gross salary</label>
+      <div class="c-money"><span>£</span><input id="salary" type="text" inputmode="numeric" value="35,000"/></div>
+      <input id="salaryR" class="c-range" type="range" min="0" max="200000" step="500" value="35000"/></div>
+    <div class="c-row2">
+      <div class="c-fld"><label for="pension">Pension contribution</label>
+        <div class="c-pct"><input id="pension" type="number" min="0" max="100" step="0.5" value="0"/><span>%</span></div></div>
+      <div class="c-fld"><label for="sl">Student loan</label>
+        <select id="sl"><option value="none">None</option><option value="p1">Plan 1</option><option value="p2">Plan 2</option><option value="p4">Plan 4 (Scotland)</option><option value="pg">Postgraduate</option></select></div>
     </div>
+    <div class="c-fld" style="margin-bottom:0"><label for="ptype">Pension type</label>
+      <select id="ptype"><option value="ras">Relief at source (personal pension)</option><option value="net">Net pay arrangement (workplace)</option><option value="sac">Salary sacrifice (saves tax + NI)</option></select></div>
   </div>
-  <section>
-    <div class="wrap">
-      <div style="max-width:720px;margin:0 auto;text-align:center" class="fade">
-        <div class="s-label">Our Story</div>
-        <h2 class="s-title">Built on Relationships, Driven by Results</h2>
-        <p style="color:var(--text-mid);font-size:1.02rem;line-height:1.9;font-weight:300">CFA Accountants was founded with a simple belief: that great accounting is about more than numbers. It's about understanding your business, anticipating challenges, and being there when it matters most. Based in Manchester and serving clients across the UK.</p>
-      </div>
-      </div>
-  </section>
-  <section style="background:var(--off-white)">
-    <div class="wrap">
-      <div style="text-align:center;margin-bottom:.5rem" class="fade">
-        <div class="s-label">Our Team</div>
-        <h2 class="s-title">Meet the Experts Behind CFA</h2>
-      </div>
-      <div class="team-grid">
-        <div class="team-card fade"><img class="team-av" src="/assets/img/img_d3960a148e.webp" alt="Karamat Wali" style="width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 30%;display:block"/><div class="team-info"><div class="team-name">Karamat Wali, ACCA, ATA, AFA</div><div class="team-role">Co-Founder & Director</div><div class="team-bio">Karamat brings over 7 years of high-level strategy experience from global organizations like PwC, S&P Global, and Mott MacDonald, alongside leadership in the non-profit sector. He is deeply passionate about building digital, automated ecosystems that take the stress of compliance and paperwork completely off your plate.<br><br>⚽ Free time: Lacing up his boots for a game of football on the pitch.</div></div></div>
-        <div class="team-card fade"><img class="team-av" src="/assets/img/img_1a24909dfe.webp" alt="Ahmad Asad" style="width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 30%;display:block"/><div class="team-info"><div class="team-name">Ahmad Asad, BSc</div><div class="team-role">Co-Founder & Finance Director</div><div class="team-bio">Armed with a degree in Applied Accounting and prime experience at global powerhouse EY, Ahmad excels at transforming messy admin into streamlined workflows. He specializes in tailoring financial frameworks for complex sectors &mdash; ranging from fast-paced hospitality to highly regulated legal firms.<br><br>🥾 Free time: Mountain hiking and hunting down the best local artisan coffee spots.</div></div></div>
-        <div class="team-card fade"><div class="team-av">DL</div><div class="team-info"><div class="team-name">David Lee</div><div class="team-role">Corporate Finance Lead</div><div class="team-bio">David brings deep expertise in M&A and business valuations, having supported dozens of successful transactions across multiple sectors.</div></div></div>
-        <div class="team-card fade"><div class="team-av">SK</div><div class="team-info"><div class="team-name">Sophia Khan</div><div class="team-role">Head of Bookkeeping</div><div class="team-bio">Sophia oversees bookkeeping and payroll operations, ensuring every client's accounts are accurate, timely, and compliant.</div></div></div>
-      </div>
+  <div class="c-card">
+    <div class="c-toggle"><button id="tA" class="on" onclick="setPeriod('y')">Yearly</button><button id="tM" onclick="setPeriod('m')">Monthly</button></div>
+    <div class="c-big">Your take-home pay</div>
+    <div class="c-take"><span id="take">£0</span> <span class="c-per" id="per">/ year</span></div>
+    <div class="c-bar" id="bar"></div>
+    <div>
+      <div class="c-lrow"><div class="c-l"><span class="c-dot" style="background:#9aa6c2"></span>Gross salary</div><div class="c-v" id="oGross">£0</div></div>
+      <div class="c-lrow"><div class="c-l"><span class="c-dot" style="background:#3b4d8f"></span>Pension</div><div class="c-v" id="oPen">£0</div></div>
+      <div class="c-lrow"><div class="c-l"><span class="c-dot" style="background:#e74c3c"></span>Income Tax</div><div class="c-v" id="oTax">£0</div></div>
+      <div class="c-lrow"><div class="c-l"><span class="c-dot" style="background:#e8915f"></span>National Insurance</div><div class="c-v" id="oNI">£0</div></div>
+      <div class="c-lrow"><div class="c-l"><span class="c-dot" style="background:#c7a44a"></span>Student Loan</div><div class="c-v" id="oSL">£0</div></div>
+      <div class="c-lrow net"><div class="c-l">Take-home pay</div><div class="c-v" id="oNet">£0</div></div>
     </div>
-  </section>
-</div>
-<footer>
+    <div class="c-rate" id="rateNote"></div>
+    <div class="c-rate" id="penNote" style="margin-top:.55rem"></div>
+    <a class="c-cta" href="/contact">Talk to CFA about your tax &rarr;</a>
+  </div>
+</div></div>
+<p class="c-note"><strong>Estimates only.</strong> Based on 2025/26 rates for England, Wales &amp; Northern Ireland (Scottish income tax bands differ). Assumes a standard Personal Allowance, Class 1 employee NI and the standard tax code, and doesn’t account for taxable benefits or multiple incomes. Confirm with CFA Accountants before relying on these figures.</p>
+<div class="c-xlinks"><a class="c-xlink" href="/take-home-pay-calculator"><div class="t">Take-Home Pay Calculator</div><div class="s">Your salary after tax &amp; NI &rarr;</div></a><a class="c-xlink" href="/salary-vs-dividend-calculator"><div class="t">Salary vs Dividend Calculator</div><div class="s">Optimise how you pay yourself &rarr;</div></a><a class="c-xlink" href="/contact"><div class="t">Talk to an Accountant</div><div class="s">Get tailored advice &rarr;</div></a></div>
+  <footer>
   <div class="wrap">
     <div class="footer-grid">
       <div class="f-brand">
@@ -365,6 +390,49 @@
     var b = document.getElementById('cfa-cookie-banner');
     if(b) b.style.display = 'none';
   };
+})();
+</script>
+<script>
+(function(){
+var period='y';var PA0=12570,BASIC=37700,ADDL=125140,UEL=50270,PT=12570;
+function gv(id){return document.getElementById(id);}
+function num(s){return parseFloat((s+'').replace(/[^0-9.]/g,''))||0;}
+function fmt(n){return '\u00a3'+Math.round(n).toLocaleString('en-GB');}
+window.setPeriod=function(p){period=p;gv('tA').classList.toggle('on',p==='y');gv('tM').classList.toggle('on',p==='m');calc();};
+function calc(){
+  var gross=num(gv('salary').value),penPct=Math.min(100,Math.max(0,num(gv('pension').value))),ptype=gv('ptype').value,slPlan=gv('sl').value;
+  var pension=gross*penPct/100;
+  var taxBase,niBase,bandExt=0,penFromPay,pot=pension,basicRelief=0;
+  if(ptype==='sac'){taxBase=gross-pension;niBase=gross-pension;penFromPay=pension;}
+  else if(ptype==='net'){taxBase=gross-pension;niBase=gross;penFromPay=pension;}
+  else {taxBase=gross;niBase=gross;bandExt=pension;penFromPay=pension*0.8;basicRelief=pension*0.2;}
+  var ani=gross-pension,pa=PA0;if(ani>100000)pa=Math.max(0,PA0-(ani-100000)/2);
+  var brEnd=pa+BASIC+bandExt;
+  var tax=Math.max(0,Math.min(taxBase,brEnd)-pa)*0.20+Math.max(0,Math.min(taxBase,ADDL)-brEnd)*0.40+Math.max(0,taxBase-ADDL)*0.45;
+  var ni=Math.max(0,Math.min(niBase,UEL)-PT)*0.08+Math.max(0,niBase-UEL)*0.02;
+  var sl=0;
+  if(slPlan==='p1')sl=Math.max(0,gross-26065)*0.09;else if(slPlan==='p2')sl=Math.max(0,gross-28470)*0.09;
+  else if(slPlan==='p4')sl=Math.max(0,gross-32745)*0.09;else if(slPlan==='pg')sl=Math.max(0,gross-21000)*0.06;
+  var net=gross-tax-ni-sl-penFromPay,d=(period==='m')?12:1,suffix=(period==='m')?' / month':' / year';
+  gv('take').textContent=fmt(net/d);gv('per').textContent=suffix;
+  gv('oGross').textContent=fmt(gross/d);gv('oPen').textContent='\u2212'+fmt(penFromPay/d);
+  gv('oTax').textContent='\u2212'+fmt(tax/d);gv('oNI').textContent='\u2212'+fmt(ni/d);
+  gv('oSL').textContent='\u2212'+fmt(sl/d);gv('oNet').textContent=fmt(net/d);
+  var g=gross||1;function w(x){return(Math.max(0,x)/g*100);}
+  gv('bar').innerHTML='<i style="width:'+w(net)+'%;background:#1b2a63"></i><i style="width:'+w(penFromPay)+'%;background:#3b4d8f"></i><i style="width:'+w(tax)+'%;background:#e74c3c"></i><i style="width:'+w(ni)+'%;background:#e8915f"></i><i style="width:'+w(sl)+'%;background:#c7a44a"></i>';
+  gv('rateNote').innerHTML='Effective tax + NI rate: <strong>'+(gross>0?((tax+ni)/gross*100).toFixed(1):0)+'%</strong> &nbsp;\u00b7&nbsp; You keep <strong>'+(gross>0?(net/gross*100).toFixed(1):0)+'p</strong> of every \u00a31 earned.';
+  var pn='';
+  if(penPct>0){
+    if(ptype==='ras')pn='<strong>Relief at source:</strong> '+fmt(penFromPay)+' leaves your take-home; HMRC adds '+fmt(basicRelief)+' basic-rate relief, so '+fmt(pot)+' goes into your pension. Income tax is on full salary \u2014 higher-rate relief is already reflected above.';
+    else if(ptype==='net')pn='<strong>Net pay:</strong> '+fmt(pot)+' is taken before income tax (full relief automatic) and goes into your pension. NI is still on full salary.';
+    else pn='<strong>Salary sacrifice:</strong> '+fmt(pot)+' is given up from salary \u2014 cutting income tax and NI \u2014 and goes into your pension.';
+  }
+  gv('penNote').innerHTML=pn;
+}
+gv('salary').addEventListener('input',function(){var v=num(this.value);gv('salaryR').value=Math.min(200000,v);this.value=v?v.toLocaleString('en-GB'):'';calc();});
+gv('salaryR').addEventListener('input',function(){gv('salary').value=parseInt(this.value).toLocaleString('en-GB');calc();});
+['pension','sl','ptype'].forEach(function(id){gv(id).addEventListener('input',calc);});
+calc();
 })();
 </script>
 </body>

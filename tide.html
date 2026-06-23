@@ -25,7 +25,7 @@ body{font-family:'Inter',sans-serif}
 .dd-s{font-size:.75rem;color:rgba(255,255,255,.5);font-weight:400}
 
 /* HERO */
-.tide-hero{background:#ffffff;padding:5rem 0 5rem;position:relative;overflow:hidden;margin-top:70px;border-bottom:1px solid rgba(15,42,92,.07)}
+.tide-hero{background:#ffffff;padding:5rem 0 5rem;position:relative;overflow:hidden;border-bottom:1px solid rgba(15,42,92,.07)}
 .tide-hero-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
 .tide-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(25,41,214,.08);border:1px solid rgba(25,41,214,.2);color:#1929d6;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.45rem 1.1rem;border-radius:100px;margin-bottom:1.8rem}
 .tide-hero h1{font-size:clamp(2rem,3.5vw,3rem);font-weight:800;color:#00106a;letter-spacing:-0.03em;margin:0 0 .5rem;line-height:1.1}
@@ -260,6 +260,23 @@ footer{background:#050b22;padding:4rem 0 2rem}
         </div>
       </div>
       <div class="nav-dd">
+        <a href="/services#industries" id="nav-industries">Industries <span class="dd-caret">▾</span></a>
+        <div class="nav-dd-menu">
+          <a href="/contractor-accountants-manchester"><span class="dd-t">Contractors &amp; Freelancers</span><span class="dd-s">IR35 &amp; limited company.</span></a>
+          <a href="/property-accountants-manchester"><span class="dd-t">Property Investors &amp; Landlords</span><span class="dd-s">Portfolios &amp; property tax.</span></a>
+          <a href="/ecommerce-accountants-manchester"><span class="dd-t">Ecommerce Businesses</span><span class="dd-s">Online &amp; multi-channel.</span></a>
+          <a href="/accountants-for-dentists-manchester"><span class="dd-t">Dentists &amp; Dental Practices</span><span class="dd-s">NHS &amp; private practices.</span></a>
+          <a href="/accountants-for-law-firms-manchester"><span class="dd-t">Law Firms &amp; Solicitors</span><span class="dd-s">SRA &amp; client accounts.</span></a>
+        </div>
+      </div>
+      <div class="nav-dd">
+        <a href="/take-home-pay-calculator" id="nav-calculators">Calculators <span class="dd-caret">▾</span></a>
+        <div class="nav-dd-menu">
+          <a href="/take-home-pay-calculator"><span class="dd-t">Take-Home Pay</span><span class="dd-s">Salary after tax &amp; NI.</span></a>
+          <a href="/salary-vs-dividend-calculator"><span class="dd-t">Salary vs Dividend</span><span class="dd-s">Optimise director pay.</span></a>
+        </div>
+      </div>
+      <div class="nav-dd">
         <a href="#" id="nav-solutions">Solutions <span class="dd-caret">&#9662;</span></a>
         <div class="nav-dd-menu">
           <a href="/tide"><span class="dd-t">Tide Business Banking</span><span class="dd-s">Our banking partner.</span></a>
@@ -302,6 +319,23 @@ footer{background:#050b22;padding:4rem 0 2rem}
       <a href="/tax">Corporate Tax Planning</a>
       <a href="/tax">Capital Gains &amp; Property Tax</a>
       <a href="/tax">Estate Planning &amp; IHT</a>
+    </div>
+  </div>
+  <div class="mob-section">
+    <button class="mob-section-toggle" onclick="toggleMobileSection(this)">Industries</button>
+    <div class="mob-sub">
+      <a href="/contractor-accountants-manchester">Contractors &amp; Freelancers</a>
+      <a href="/property-accountants-manchester">Property Investors &amp; Landlords</a>
+      <a href="/ecommerce-accountants-manchester">Ecommerce Businesses</a>
+      <a href="/accountants-for-dentists-manchester">Dentists &amp; Dental Practices</a>
+      <a href="/accountants-for-law-firms-manchester">Law Firms &amp; Solicitors</a>
+    </div>
+  </div>
+  <div class="mob-section">
+    <button class="mob-section-toggle" onclick="toggleMobileSection(this)">Calculators</button>
+    <div class="mob-sub">
+      <a href="/take-home-pay-calculator">Take-Home Pay Calculator</a>
+      <a href="/salary-vs-dividend-calculator">Salary vs Dividend Calculator</a>
     </div>
   </div>
   <div class="mob-section">
