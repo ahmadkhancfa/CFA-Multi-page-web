@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Monthly Budget Dashboard | Free Budgeting Tool | CFA Accountants</title>
+<meta name="description" content="A free interactive monthly budget dashboard from CFA Accountants. Track income, bills, savings and debt, compare budget vs actual, and see what is left each month."/>
+<link rel="canonical" href="https://www.cfaaccountants.com/budget-planner"/>
+<meta property="og:title" content="Monthly Budget Dashboard | CFA Accountants"/>
+<meta property="og:description" content="Free UK take-home pay calculator (2025/26). See your salary after Income Tax, National Insurance, pension and student loan, monthly or yearly."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://www.cfaaccountants.com/budget-planner"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="/assets/styles.css"/>
+
+
+<style>
+.b-hero{background:radial-gradient(60% 95% at 0% 0%,rgba(231,76,60,.16) 0%,transparent 55%),linear-gradient(135deg,#05103a 0%,#050c26 55%,#03081b 100%);color:#fff;padding:6.5rem 1.5rem 4rem;text-align:center}
+.b-tag{display:inline-block;border:1px solid rgba(231,76,60,.5);color:#f3a594;font-size:.7rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:.45rem 1rem;border-radius:30px;margin-bottom:1.2rem}
+.b-hero h1{font-size:clamp(2rem,4.6vw,2.9rem);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1.1;margin:0 auto;max-width:820px}
+.b-hero p{color:rgba(255,255,255,.72);max-width:600px;margin:1rem auto 0;font-weight:300;line-height:1.75}
+.b-wrap{max-width:1080px;margin:0 auto;padding:2.5rem 1.2rem 1rem}
+.b-setup{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-end;background:#fff;border:1px solid rgba(15,42,92,.12);border-radius:14px;padding:1.3rem 1.4rem;margin-bottom:1.4rem}
+.b-setup>div{display:flex;flex-direction:column;gap:.35rem}
+.b-setup label{font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#7a8398}
+.b-setup input{border:1px solid rgba(15,42,92,.18);border-radius:8px;padding:.6rem .7rem;font-size:1rem;font-weight:600;color:#04103d;min-width:150px}
+.b-setup-actions{flex:1;flex-direction:row!important;justify-content:flex-end;gap:.6rem;align-items:center}
+.b-btn-ghost{background:#fff;border:1.5px solid rgba(15,42,92,.2);color:#04103d;font-weight:700;font-size:.85rem;padding:.6rem 1.1rem;border-radius:8px;cursor:pointer}
+.b-btn-ghost:hover{border-color:#04103d}
+/* dashboard */
+.b-dash{margin-bottom:1rem}
+.b-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+.b-card{background:#fff;border:1px solid rgba(15,42,92,.12);border-radius:14px;padding:1.05rem 1.15rem;display:flex;flex-direction:column;gap:.15rem}
+.b-card-l{font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#7a8398}
+.b-card-v{font-size:1.5rem;font-weight:800;color:#04103d;letter-spacing:-.02em}
+.b-card-b{font-size:.74rem;color:#9aa3b5}
+.b-card-b em{font-style:normal;font-weight:700;color:#566074}
+.b-card.big{grid-column:1 / -1;background:linear-gradient(135deg,#04103d,#13245c);border:none}
+.b-card.big .b-card-l{color:rgba(255,255,255,.65)}
+.b-card.big .b-card-v{color:#fff;font-size:1.9rem}
+.b-card.big .b-card-b{color:rgba(255,255,255,.6)}
+.b-card.big .b-card-b em{color:#fff}
+.b-card.big.neg{background:linear-gradient(135deg,#7a1b16,#b8371f)}
+.b-compare{display:grid;grid-template-columns:1.5fr 1fr;gap:1.1rem;margin-bottom:1.6rem}
+.b-bva{background:#fff;border:1px solid rgba(15,42,92,.12);border-radius:14px;padding:1.1rem 1.3rem 1.2rem}
+.b-bva-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid #f0f2f7;padding-bottom:.55rem;margin-bottom:.25rem;gap:1rem}
+.b-bva-head h3{margin:0;font-size:1.05rem;font-weight:800;color:#04103d}
+.b-bva-sub{font-size:.72rem;color:#9aa3b5;text-align:right}
+.b-bva-r{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.1fr;gap:.4rem;align-items:center;padding:.5rem .1rem;border-bottom:1px solid #f4f5f9;font-size:.9rem}
+.b-bva-r span{text-align:right;font-variant-numeric:tabular-nums}
+.b-bva-r span:first-child{text-align:left;color:#566074}
+.b-bva-hr{border-bottom:2px solid #f0f2f7;padding-bottom:.4rem;font-size:.62rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.b-bva-hr span{color:#9aa3b5!important}
+.b-bva-r.strong{font-weight:800;border-top:2px solid #f0f2f7;border-bottom:none;margin-top:.15rem;color:#04103d}
+.b-bva-r.strong span:first-child{color:#04103d}
+.b-bva-r .diff.good{color:#2e9e6b;font-weight:700}
+.b-bva-r .diff.bad{color:#e74c3c;font-weight:700}
+.b-bva-r .diff.zero{color:#9aa3b5}
+.b-donut-box{background:#fff;border:1px solid rgba(15,42,92,.12);border-radius:14px;padding:1.2rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem}
+.b-donut-wrap{position:relative;width:160px;height:160px}
+.b-donut{width:160px;height:160px;transform:rotate(0deg)}
+.b-donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.b-donut-center small{font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9aa3b5}
+.b-donut-center b{font-size:1.15rem;color:#04103d;font-weight:800}
+.b-legend{display:flex;flex-direction:column;gap:.35rem;width:100%}
+.b-legend div{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:#566074}
+.b-legend span.dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
+.b-legend span.val{margin-left:auto;font-weight:700;color:#04103d}
+/* sections */
+.b-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.b-sec{background:#fff;border:1px solid rgba(15,42,92,.12);border-radius:14px;padding:1.1rem 1.2rem 1.2rem;display:flex;flex-direction:column}
+.b-sec.full{grid-column:1 / -1}
+.b-sec-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.6rem;border-bottom:2px solid #f0f2f7;padding-bottom:.5rem}
+.b-sec-head h3{margin:0;font-size:1.05rem;font-weight:800;color:#04103d}
+.b-colh{display:grid;gap:.4rem;align-items:center;font-size:.64rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#9aa3b5;padding:.1rem .1rem .35rem}
+.b-row{display:grid;gap:.4rem;align-items:center;padding:.2rem 0}
+.b-sec[data-due="0"] .b-row,.b-sec[data-due="0"] .b-colh{grid-template-columns:1fr 86px 86px 24px}
+.b-sec[data-due="1"] .b-row,.b-sec[data-due="1"] .b-colh{grid-template-columns:1fr 56px 80px 80px 50px 24px}
+.b-row input,.b-lbl,.b-due{border:1px solid transparent;border-radius:7px;padding:.5rem .55rem;font-size:.9rem;color:#04103d;background:#f6f7fb;width:100%}
+.b-lbl{font-weight:600;text-align:left}
+.b-amt,.b-due{text-align:right;font-variant-numeric:tabular-nums}
+.b-due{text-align:center}
+.b-row input:focus{outline:none;border-color:#04103d;background:#fff}
+.b-paid{display:flex;align-items:center;justify-content:center;gap:.25rem;font-size:.62rem;font-weight:700;color:#7a8398;cursor:pointer}
+.b-paid input{accent-color:#2e9e6b;width:15px;height:15px}
+.b-row.paid .b-amt{color:#2e9e6b}
+.b-del{background:none;border:none;color:#c2cad8;font-size:1.15rem;line-height:1;cursor:pointer;padding:0;width:24px}
+.b-del:hover{color:#e74c3c}
+.b-add{align-self:flex-start;background:none;border:none;color:#e74c3c;font-weight:700;font-size:.82rem;cursor:pointer;padding:.5rem .1rem;margin-top:.2rem}
+.b-add:hover{text-decoration:underline}
+.b-sec-total{display:grid;gap:.4rem;align-items:center;margin-top:.5rem;padding-top:.6rem;border-top:2px solid #f0f2f7;font-weight:800;color:#04103d;font-size:.92rem}
+.b-sec[data-due="0"] .b-sec-total{grid-template-columns:1fr 86px 86px 24px}
+.b-sec[data-due="1"] .b-sec-total{grid-template-columns:1fr 56px 80px 80px 50px 24px}
+.b-sec-total .bt{text-align:right;font-variant-numeric:tabular-nums}
+.b-sec-total .lab{text-align:left;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:#7a8398}
+.b-note{max-width:1080px;margin:2rem auto 0;padding:0 1.2rem 4rem;color:#8893a8;font-size:.8rem;line-height:1.7}
+@media(max-width:880px){.b-cards{grid-template-columns:1fr 1fr}.b-compare{grid-template-columns:1fr}.b-grid{grid-template-columns:1fr}.b-sec.full{grid-column:auto}}
+@media(max-width:560px){
+ .b-sec[data-due="1"]{overflow-x:auto}
+ .b-sec[data-due="1"] .b-row,.b-sec[data-due="1"] .b-colh,.b-sec[data-due="1"] .b-sec-total{min-width:430px}
+ .b-cards{grid-template-columns:1fr 1fr}
+}
+@media print{
+ nav,.mobile-nav,footer,.b-setup-actions,.b-add,.b-del,#cfa-cookie-banner{display:none!important}
+ .b-hero{padding:1rem;background:#04103d!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .b-row input,.b-lbl,.b-due{background:#fff!important;border:1px solid #ddd!important}
+}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Monthly Budget Dashboard","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"provider":{"@type":"AccountingService","name":"CFA Accountants","url":"https://www.cfaaccountants.com"},"url":"https://www.cfaaccountants.com/budget-planner","description":"A free interactive monthly budget dashboard from CFA Accountants. Track income, fixed bills, variable expenses, savings and debt, compare budget vs actual, and see exactly what is left each month."}
+</script>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="brand-lockup" style="cursor:pointer;display:inline-flex;align-items:center;text-decoration:none">
+      <div class="nav-logo-chip">
+      <img class="chip-logo" src="/assets/img/img_b151954839.webp" alt="CFA Accountants" style="height:40px;width:auto;object-fit:contain;display:block"/>
+      </div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="/" id="nav-home">Home</a>
+      <div class="nav-dd">
+        <a href="/services" id="nav-services">Services <span class="dd-caret">▾</span></a>
+        <div class="nav-mega">
+          <div class="mega-col">
+            <a class="mega-col-head" href="/accounting">Accounting &amp; Compliance <span class="ar">→</span></a>
+            <a class="mi" href="/mtd-vat">VAT Returns</a>
+            <a class="mi" href="/mtd-vat">Making Tax Digital (MTD)</a>
+            <a class="mi" href="/annual-accounts">Year-End Accounts</a>
+            <a class="mi" href="/corporation-tax">Corporation Tax Returns</a>
+            <a class="mi" href="/self-assessment">Self-Assessment Tax Returns</a>
+            <a class="mi" href="/payroll">Payroll &amp; Pensions</a>
+            <a class="mi" href="/company-secretarial">Company Secretarial</a>
+            <a class="mi" href="/companies-house-id-verification">Companies House ID Verification</a>
+          </div>
+          <div class="mega-col">
+            <a class="mega-col-head" href="/advisory">Advisory <span class="ar">→</span></a>
+            <a class="mi" href="/bookkeeping">Digital Bookkeeping</a>
+            <a class="mi" href="/advisory#svc-fd">Outsourced Finance Director</a>
+            <a class="mi" href="/advisory#svc-mgmt">Management Accounts &amp; Insights</a>
+            <a class="mi" href="/advisory#svc-tax">Compliance &amp; HMRC Enquiries</a>
+            <a class="mi" href="/advisory#svc-biz">Business Advisory &amp; Automation</a>
+            <a class="mi" href="/advisory#svc-corp">Corporate Finance &amp; Transactions</a>
+          </div>
+          <div class="mega-col">
+            <a class="mega-col-head" href="/tax">Tax Advice &amp; Planning <span class="ar">→</span></a>
+            <a class="mi" href="/self-assessment">Personal &amp; Director Tax</a>
+            <a class="mi" href="/corporation-tax">Corporation Tax</a>
+            <a class="mi" href="/tax">Corporate Tax Planning</a>
+            <a class="mi" href="/tax">Capital Gains &amp; Property Tax</a>
+            <a class="mi" href="/tax">Estate Planning &amp; IHT</a>
+            <a class="mi more" href="/tax">More tax services →</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-dd">
+        <a href="/services#industries" id="nav-industries">Industries <span class="dd-caret">▾</span></a>
+        <div class="nav-dd-menu">
+          <a href="/contractor-accountants-manchester"><span class="dd-t">Contractors &amp; Freelancers</span><span class="dd-s">IR35 &amp; limited company.</span></a>
+          <a href="/property-accountants-manchester"><span class="dd-t">Property Investors &amp; Landlords</span><span class="dd-s">Portfolios &amp; property tax.</span></a>
+          <a href="/ecommerce-accountants-manchester"><span class="dd-t">Ecommerce Businesses</span><span class="dd-s">Online &amp; multi-channel.</span></a>
+          <a href="/accountants-for-dentists-manchester"><span class="dd-t">Dentists &amp; Dental Practices</span><span class="dd-s">NHS &amp; private practices.</span></a>
+          <a href="/accountants-for-law-firms-manchester"><span class="dd-t">Law Firms &amp; Solicitors</span><span class="dd-s">SRA &amp; client accounts.</span></a>
+        </div>
+      </div>
+
+      <div class="nav-dd">
+        <a href="#" id="nav-solutions">Solutions <span class="dd-caret">▾</span></a>
+        <div class="nav-dd-menu">
+          <a href="/tide"><span class="dd-t">Tide Business Banking</span><span class="dd-s">Our banking partner.</span></a>
+        </div>
+      </div>
+      <a href="/pricing" id="nav-pricing">Pricing</a>
+      <a href="/insights" id="nav-insights">Insights</a>
+      <a href="/about" id="nav-about">About us</a>
+      <a href="/contact" class="nav-cta" id="nav-contact">Get in Touch</a>
+      <a href="/take-home-pay-calculator" class="nav-calc-btn" id="nav-calc-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M15 15v3M9 18h3"/></svg> Calculators</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<section class="b-hero">
+  <div class="b-tag">● Free Tool</div>
+  <h1>Monthly Budget Dashboard</h1>
+  <p>Plan your month, track budget against actual, and see exactly what is left. A free personal cashflow tool from CFA Accountants — your figures stay private on your own device.</p>
+</section>
+
+<div class="b-wrap">
+  <div class="b-setup">
+    <div><label>Month</label><input type="text" id="b-month" placeholder="e.g. January 2026"></div>
+    <div><label>Start balance (£)</label><input type="number" id="b-start" step="any" placeholder="0"></div>
+    <div class="b-setup-actions">
+      <button class="b-btn-ghost" id="b-print">Print / Save PDF</button>
+      <button class="b-btn-ghost" id="b-reset">Reset</button>
+    </div>
+  </div>
+
+  <div class="b-dash">
+    <div class="b-cards">
+      <div class="b-card"><span class="b-card-l">Money In</span><span class="b-card-v" id="d-inc">£0</span><span class="b-card-b">Budget <em id="d-inc-b">£0</em></span></div>
+      <div class="b-card"><span class="b-card-l">Bills &amp; Expenses</span><span class="b-card-v" id="d-be">£0</span><span class="b-card-b">Budget <em id="d-be-b">£0</em></span></div>
+      <div class="b-card"><span class="b-card-l">Savings</span><span class="b-card-v" id="d-sav">£0</span><span class="b-card-b">Budget <em id="d-sav-b">£0</em></span></div>
+      <div class="b-card"><span class="b-card-l">Debt</span><span class="b-card-v" id="d-debt">£0</span><span class="b-card-b">Budget <em id="d-debt-b">£0</em></span></div>
+      <div class="b-card big" id="d-left-card"><span class="b-card-l">Left Over (Actual)</span><span class="b-card-v" id="d-left">£0</span><span class="b-card-b">Budgeted <em id="d-left-b">£0</em></span></div>
+    </div>
+  </div>
+
+  <div class="b-compare">
+    <div class="b-bva">
+      <div class="b-bva-head"><h3>Budget vs Actual</h3><span class="b-bva-sub">Where your plan and reality differ</span></div>
+      <div class="b-bva-r b-bva-hr"><span>Category</span><span>Budget</span><span>Actual</span><span>Difference</span></div>
+      <div id="bva-rows"></div>
+    </div>
+    <div class="b-donut-box">
+      <div class="b-donut-wrap">
+        <svg viewBox="0 0 42 42" class="b-donut" id="b-donut"></svg>
+        <div class="b-donut-center"><small>Left over</small><b id="b-donut-c">£0</b></div>
+      </div>
+      <div class="b-legend" id="b-legend"></div>
+    </div>
+  </div>
+
+  <div class="b-grid">
+    <div class="b-sec" data-sec="income" data-due="0">
+      <div class="b-sec-head"><h3>Income</h3></div>
+      <div class="b-colh"><span>Source</span><span>Budget</span><span>Actual</span><span></span></div>
+      <div class="b-rows" id="rows-income"></div>
+      <button class="b-add" data-add="income">+ Add income</button>
+      <div class="b-sec-total"><span class="lab">Total income</span><span class="bt" id="t-income-b">£0</span><span class="bt" id="t-income-a">£0</span><span></span></div>
+    </div>
+
+    <div class="b-sec" data-sec="savings" data-due="0">
+      <div class="b-sec-head"><h3>Savings</h3></div>
+      <div class="b-colh"><span>Goal</span><span>Budget</span><span>Actual</span><span></span></div>
+      <div class="b-rows" id="rows-savings"></div>
+      <button class="b-add" data-add="savings">+ Add savings</button>
+      <div class="b-sec-total"><span class="lab">Total savings</span><span class="bt" id="t-savings-b">£0</span><span class="bt" id="t-savings-a">£0</span><span></span></div>
+    </div>
+
+    <div class="b-sec full" data-sec="bills" data-due="1">
+      <div class="b-sec-head"><h3>Fixed Bills</h3></div>
+      <div class="b-colh"><span>Bill</span><span>Due</span><span>Budget</span><span>Actual</span><span>Paid</span><span></span></div>
+      <div class="b-rows" id="rows-bills"></div>
+      <button class="b-add" data-add="bills">+ Add bill</button>
+      <div class="b-sec-total"><span class="lab">Total fixed bills</span><span></span><span class="bt" id="t-bills-b">£0</span><span class="bt" id="t-bills-a">£0</span><span></span><span></span></div>
+    </div>
+
+    <div class="b-sec" data-sec="expenses" data-due="0">
+      <div class="b-sec-head"><h3>Variable Expenses</h3></div>
+      <div class="b-colh"><span>Expense</span><span>Budget</span><span>Actual</span><span></span></div>
+      <div class="b-rows" id="rows-expenses"></div>
+      <button class="b-add" data-add="expenses">+ Add expense</button>
+      <div class="b-sec-total"><span class="lab">Total expenses</span><span class="bt" id="t-expenses-b">£0</span><span class="bt" id="t-expenses-a">£0</span><span></span></div>
+    </div>
+
+    <div class="b-sec" data-sec="debt" data-due="1">
+      <div class="b-sec-head"><h3>Debt Repayments</h3></div>
+      <div class="b-colh"><span>Debt</span><span>Due</span><span>Budget</span><span>Actual</span><span>Paid</span><span></span></div>
+      <div class="b-rows" id="rows-debt"></div>
+      <button class="b-add" data-add="debt">+ Add debt</button>
+      <div class="b-sec-total"><span class="lab">Total debt</span><span></span><span class="bt" id="t-debt-b">£0</span><span class="bt" id="t-debt-a">£0</span><span></span><span></span></div>
+    </div>
+  </div>
+
+  <p class="b-note"><strong>How it works:</strong> Left Over = Start Balance + Income − Savings − Bills &amp; Expenses − Debt, shown for both your Budget (your plan) and Actual (what really happened). Tick “Paid” as bills clear through the month. This dashboard is for personal financial guidance only and is not a substitute for professional bookkeeping or accounting advice. Your entries are saved only in this browser on this device — nothing is sent to us. For tailored advice, <a href="/contact" style="color:#8893a8;text-decoration:underline">get in touch with CFA Accountants</a>.</p>
+</div>
+
+<script>
+(function(){
+  var GBP=new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP',maximumFractionDigits:0});
+  var DEFAULTS={
+    income:{due:0,paid:0,rows:[['Salary / Wages','',0,0,0],['Dividend','',0,0,0],['Other','',0,0,0]]},
+    savings:{due:0,paid:0,rows:[['Savings Account','',0,0,0],['Savings ISA','',0,0,0],['Birthdays','',0,0,0],['Christmas','',0,0,0]]},
+    bills:{due:1,paid:1,rows:[['Rent','1st',0,0,0],['Gas','1st',0,0,0],['Electricity','1st',0,0,0],['Council Tax','1st',0,0,0],['Water','1st',0,0,0],['Car','5th',0,0,0],['Telephone','14th',0,0,0],['Wifi','1st',0,0,0],['Netflix','5th',0,0,0]]},
+    expenses:{due:0,paid:0,rows:[['Food','',0,0,0],['Transport','',0,0,0],['Clothing','',0,0,0],['Gifts','',0,0,0],['Entertainment','',0,0,0],['Dining Out','',0,0,0]]},
+    debt:{due:1,paid:1,rows:[['Lowell','1st',0,0,0],['Klarna','1st',0,0,0]]}
+  };
+  var KEY='cfa_budget_v1';
+  var state=load()||clone(DEFAULTS), meta=loadMeta()||{month:'',start:''};
+
+  function clone(o){return JSON.parse(JSON.stringify(o));}
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+  function num(v){v=parseFloat(v);return isNaN(v)?0:v;}
+
+  function rowHTML(sec,r){
+    var due=DEFAULTS[sec].due, paid=DEFAULTS[sec].paid;
+    var h='<div class="b-row'+(r[4]?' paid':'')+'">';
+    h+='<input class="b-lbl" type="text" value="'+esc(r[0])+'" placeholder="Label">';
+    if(due)h+='<input class="b-due" type="text" value="'+esc(r[1])+'" placeholder="Due">';
+    h+='<input class="b-amt" data-col="b" type="number" step="any" value="'+(r[2]!==0&&r[2]!==''?r[2]:'')+'" placeholder="0">';
+    h+='<input class="b-amt" data-col="a" type="number" step="any" value="'+(r[3]!==0&&r[3]!==''?r[3]:'')+'" placeholder="0">';
+    if(paid)h+='<label class="b-paid"><input type="checkbox"'+(r[4]?' checked':'')+'></label>';
+    h+='<button class="b-del" title="Remove">×</button></div>';
+    return h;
+  }
+  function renderSec(sec){
+    var c=document.getElementById('rows-'+sec);c.innerHTML='';
+    state[sec].rows.forEach(function(r){c.insertAdjacentHTML('beforeend',rowHTML(sec,r));});
+  }
+  function renderAll(){Object.keys(DEFAULTS).forEach(renderSec);document.getElementById('b-month').value=meta.month||'';document.getElementById('b-start').value=meta.start||'';recompute();}
+
+  function readSec(sec){
+    var due=DEFAULTS[sec].due,paid=DEFAULTS[sec].paid,rows=[];
+    document.querySelectorAll('#rows-'+sec+' .b-row').forEach(function(row){
+      var lbl=row.querySelector('.b-lbl').value;
+      var d=due?row.querySelector('.b-due').value:'';
+      var amts=row.querySelectorAll('.b-amt');
+      var pk=paid?(row.querySelector('.b-paid input').checked?1:0):0;
+      rows.push([lbl,d,num(amts[0].value),num(amts[1].value),pk]);
+    });
+    return rows;
+  }
+  function sumSec(sec){var b=0,a=0;readSec(sec).forEach(function(r){b+=r[2];a+=r[3];});return{b:b,a:a};}
+
+  function recompute(){
+    var t={};Object.keys(DEFAULTS).forEach(function(s){t[s]=sumSec(s);document.getElementById('t-'+s+'-b').textContent=GBP.format(t[s].b);document.getElementById('t-'+s+'-a').textContent=GBP.format(t[s].a);});
+    var start=num(document.getElementById('b-start').value);
+    var beB=t.bills.b+t.expenses.b, beA=t.bills.a+t.expenses.a;
+    var leftB=start+t.income.b-t.savings.b-beB-t.debt.b;
+    var leftA=start+t.income.a-t.savings.a-beA-t.debt.a;
+    set('d-inc',t.income.a);set('d-inc-b',t.income.b);
+    set('d-be',beA);set('d-be-b',beB);
+    set('d-sav',t.savings.a);set('d-sav-b',t.savings.b);
+    set('d-debt',t.debt.a);set('d-debt-b',t.debt.b);
+    set('d-left',leftA);set('d-left-b',leftB);
+    var card=document.getElementById('d-left-card');card.classList.toggle('neg',leftA<0);
+    var outB=t.savings.b+t.bills.b+t.expenses.b+t.debt.b, outA=t.savings.a+t.bills.a+t.expenses.a+t.debt.a;
+    var bva='';
+    bva+=vaRow('Income',t.income.b,t.income.a,false,false);
+    bva+=vaRow('Savings',t.savings.b,t.savings.a,false,false);
+    bva+=vaRow('Fixed Bills',t.bills.b,t.bills.a,true,false);
+    bva+=vaRow('Variable Expenses',t.expenses.b,t.expenses.a,true,false);
+    bva+=vaRow('Debt',t.debt.b,t.debt.a,true,false);
+    bva+=vaRow('Total out',outB,outA,true,true);
+    bva+=vaRow('Left over',leftB,leftA,false,true);
+    document.getElementById('bva-rows').innerHTML=bva;
+    drawDonut(t.bills.a,t.expenses.a,t.savings.a,t.debt.a,leftA);
+    document.getElementById('b-donut-c').textContent=GBP.format(leftA);
+    save();
+  }
+  function set(id,v){document.getElementById(id).textContent=GBP.format(v);}
+
+  function vaRow(label,bud,act,goodUnder,strong){
+    var diff=act-bud, good=goodUnder?diff<=0.005:diff>=-0.005;
+    var cls=Math.abs(diff)<0.005?'zero':(good?'good':'bad');
+    var sign=diff>0.005?'+':(diff<-0.005?'−':'');
+    return '<div class="b-bva-r'+(strong?' strong':'')+'"><span>'+label+'</span><span>'+GBP.format(bud)+'</span><span>'+GBP.format(act)+'</span><span class="diff '+cls+'">'+sign+GBP.format(Math.abs(diff))+'</span></div>';
+  }
+
+  function drawDonut(bills,exp,sav,debt,left){
+    var segs=[{l:'Fixed Bills',v:bills,c:'#04103d'},{l:'Expenses',v:exp,c:'#e74c3c'},{l:'Savings',v:sav,c:'#2e9e6b'},{l:'Debt',v:debt,c:'#e8923a'},{l:'Left over',v:Math.max(0,left),c:'#8aa0c8'}];
+    var tot=segs.reduce(function(s,x){return s+Math.max(0,x.v);},0)||1;
+    var svg=document.getElementById('b-donut');
+    var html='<circle cx="21" cy="21" r="15.915" fill="none" stroke="#eef0f6" stroke-width="6"></circle>';
+    var off=25;
+    segs.forEach(function(x){var pct=Math.max(0,x.v)/tot*100;if(pct>0.01){html+='<circle cx="21" cy="21" r="15.915" fill="none" stroke="'+x.c+'" stroke-width="6" stroke-dasharray="'+pct+' '+(100-pct)+'" stroke-dashoffset="'+off+'" stroke-linecap="butt"></circle>';off-=pct;}});
+    svg.innerHTML=html;
+    var leg=document.getElementById('b-legend');leg.innerHTML='';
+    segs.forEach(function(x){if(x.v>0.01){leg.insertAdjacentHTML('beforeend','<div><span class="dot" style="background:'+x.c+'"></span>'+x.l+'<span class="val">'+GBP.format(x.v)+'</span></div>');}});
+  }
+
+  function syncState(){Object.keys(DEFAULTS).forEach(function(s){state[s].rows=readSec(s);});meta={month:document.getElementById('b-month').value,start:document.getElementById('b-start').value};}
+  function save(){try{syncState();localStorage.setItem(KEY,JSON.stringify({state:state,meta:meta}));}catch(e){}}
+  function load(){try{var d=JSON.parse(localStorage.getItem(KEY));return d&&d.state?d.state:null;}catch(e){return null;}}
+  function loadMeta(){try{var d=JSON.parse(localStorage.getItem(KEY));return d&&d.meta?d.meta:null;}catch(e){return null;}}
+
+  // events (delegation)
+  document.querySelector('.b-grid').addEventListener('input',function(e){
+    if(e.target.classList.contains('b-amt')||e.target.classList.contains('b-lbl')||e.target.classList.contains('b-due'))recompute();
+  });
+  document.querySelector('.b-grid').addEventListener('change',function(e){
+    if(e.target.matches('.b-paid input')){
+      var row=e.target.closest('.b-row');row.classList.toggle('paid',e.target.checked);
+      if(e.target.checked){var a=row.querySelectorAll('.b-amt');if(num(a[1].value)===0&&num(a[0].value)!==0)a[1].value=a[0].value;}
+      recompute();
+    }
+  });
+  document.querySelector('.b-grid').addEventListener('click',function(e){
+    if(e.target.classList.contains('b-del')){e.target.closest('.b-row').remove();recompute();}
+    if(e.target.classList.contains('b-add')){var sec=e.target.getAttribute('data-add');document.getElementById('rows-'+sec).insertAdjacentHTML('beforeend',rowHTML(sec,['', DEFAULTS[sec].due?'1st':'',0,0,0]));}
+  });
+  document.getElementById('b-start').addEventListener('input',recompute);
+  document.getElementById('b-month').addEventListener('input',save);
+  document.getElementById('b-print').addEventListener('click',function(){window.print();});
+  document.getElementById('b-reset').addEventListener('click',function(){if(confirm('Reset the dashboard and clear saved entries on this device?')){try{localStorage.removeItem(KEY);}catch(e){}state=clone(DEFAULTS);meta={month:'',start:''};renderAll();}});
+
+  renderAll();
+})();
+</script>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="f-brand">
+        <p>Modern, tech-forward accounting and advisory. We take the compliance and paperwork off your plate so you can focus on growth.</p>
+        </div>
+      <div class="f-col">
+        <h4>Services</h4>
+        <a href="/bookkeeping">Digital Bookkeeping</a>
+        <a href="/mtd-vat">Making Tax Digital & VAT</a>
+        <a href="/payroll">Payroll & Pensions</a>
+        <a href="/annual-accounts">Year-End Accounts</a>
+        <a href="/corporation-tax">Corporation Tax</a>
+        <a href="/self-assessment">Self-Assessment Tax</a>
+        <a href="/company-secretarial">Company Secretarial</a>
+      <a href="/companies-house-id-verification">Companies House ID Verification</a>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <a href="/about">About Us</a>
+        <a href="/insights">Insights</a>
+        <a href="/faqs">FAQs</a>
+        <a href="/about">Our Team</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
+      </div>
+      <div class="f-col">
+        <h4>Industries</h4>
+        <a href="/accountants-for-law-firms-manchester">Law Firms &amp; Solicitors</a>
+        <a href="/accountants-for-dentists-manchester">Dentists &amp; Dental Practices</a>
+        <a href="/contractor-accountants-manchester">Contractors &amp; Freelancers</a>
+        <a href="/ecommerce-accountants-manchester">Ecommerce Businesses</a>
+        <a href="/property-accountants-manchester">Property Investors</a>
+      </div>
+      <div class="f-col">
+        <h4>Contact</h4>
+        <a style="cursor:default">CFA Accountants</a>
+        <a style="cursor:default">CFA Accountants, 107</a>
+        <a style="cursor:default">Salford Innovation Forum</a>
+        <a style="cursor:default">51 Frederick Rd, Salford</a>
+        <a style="cursor:default">Manchester M6 6FP</a>
+        <a href="tel:+447440290584">+44 7440 290584</a>
+        <a href="mailto:cfa@cfaaccountants.com">cfa@cfaaccountants.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 CFA Accountants Ltd. All rights reserved. &middot; Registered in England, Company No. 16156596.</span>
+      <span><a href="/privacy" style="color:rgba(255,255,255,.45);cursor:pointer;text-decoration:none">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+<div class="cfa-chat" id="cfaChat" role="dialog" aria-label="CFA assistant">
+  <div class="cfa-chat-head">
+    <div class="cfa-avatar">💬</div>
+    <div>
+      <h4>CFA Assistant</h4>
+      <p><span class="cfa-dot"></span> Here to help</p>
+    </div>
+    <button class="cfa-chat-close" onclick="cfaToggleChat(false)" aria-label="Close">&times;</button>
+  </div>
+  <div class="cfa-chat-body" id="cfaChatBody"></div>
+  <div class="cfa-chips" id="cfaChips"></div>
+  <div class="cfa-chat-input">
+    <input id="cfaChatInput" type="text" placeholder="Type your question…" onkeydown="if(event.key==='Enter')cfaSend()"/>
+    <button onclick="cfaSend()" aria-label="Send">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="cfa-fab-wrap" id="cfaFabWrap">
+  <button class="cfa-fab cfa-fab-ai" id="cfaFabAi" onclick="cfaToggleChat()" aria-label="Open assistant">
+    <svg class="cfa-ai-open" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg class="cfa-ai-close" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <span class="cfa-fab-badge" id="cfaFabBadge"></span>
+  </button>
+</div>
+<script src="/assets/main.js" defer></script>
+<script src="/assets/assistant.js" defer></script>
+
+<!-- Cookie Consent Banner -->
+<style>
+#cfa-cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#fff;border-top:2px solid rgba(15,42,92,.12);box-shadow:0 -4px 24px rgba(4,16,61,.12);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;font-family:'Inter',sans-serif}
+#cfa-cookie-banner p{margin:0;font-size:.88rem;color:#4a5568;line-height:1.6;flex:1;min-width:200px}
+#cfa-cookie-banner a{color:#e74c3c;text-decoration:underline;cursor:pointer}
+.cfa-cookie-btns{display:flex;gap:.75rem;flex-shrink:0}
+.cfa-cookie-accept{background:#04103d;color:#fff;border:none;padding:.65rem 1.5rem;border-radius:6px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:background .2s}
+.cfa-cookie-accept:hover{background:#13245c}
+.cfa-cookie-decline{background:transparent;color:#4a5568;border:1.5px solid rgba(15,42,92,.2);padding:.65rem 1.5rem;border-radius:6px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s}
+.cfa-cookie-decline:hover{border-color:#04103d;color:#04103d}
+@media(max-width:580px){#cfa-cookie-banner{flex-direction:column;align-items:flex-start}.cfa-cookie-btns{width:100%}.cfa-cookie-accept,.cfa-cookie-decline{flex:1;text-align:center}}
+</style>
+<div id="cfa-cookie-banner" style="display:none">
+  <p>We use cookies to analyse site traffic and improve your experience. See our <a href="/privacy">Privacy Policy</a>.</p>
+  <div class="cfa-cookie-btns">
+    <button class="cfa-cookie-decline" onclick="cfaCookieDecline()">Decline</button>
+    <button class="cfa-cookie-accept" onclick="cfaCookieAccept()">Accept</button>
+  </div>
+</div>
+<script>
+(function(){
+  // Google Analytics 4 (GA4) — full analytics on by default.
+  // Accept keeps full analytics; Decline drops to anonymous, cookieless measurement.
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('consent','default',{
+    'ad_storage':'denied',
+    'ad_user_data':'denied',
+    'ad_personalization':'denied',
+    'analytics_storage':'granted'
+  });
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8HMTNP7LM3';
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config','G-8HMTNP7LM3');
+
+  var consent = localStorage.getItem('cfa_cookie_consent');
+  if(consent === 'declined'){
+    gtag('consent','update',{'analytics_storage':'denied'});
+  } else if(consent !== 'accepted'){
+    document.addEventListener('DOMContentLoaded', function(){
+      var b = document.getElementById('cfa-cookie-banner');
+      if(b) b.style.display = 'flex';
+    });
+  }
+
+  window.cfaCookieAccept = function(){
+    localStorage.setItem('cfa_cookie_consent','accepted');
+    gtag('consent','update',{'analytics_storage':'granted'});
+    var b = document.getElementById('cfa-cookie-banner');
+    if(b) b.style.display = 'none';
+  };
+
+  window.cfaCookieDecline = function(){
+    localStorage.setItem('cfa_cookie_consent','declined');
+    gtag('consent','update',{'analytics_storage':'denied'});
+    var b = document.getElementById('cfa-cookie-banner');
+    if(b) b.style.display = 'none';
+  };
+})();
+</script>
+
+</body>
+</html>
