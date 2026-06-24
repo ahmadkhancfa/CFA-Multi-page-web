@@ -211,7 +211,7 @@ section{padding:6rem 0}
 
 /* FOOTER */
 footer{background:#050b22;padding:4rem 0 2rem}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1fr;gap:2.2rem;margin-bottom:3rem}
 .f-brand img{height:32px;filter:brightness(0) invert(1);margin-bottom:1rem}
 .f-brand p{font-size:.87rem;line-height:1.75;color:rgba(255,255,255,.5);font-weight:300}
 .f-col h4{font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.38);font-weight:700;margin-bottom:1rem}
@@ -673,3 +673,16 @@ footer{background:#050b22;padding:4rem 0 2rem}
 .hf-item[open] .hf-plus{transform:rotate(45deg)}
 .hf-item p{margin:0 0 1.2rem;color:#566074;line-height:1.7;font-size:.95rem}
 .hf-item p a{color:var(--red,#e74c3c);font-weight:600;text-decoration:none}
+
+
+/* Resources dropdown (right-aligned, glossy trigger) */
+.nav-res .nav-dd-menu{left:auto;right:0;transform:translateX(0) translateY(-8px)}
+.nav-res:hover .nav-dd-menu{transform:translateX(0) translateY(0)}
+/* Related-tools cross-link cards */
+.xtool-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:780px;margin:0 auto}
+.xtool{display:block;background:#fff;border:1px solid rgba(15,42,92,.12);border-radius:14px;padding:1.4rem 1.5rem;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.xtool:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(4,16,61,.1)}
+.xtool h3{margin:0 0 .4rem;color:#04103d;font-size:1.05rem;font-weight:800}
+.xtool p{margin:0 0 .8rem;color:#566074;font-size:.9rem;line-height:1.6}
+.xtool span{color:#e74c3c;font-weight:700;font-size:.85rem}
+@media(max-width:680px){.xtool-grid{grid-template-columns:1fr}}

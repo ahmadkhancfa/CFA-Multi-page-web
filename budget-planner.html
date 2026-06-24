@@ -178,13 +178,79 @@
       <a href="/insights" id="nav-insights">Insights</a>
       <a href="/about" id="nav-about">About us</a>
       <a href="/contact" class="nav-cta" id="nav-contact">Get in Touch</a>
-      <a href="/take-home-pay-calculator" class="nav-calc-btn" id="nav-calc-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M15 15v3M9 18h3"/></svg> Calculators</a>
+      <div class="nav-dd nav-res">
+        <a href="/take-home-pay-calculator" class="nav-calc-btn" id="nav-resources"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M15 15v3M9 18h3"/></svg> Resources <span class="dd-caret">▾</span></a>
+        <div class="nav-dd-menu">
+          <a href="/take-home-pay-calculator"><span class="dd-t">Take-home Pay Calculator</span><span class="dd-s">UK salary after tax &amp; NI.</span></a>
+          <a href="/salary-vs-dividend-calculator"><span class="dd-t">Salary vs Dividend</span><span class="dd-s">Optimise director pay.</span></a>
+          <a href="/budget-planner"><span class="dd-t">Monthly Budget Dashboard</span><span class="dd-s">Track budget vs actual.</span></a>
+        </div>
+      </div>
     </div>
     <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="/">Home</a>
+  <div class="mob-section">
+    <button class="mob-section-toggle" onclick="toggleMobileSection(this)">Services</button>
+    <div class="mob-sub">
+      <a class="mob-grouphead" href="/accounting">Accounting &amp; Compliance</a>
+      <a href="/mtd-vat">VAT Returns</a>
+      <a href="/mtd-vat">Making Tax Digital (MTD)</a>
+      <a href="/annual-accounts">Year-End Accounts</a>
+      <a href="/corporation-tax">Corporation Tax Returns</a>
+      <a href="/self-assessment">Self-Assessment Tax Returns</a>
+      <a href="/payroll">Payroll &amp; Pensions</a>
+      <a href="/company-secretarial">Company Secretarial</a>
+      <a href="/companies-house-id-verification">Companies House ID Verification</a>
+      <a class="mob-grouphead" href="/advisory">Advisory</a>
+      <a href="/bookkeeping">Digital Bookkeeping</a>
+      <a href="/advisory#svc-fd">Outsourced Finance Director</a>
+      <a href="/advisory#svc-mgmt">Management Accounts &amp; Insights</a>
+      <a href="/advisory#svc-tax">Compliance &amp; HMRC Enquiries</a>
+      <a href="/advisory#svc-biz">Business Advisory &amp; Automation</a>
+      <a href="/advisory#svc-corp">Corporate Finance &amp; Transactions</a>
+      <a class="mob-grouphead" href="/tax">Tax Advice &amp; Planning</a>
+      <a href="/self-assessment">Personal &amp; Director Tax</a>
+      <a href="/corporation-tax">Corporation Tax</a>
+      <a href="/tax">Corporate Tax Planning</a>
+      <a href="/tax">Capital Gains &amp; Property Tax</a>
+      <a href="/tax">Estate Planning &amp; IHT</a>
+    </div>
+  </div>
+  <div class="mob-section">
+    <button class="mob-section-toggle" onclick="toggleMobileSection(this)">Industries</button>
+    <div class="mob-sub">
+      <a href="/contractor-accountants-manchester">Contractors &amp; Freelancers</a>
+      <a href="/property-accountants-manchester">Property Investors &amp; Landlords</a>
+      <a href="/ecommerce-accountants-manchester">Ecommerce Businesses</a>
+      <a href="/accountants-for-dentists-manchester">Dentists &amp; Dental Practices</a>
+      <a href="/accountants-for-law-firms-manchester">Law Firms &amp; Solicitors</a>
+    </div>
+  </div>
+
+  <div class="mob-section">
+    <button class="mob-section-toggle" onclick="toggleMobileSection(this)">Solutions</button>
+    <div class="mob-sub">
+      <a href="/tide">Tide Business Banking</a>
+    </div>
+  </div>
+  <a href="/pricing">Pricing</a>
+  <a href="/insights">Insights</a>
+  <a href="/about">About us</a>
+  <a href="/contact">Get in Touch</a>
+  <div class="mob-section">
+    <button class="mob-section-toggle" onclick="toggleMobileSection(this)">Resources</button>
+    <div class="mob-sub">
+      <a href="/take-home-pay-calculator">Take-home Pay Calculator</a>
+      <a href="/salary-vs-dividend-calculator">Salary vs Dividend Calculator</a>
+      <a href="/budget-planner">Monthly Budget Dashboard</a>
+    </div>
+  </div>
+</div>
 <section class="b-hero">
   <div class="b-tag">● Free Tool</div>
   <h1>Monthly Budget Dashboard</h1>
@@ -394,7 +460,20 @@
 })();
 </script>
 
-<footer>
+<section class="section" style="background:#f7f6f3">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:1.6rem">
+      <div class="s-label">More Free Tools</div>
+      <h2 class="s-title" style="text-align:center">Explore our other tools</h2>
+    </div>
+    <div class="xtool-grid">
+      <a class="xtool" href="/take-home-pay-calculator"><h3>Take-home Pay Calculator</h3><p>See your UK salary after tax, National Insurance, pension and student loan.</p><span>Open tool →</span></a>
+      <a class="xtool" href="/salary-vs-dividend-calculator"><h3>Salary vs Dividend Calculator</h3><p>Find the most tax-efficient split of salary and dividends as a director.</p><span>Open tool →</span></a>
+    </div>
+  </div>
+</section>
+
+  <footer>
   <div class="wrap">
     <div class="footer-grid">
       <div class="f-brand">
@@ -410,6 +489,12 @@
         <a href="/self-assessment">Self-Assessment Tax</a>
         <a href="/company-secretarial">Company Secretarial</a>
       <a href="/companies-house-id-verification">Companies House ID Verification</a>
+      </div>
+      <div class="f-col">
+        <h4>Resources</h4>
+        <a href="/take-home-pay-calculator">Take-home Pay Calculator</a>
+        <a href="/salary-vs-dividend-calculator">Salary vs Dividend Calculator</a>
+        <a href="/budget-planner">Monthly Budget Dashboard</a>
       </div>
       <div class="f-col">
         <h4>Company</h4>

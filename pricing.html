@@ -179,7 +179,14 @@
       <a href="/insights" id="nav-insights">Insights</a>
       <a href="/about" class="active" id="nav-about">About us</a>
       <a href="/contact" class="nav-cta" id="nav-contact">Get in Touch</a>
-      <a href="/take-home-pay-calculator" class="nav-calc-btn" id="nav-calc-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M15 15v3M9 18h3"/></svg> Calculators</a>
+      <div class="nav-dd nav-res">
+        <a href="/take-home-pay-calculator" class="nav-calc-btn" id="nav-resources"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M15 15v3M9 18h3"/></svg> Resources <span class="dd-caret">▾</span></a>
+        <div class="nav-dd-menu">
+          <a href="/take-home-pay-calculator"><span class="dd-t">Take-home Pay Calculator</span><span class="dd-s">UK salary after tax &amp; NI.</span></a>
+          <a href="/salary-vs-dividend-calculator"><span class="dd-t">Salary vs Dividend</span><span class="dd-s">Optimise director pay.</span></a>
+          <a href="/budget-planner"><span class="dd-t">Monthly Budget Dashboard</span><span class="dd-s">Track budget vs actual.</span></a>
+        </div>
+      </div>
     </div>
     <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -236,7 +243,14 @@
   <a href="/insights">Insights</a>
   <a href="/about">About us</a>
   <a href="/contact">Get in Touch</a>
-  <a href="/take-home-pay-calculator" class="mob-calc-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 6h6M15 15v3M9 18h3"/></svg> Calculators</a>
+  <div class="mob-section">
+    <button class="mob-section-toggle" onclick="toggleMobileSection(this)">Resources</button>
+    <div class="mob-sub">
+      <a href="/take-home-pay-calculator">Take-home Pay Calculator</a>
+      <a href="/salary-vs-dividend-calculator">Salary vs Dividend Calculator</a>
+      <a href="/budget-planner">Monthly Budget Dashboard</a>
+    </div>
+  </div>
 </div>
 
 
@@ -646,7 +660,65 @@
 
 </main>
 
-<!-- Cookie Consent Banner -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="f-brand">
+        <p>Modern, tech-forward accounting and advisory. We take the compliance and paperwork off your plate so you can focus on growth.</p>
+        </div>
+      <div class="f-col">
+        <h4>Services</h4>
+        <a href="/bookkeeping">Digital Bookkeeping</a>
+        <a href="/mtd-vat">Making Tax Digital & VAT</a>
+        <a href="/payroll">Payroll & Pensions</a>
+        <a href="/annual-accounts">Year-End Accounts</a>
+        <a href="/corporation-tax">Corporation Tax</a>
+        <a href="/self-assessment">Self-Assessment Tax</a>
+        <a href="/company-secretarial">Company Secretarial</a>
+      <a href="/companies-house-id-verification">Companies House ID Verification</a>
+      </div>
+      <div class="f-col">
+        <h4>Resources</h4>
+        <a href="/take-home-pay-calculator">Take-home Pay Calculator</a>
+        <a href="/salary-vs-dividend-calculator">Salary vs Dividend Calculator</a>
+        <a href="/budget-planner">Monthly Budget Dashboard</a>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <a href="/about">About Us</a>
+        <a href="/insights">Insights</a>
+        <a href="/faqs">FAQs</a>
+        <a href="/about">Our Team</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy Policy</a>
+      </div>
+      <div class="f-col">
+        <h4>Industries</h4>
+        <a href="/accountants-for-law-firms-manchester">Law Firms &amp; Solicitors</a>
+        <a href="/accountants-for-dentists-manchester">Dentists &amp; Dental Practices</a>
+        <a href="/contractor-accountants-manchester">Contractors &amp; Freelancers</a>
+        <a href="/ecommerce-accountants-manchester">Ecommerce Businesses</a>
+        <a href="/property-accountants-manchester">Property Investors</a>
+      </div>
+      <div class="f-col">
+        <h4>Contact</h4>
+        <a style="cursor:default">CFA Accountants</a>
+        <a style="cursor:default">CFA Accountants, 107</a>
+        <a style="cursor:default">Salford Innovation Forum</a>
+        <a style="cursor:default">51 Frederick Rd, Salford</a>
+        <a style="cursor:default">Manchester M6 6FP</a>
+        <a href="tel:+447440290584">+44 7440 290584</a>
+        <a href="mailto:cfa@cfaaccountants.com">cfa@cfaaccountants.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 CFA Accountants Ltd. All rights reserved. &middot; Registered in England, Company No. 16156596.</span>
+      <span><a href="/privacy" style="color:rgba(255,255,255,.45);cursor:pointer;text-decoration:none">Privacy Policy</a></span>
+    </div>
+  </div>
+</footer>
+
+  <!-- Cookie Consent Banner -->
 <style>
 #cfa-cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#fff;border-top:2px solid rgba(15,42,92,.12);box-shadow:0 -4px 24px rgba(4,16,61,.12);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;font-family:'Inter',sans-serif}
 #cfa-cookie-banner p{margin:0;font-size:.88rem;color:#4a5568;line-height:1.6;flex:1;min-width:200px}
