@@ -247,24 +247,41 @@
             btn.textContent = 'Sending...';
             btn.disabled = true;
             var form = e.target;
-            fetch(form.action, {
+            var fd = new FormData(form);
+
+            // Build a clean payload for Web3Forms (sent as JSON, with the access key)
+            var obj = {};
+            fd.forEach(function(v,k){ obj[k] = v; });
+            obj.access_key = '63c64337-be6a-4e8a-9670-390dd5b89401';
+            obj.name = ((obj.first_name||'') + ' ' + (obj.last_name||'')).trim();
+            obj.subject = 'New enquiry from CFA Accountants website';
+            obj.from_name = 'CFA Accountants Website';
+
+            // Fire both providers in parallel so the enquiry lands in both inboxes
+            var toFormspree = fetch('https://formspree.io/f/xzdqabvz', {
               method: 'POST',
-              body: new FormData(form),
+              body: fd,
               headers: {'Accept': 'application/json'}
-            }).then(function(r){
-              if(r.ok){
+            });
+            var toWeb3 = fetch('https://api.web3forms.com/submit', {
+              method: 'POST',
+              headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
+              body: JSON.stringify(obj)
+            });
+
+            Promise.allSettled([toFormspree, toWeb3]).then(function(results){
+              var anyOk = results.some(function(r){ return r.status === 'fulfilled' && r.value && r.value.ok; });
+              if(anyOk){
                 document.getElementById('cfaFormSuccess').style.display = 'block';
                 document.getElementById('cfaFormError').style.display = 'none';
                 form.reset();
                 btn.textContent = 'Sent!';
               } else {
-                throw new Error('Failed');
+                document.getElementById('cfaFormError').style.display = 'block';
+                document.getElementById('cfaFormSuccess').style.display = 'none';
+                btn.textContent = 'Send Message';
+                btn.disabled = false;
               }
-            }).catch(function(){
-              document.getElementById('cfaFormError').style.display = 'block';
-              document.getElementById('cfaFormSuccess').style.display = 'none';
-              btn.textContent = 'Send Message';
-              btn.disabled = false;
             });
           });
           </script>
