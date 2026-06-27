@@ -717,8 +717,36 @@
     </div>
   </div>
 </footer>
+<div class="cfa-chat" id="cfaChat" role="dialog" aria-label="CFA assistant">
+  <div class="cfa-chat-head">
+    <div class="cfa-avatar">💬</div>
+    <div>
+      <h4>CFA Assistant</h4>
+      <p><span class="cfa-dot"></span> Here to help</p>
+    </div>
+    <button class="cfa-chat-close" onclick="cfaToggleChat(false)" aria-label="Close">&times;</button>
+  </div>
+  <div class="cfa-chat-body" id="cfaChatBody"></div>
+  <div class="cfa-chips" id="cfaChips"></div>
+  <div class="cfa-chat-input">
+    <input id="cfaChatInput" type="text" placeholder="Type your question…" onkeydown="if(event.key==='Enter')cfaSend()"/>
+    <button onclick="cfaSend()" aria-label="Send">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+    </button>
+  </div>
+</div>
 
-  <!-- Cookie Consent Banner -->
+<div class="cfa-fab-wrap" id="cfaFabWrap">
+  <button class="cfa-fab cfa-fab-ai" id="cfaFabAi" onclick="cfaToggleChat()" aria-label="Open assistant">
+    <svg class="cfa-ai-open" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg class="cfa-ai-close" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    <span class="cfa-fab-badge" id="cfaFabBadge"></span>
+  </button>
+</div>
+<script src="/assets/main.js" defer></script>
+<script src="/assets/assistant.js" defer></script>
+
+<!-- Cookie Consent Banner -->
 <style>
 #cfa-cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:#fff;border-top:2px solid rgba(15,42,92,.12);box-shadow:0 -4px 24px rgba(4,16,61,.12);padding:1.2rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;font-family:'Inter',sans-serif}
 #cfa-cookie-banner p{margin:0;font-size:.88rem;color:#4a5568;line-height:1.6;flex:1;min-width:200px}
