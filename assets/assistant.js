@@ -94,18 +94,33 @@
       a:"We aim to respond promptly during business hours. The best way to reach us is by phone or email.<br>📞 <a href='tel:+447440290584'>+44 7440 290584</a> · ✉️ <a href='mailto:cfa@cfaaccountants.com'>cfa@cfaaccountants.com</a>" },
     { k:['human','person','agent','real','someone','talk to'],
       a:"Of course — you'll always talk to a real person here in Manchester.<br>📞 <a href='tel:+447440290584'>+44 7440 290584</a><br>✉️ <a href='mailto:cfa@cfaaccountants.com'>cfa@cfaaccountants.com</a><br>"+contactBtn },
+    { k:['tool','tools','calculator','calculators','resources','free tool'],
+      a:"We've got free online tools you can use any time:<br>• <a href='/take-home-pay-calculator'>Take-home Pay Calculator</a> — UK salary after tax, NI, pension &amp; student loan<br>• <a href='/salary-vs-dividend-calculator'>Salary vs Dividend Calculator</a> — the most tax-efficient director pay split<br>• <a href='/budget-planner'>Monthly Budget Dashboard</a> — plan your month and track budget vs actual" },
+    { k:['take home','take-home','net pay','salary after tax','pay after tax','net salary','paycheck'],
+      a:"Our free Take-home Pay Calculator shows your UK salary after Income Tax, National Insurance, pension and student loan for 2025/26.<br><a href='/take-home-pay-calculator'>Open the Take-home Pay Calculator →</a>" },
+    { k:['salary vs dividend','dividend calculator','salary or dividend','dividend vs salary','director pay','how much salary','optimal salary','extract profit'],
+      a:"If you're a director, our Salary vs Dividend Calculator finds the most tax-efficient split of salary and dividends — including Corporation Tax, NI and the dividend allowance.<br><a href='/salary-vs-dividend-calculator'>Open the Salary vs Dividend Calculator →</a>" },
+    { k:['budget','budgeting','budget planner','budget dashboard','monthly budget','track spending','household budget'],
+      a:"Our free Monthly Budget Dashboard lets you plan income, bills, savings and debt, and tracks your budget against your actual spending — your figures stay private on your own device.<br><a href='/budget-planner'>Open the Budget Dashboard →</a>" },
+    { k:['tide','business banking','business account','business bank','banking partner','open an account','business current account'],
+      a:"We've partnered with Tide to help startups, contractors and freelancers get set up fast. Tide is a business financial platform (not a bank) — its business accounts are provided by ClearBank Ltd and are FSCS-protected, with 24/7 fraud monitoring. Our partner referral code is applied automatically.<br><a href='/tide'>Learn about Tide &amp; open an account →</a>" },
+    { k:['companies house','id verification','identity verification','acsp','personal code','verify identity','verify my identity','director verification','authorised corporate'],
+      a:"Identity verification is now a legal requirement for all UK company directors and people with significant control (PSCs). As a registered Authorised Corporate Service Provider (ACSP), we can verify your identity and obtain your Companies House personal code — even if you're not yet a client.<br><a href='/companies-house-id-verification'>Companies House ID Verification →</a>" },
+    { k:['when to hire','when should i hire','best time to','just started','starting out','do i need an accountant','new business accountant'],
+      a:"It's smart to bring an accountant in right at the start, so you choose the best structure for your business — and certainly once bookkeeping, payroll or tax starts eating into your time. Happy to talk it through.<br>"+contactBtn },
     { k:['hi','hello','hey','good morning','good afternoon'],
-      a:"Hi there! 👋 I can help with questions about our services, tax, fees, FAQs, or booking a consultation. What would you like to know?" },
+      a:"Hi there! 👋 I can help with questions about our services, tax, fees, free calculators, FAQs, Tide banking, or booking a consultation. What would you like to know?" },
     { k:['thank','thanks','cheers','ta'],
       a:"You're welcome! If there's anything else, just ask — or reach the team any time on "+'<a href=\'tel:+447440290584\'>+44 7440 290584</a>.' }
   ];
 
   const CHIPS = [
     ['Your services','what services do you offer'],
-    ['Tax help','tax'],
+    ['Free tools','calculators tools resources'],
     ['Fees','how much do you charge'],
-    ["What's new",'what is new insights'],
     ['FAQs','faq common questions'],
+    ["What's new",'what is new insights'],
+    ['Tide banking','tide business banking'],
     ['Where are you based','where are you based']
   ];
 
@@ -170,7 +185,7 @@
       if(!greeted){
         greeted = true;
         renderChips();
-        addMsg("Hi! 👋 I'm the CFA Assistant. Ask me about our services, tax, fees or booking a consultation — or tap a topic below.", 'bot');
+        addMsg("Hi! 👋 I'm the CFA Assistant. Ask me about our services, tax, fees, free calculators, Tide banking or booking a consultation — or tap a topic below.", 'bot');
       }
       setTimeout(()=>document.getElementById('cfaChatInput').focus(), 300);
     }
