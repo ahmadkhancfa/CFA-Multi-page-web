@@ -690,8 +690,8 @@ footer{background:#050b22;padding:4rem 0 2rem}
 
 /* ===== MOBILE HERO PHOTO (desktop hero unchanged) ===== */
 @media(max-width:960px){
-  .hero::before{content:'';position:absolute;inset:0;z-index:1;background:url(/assets/img/img_5273796859.webp) center 30%/cover no-repeat;filter:grayscale(1) brightness(.5) contrast(1.05)}
-  .hero::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(160deg,rgba(4,12,40,.84) 0%,rgba(3,8,27,.72) 100%)}
+  .hero::before{display:block!important;content:'';position:absolute;inset:0;z-index:1;background:url(/assets/img/img_5273796859.webp) center 30%/cover no-repeat;filter:grayscale(1) brightness(.62) contrast(1.05)}
+  .hero::after{display:block!important;content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(160deg,rgba(4,12,40,.74) 0%,rgba(3,8,27,.58) 100%)}
   .hero-media{display:none}
   .hero-inner{max-width:680px}
 }
