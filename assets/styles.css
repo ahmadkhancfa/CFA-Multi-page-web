@@ -369,9 +369,9 @@ footer{background:#050b22;padding:4rem 0 2rem}
 .svc-col-head .cat-name{font-family:'Inter',sans-serif;font-size:1.3rem;font-weight:700;color:var(--navy);letter-spacing:-0.02em}
 .svc-col-head .cat-tag{font-size:.86rem;color:var(--text-light);font-style:italic}
 .svc-col-list{display:flex;flex-direction:column;gap:.7rem}
-.svc-item-row{display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid rgba(15,42,92,.08);border-radius:12px;padding:.8rem 1.05rem;cursor:pointer;transition:transform .22s,box-shadow .22s,border-color .22s;position:relative;overflow:hidden}
+.svc-item-row{display:flex;align-items:center;gap:.9rem;background:linear-gradient(180deg,#fff 0%,#f5f7fc 100%);border:1px solid rgba(15,42,92,.10);border-radius:14px;padding:.95rem 1.15rem;cursor:pointer;transition:transform .22s ease,box-shadow .22s ease,border-color .22s;position:relative;overflow:hidden;box-shadow:0 1px 2px rgba(15,42,92,.06),0 5px 14px rgba(15,42,92,.10)}
 .svc-item-row::after{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--red);transform:scaleY(0);transform-origin:top;transition:transform .22s}
-.svc-item-row:hover{transform:translateX(4px);box-shadow:0 12px 28px rgba(15,42,92,.1);border-color:rgba(231,76,60,.25)}
+.svc-item-row:hover{transform:translateY(-5px);box-shadow:0 4px 10px rgba(15,42,92,.10),0 18px 36px rgba(15,42,92,.20);border-color:rgba(231,76,60,.35)}
 .svc-item-row:hover::after{transform:scaleY(1)}
 .svc-item-ico{width:42px;height:42px;flex-shrink:0;background:transparent;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;overflow:hidden}.svc-item-ico svg{width:42px;height:42px;display:block;filter:drop-shadow(0 2px 4px rgba(0,0,0,0.18))}
 .svc-item-row h3{flex:1;font-family:'Inter',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);margin:0;line-height:1.25}
@@ -686,3 +686,12 @@ footer{background:#050b22;padding:4rem 0 2rem}
 .xtool p{margin:0 0 .8rem;color:#566074;font-size:.9rem;line-height:1.6}
 .xtool span{color:#e74c3c;font-weight:700;font-size:.85rem}
 @media(max-width:680px){.xtool-grid{grid-template-columns:1fr}}
+
+
+/* ===== MOBILE HERO PHOTO (desktop hero unchanged) ===== */
+@media(max-width:960px){
+  .hero::before{content:'';position:absolute;inset:0;z-index:1;background:url(/assets/img/img_5273796859.webp) center 30%/cover no-repeat;filter:grayscale(1) brightness(.5) contrast(1.05)}
+  .hero::after{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(160deg,rgba(4,12,40,.84) 0%,rgba(3,8,27,.72) 100%)}
+  .hero-media{display:none}
+  .hero-inner{max-width:680px}
+}
