@@ -89,7 +89,7 @@
   @media print{
     @page{margin:14mm 12mm}
     body{background:#fff;min-height:auto;display:block}.noprint,.bar,.ref{display:none!important}
-    .page{box-shadow:none;margin:0;max-width:none;min-height:auto;display:block}
+    .page{box-shadow:none;margin:0;max-width:none;min-height:100vh;display:flex;flex-direction:column}
     [data-sec].sec-active{box-shadow:none!important}
     .row.line.excluded,.row.group.empty{display:none!important}
     input.edit,textarea.edit,.grp-name{border-bottom:none!important;background:none!important}
@@ -97,6 +97,8 @@
     .unit{border:none!important;-webkit-appearance:none;appearance:none;color:var(--light)!important;padding:0}
     h2,.total,.row{break-inside:avoid}.cover,.total{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .ln-price .amt{width:auto}
+    .body{flex:1 0 auto}
+    .foot{margin-top:auto;page-break-inside:avoid}
   }
   @media(max-width:640px){.body,.cover,.foot{padding-left:1.3rem;padding-right:1.3rem}.meta{grid-template-columns:1fr}}
 </style>
