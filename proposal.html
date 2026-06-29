@@ -89,7 +89,7 @@
   @media print{
     @page{margin:14mm 12mm}
     body{background:#fff;min-height:auto;display:block}.noprint,.bar,.ref{display:none!important}
-    .page{box-shadow:none;margin:0;max-width:none;min-height:100vh;display:flex;flex-direction:column}
+    .page{box-shadow:none;margin:0;max-width:none;min-height:auto;display:block}
     [data-sec].sec-active{box-shadow:none!important}
     .row.line.excluded,.row.group.empty{display:none!important}
     input.edit,textarea.edit,.grp-name{border-bottom:none!important;background:none!important}
@@ -97,8 +97,6 @@
     .unit{border:none!important;-webkit-appearance:none;appearance:none;color:var(--light)!important;padding:0}
     h2,.total,.row{break-inside:avoid}.cover,.total{-webkit-print-color-adjust:exact;print-color-adjust:exact}
     .ln-price .amt{width:auto}
-    .body{flex:1 0 auto}
-    .foot{margin-top:auto;page-break-inside:avoid}
   }
   @media(max-width:640px){.body,.cover,.foot{padding-left:1.3rem;padding-right:1.3rem}.meta{grid-template-columns:1fr}}
 </style>
@@ -210,10 +208,7 @@
     </section>
   </div>
 
-  <div class="foot sec" data-sec="footer" contenteditable data-key="foot">
-    <b>CFA Accountants Ltd</b> &nbsp;·&nbsp; Salford Innovation Forum, 51 Frederick Road, Salford M6 6FP &nbsp;·&nbsp; www.cfaaccountants.com<br>
-    Chartered Certified Accountants in Manchester. Fees quoted exclude VAT unless stated. This proposal is valid for 30 days from the date above.
-  </div>
+
 </div>
 
 <details class="ref noprint">
@@ -393,6 +388,20 @@ function resetAll(){if(confirm('Reset everything to the blank template? This cle
   if(d)apply(d);else{buildLines(DEF_SETUP,DEF_MONTHLY);recalc();}
   document.querySelectorAll('[contenteditable],[data-key]').forEach(e=>e.addEventListener('input',save));
 })();
+function padFooterForPrint(){
+  const foot=document.querySelector('.foot');
+  const page=document.querySelector('.page');
+  // A4 at 96dpi minus 14mm top + 14mm bottom margins (approx 106px total)
+  const pageH=1056;
+  const contentH=page.scrollHeight;
+  const remainder=contentH%pageH;
+  const pad=remainder>0?pageH-remainder:0;
+  foot.style.marginTop=pad+'px';
+}
+window.addEventListener('beforeprint',padFooterForPrint);
+window.addEventListener('afterprint',function(){
+  document.querySelector('.foot').style.marginTop='';
+});
 </script>
 </body>
 </html>
