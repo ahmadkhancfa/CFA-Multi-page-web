@@ -427,7 +427,9 @@ function fmt(n){return '\u00a3'+Math.round(n).toLocaleString('en-GB');}
 window.setPeriod=function(p){period=p;gv('tA').classList.toggle('on',p==='y');gv('tM').classList.toggle('on',p==='m');calc();};
 function calc(){
   var gross=num(gv('salary').value),penPct=Math.min(100,Math.max(0,num(gv('pension').value))),ptype=gv('ptype').value,slPlan=gv('sl').value;
-  var pension=gross*penPct/100;
+  var QE_LOWER=6240,QE_UPPER=50270;
+  var qe=Math.max(0,Math.min(gross,QE_UPPER)-QE_LOWER);
+  var pension=qe*penPct/100;
   var taxBase,niBase,bandExt=0,penFromPay,pot=pension,basicRelief=0;
   if(ptype==='sac'){taxBase=gross-pension;niBase=gross-pension;penFromPay=pension;}
   else if(ptype==='net'){taxBase=gross-pension;niBase=gross;penFromPay=pension;}
