@@ -1,4 +1,58 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/accountants-for-law-firms-manchester",
+      "destination": "/accountants-for-law-firms-manchester.html"
+    },
+    {
+      "source": "/accountants-for-dentists-manchester",
+      "destination": "/accountants-for-dentists-manchester.html"
+    },
+    {
+      "source": "/contractor-accountants-manchester",
+      "destination": "/contractor-accountants-manchester.html"
+    },
+    {
+      "source": "/ecommerce-accountants-manchester",
+      "destination": "/ecommerce-accountants-manchester.html"
+    },
+    {
+      "source": "/property-accountants-manchester",
+      "destination": "/property-accountants-manchester.html"
+    },
+    {
+      "source": "/blog/summer-savings-vat-relief-2026",
+      "destination": "/blog/summer-savings-vat-relief-2026.html"
+    },
+    {
+      "source": "/blog/making-tax-digital-income-tax-2026",
+      "destination": "/blog/making-tax-digital-income-tax-2026.html"
+    },
+    {
+      "source": "/blog/hmrc-mileage-rate-increase-2026",
+      "destination": "/blog/hmrc-mileage-rate-increase-2026.html"
+    },
+    {
+      "source": "/tide",
+      "destination": "/tide.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/pricing.html"
+    },
+    {
+      "source": "/bookkeeping",
+      "destination": "/bookkeeping.html"
+    },
+    {
+      "source": "/accountants-for-gp-practices-manchester",
+      "destination": "/accountants-for-gp-practices-manchester.html"
+    },
+    {
+      "source": "/accountants-for-doctors-manchester",
+      "destination": "/accountants-for-doctors-manchester.html"
+    }
+  ]
 }
