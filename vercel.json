@@ -1,21 +1,9 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "headers": [
-    {
-      "source": "/sitemap.xml",
-      "headers": [
-        { "key": "Content-Type", "value": "application/xml" }
-      ]
-    },
-    {
-      "source": "/favicon.ico",
-      "headers": [
-        { "key": "Content-Type", "value": "image/x-icon" }
-      ]
-    }
-  ],
   "rewrites": [
+    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
+    { "source": "/robots.txt", "destination": "/robots.txt" },
     { "source": "/accountants-for-law-firms-manchester", "destination": "/accountants-for-law-firms-manchester.html" },
     { "source": "/accountants-for-dentists-manchester", "destination": "/accountants-for-dentists-manchester.html" },
     { "source": "/contractor-accountants-manchester", "destination": "/contractor-accountants-manchester.html" },
