@@ -20,7 +20,6 @@
     { "source": "/faqs", "destination": "/faqs.html" },
     { "source": "/insights", "destination": "/insights.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/about", "destination": "/about.html" },
     { "source": "/tide", "destination": "/tide.html" },
     { "source": "/proposal", "destination": "/proposal.html" },
     { "source": "/take-home-pay-calculator", "destination": "/take-home-pay-calculator.html" },
