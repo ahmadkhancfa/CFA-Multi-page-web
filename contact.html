@@ -231,11 +231,11 @@
         <div>
           <div class="s-label">Contact Details</div>
           <h2 class="s-title" style="margin-bottom:2rem">We'd Love to Hear From You</h2>
-          <div class="c-item fade"><div class="c-ico"></div><div><div class="c-lbl">Office</div><div class="c-val">CFA Accountants, 107<br>Salford Innovation Forum,<br>51 Frederick Rd, Salford,<br>Manchester M6 6FP</div></div></div>
-          <div class="c-item fade"><div class="c-ico"></div><div><div class="c-lbl">Phone</div><div class="c-val"><a href="tel:+447440290584" style="color:inherit;text-decoration:none">+44 7440 290584</a></div></div></div>
-          <div class="c-item fade"><div class="c-ico"></div><div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:cfa@cfaaccountants.com" style="color:inherit;text-decoration:none">cfa@cfaaccountants.com</a></div></div></div>
-          <div class="c-item fade"><div class="c-ico"></div><div><div class="c-lbl">Hours</div><div class="c-val">Monday &ndash; Friday: 9:00am &ndash; 5:30pm<br>Saturday & Sunday: Closed</div></div></div>
-          <div class="promo-box fade"><h4>Free Initial Consultation</h4><p>Every new client receives a complimentary 30-minute consultation &mdash; no obligation, no pressure. Just an honest conversation about how we can help your business.</p></div>
+          <div class="c-item fade"><div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="c-lbl">Office</div><div class="c-val">CFA Accountants, 107<br>Salford Innovation Forum,<br>51 Frederick Rd, Salford,<br>Manchester M6 6FP</div></div></div>
+          <div class="c-item fade"><div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006.18 6.18l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><div class="c-lbl">Phone</div><div class="c-val"><a href="tel:+447440290584" style="color:inherit;text-decoration:none">+44 7440 290584</a></div></div></div>
+          <div class="c-item fade"><div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="c-lbl">Email</div><div class="c-val"><a href="mailto:cfa@cfaaccountants.com" style="color:inherit;text-decoration:none">cfa@cfaaccountants.com</a></div></div></div>
+          <div class="c-item fade"><div class="c-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="c-lbl">Hours</div><div class="c-val">Monday &ndash; Friday: 9:00am &ndash; 5:30pm<br>Saturday & Sunday: Closed</div></div></div>
+          <div class="promo-box fade"><h4>Free Initial Consultation</h4><p>Every new client receives a complimentary 30-minute consultation &mdash; no obligation, no pressure. Just an honest conversation about how we can help your business.</p><a href="https://calendly.com/cfa-cfaaccountants/30min" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:.5rem;margin-top:1rem;background:#e74c3c;color:#fff;font-size:.9rem;font-weight:600;padding:.7rem 1.4rem;border-radius:8px;text-decoration:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a Free Consultation</a></div>
           <!-- Google Maps -->
           <div class="fade" style="margin-top:1.5rem;border-radius:12px;overflow:hidden;border:1px solid rgba(15,42,92,.1)">
             <iframe
@@ -282,29 +282,12 @@
             var form = e.target;
             var fd = new FormData(form);
 
-            // Build a clean payload for Web3Forms (sent as JSON, with the access key)
-            var obj = {};
-            fd.forEach(function(v,k){ obj[k] = v; });
-            obj.access_key = '63c64337-be6a-4e8a-9670-390dd5b89401';
-            obj.name = ((obj.first_name||'') + ' ' + (obj.last_name||'')).trim();
-            obj.subject = 'New enquiry from CFA Accountants website';
-            obj.from_name = 'CFA Accountants Website';
-
-            // Fire both providers in parallel so the enquiry lands in both inboxes
-            var toFormspree = fetch('https://formspree.io/f/xzdqabvz', {
+            fetch('https://formspree.io/f/xzdqabvz', {
               method: 'POST',
               body: fd,
               headers: {'Accept': 'application/json'}
-            });
-            var toWeb3 = fetch('https://api.web3forms.com/submit', {
-              method: 'POST',
-              headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
-              body: JSON.stringify(obj)
-            });
-
-            Promise.allSettled([toFormspree, toWeb3]).then(function(results){
-              var anyOk = results.some(function(r){ return r.status === 'fulfilled' && r.value && r.value.ok; });
-              if(anyOk){
+            }).then(function(r){
+              if(r.ok){
                 document.getElementById('cfaFormSuccess').style.display = 'block';
                 document.getElementById('cfaFormError').style.display = 'none';
                 form.reset();
