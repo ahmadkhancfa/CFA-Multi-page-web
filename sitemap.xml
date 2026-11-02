@@ -22,7 +22,6 @@
   <url><loc>https://www.cfaaccountants.com/property-accountants-manchester</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.cfaaccountants.com/cafe-accountants-manchester</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.cfaaccountants.com/pricing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.cfaaccountants.com/about</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.cfaaccountants.com/insights</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.cfaaccountants.com/faqs</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.cfaaccountants.com/contact</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -34,4 +33,5 @@
   <url><loc>https://www.cfaaccountants.com/blog/hmrc-mileage-rate-increase-2026</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.cfaaccountants.com/blog/summer-savings-vat-relief-2026</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.cfaaccountants.com/blog/making-tax-digital-income-tax-2026</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.cfaaccountants.com/blog/autumn-budget-2026</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
 </urlset>

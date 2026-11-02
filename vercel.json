@@ -1,8 +1,10 @@
 {
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/about", "destination": "/", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/", "destination": "/index.html" },
-    { "source": "/about", "destination": "/about.html" },
     { "source": "/services", "destination": "/services.html" },
     { "source": "/accounting", "destination": "/accounting.html" },
     { "source": "/advisory", "destination": "/advisory.html" },
@@ -35,6 +37,7 @@
     { "source": "/cafe-accountants-manchester", "destination": "/cafe-accountants-manchester.html" },
     { "source": "/blog/hmrc-mileage-rate-increase-2026", "destination": "/blog/hmrc-mileage-rate-increase-2026.html" },
     { "source": "/blog/summer-savings-vat-relief-2026", "destination": "/blog/summer-savings-vat-relief-2026.html" },
-    { "source": "/blog/making-tax-digital-income-tax-2026", "destination": "/blog/making-tax-digital-income-tax-2026.html" }
+    { "source": "/blog/making-tax-digital-income-tax-2026", "destination": "/blog/making-tax-digital-income-tax-2026.html" },
+    { "source": "/blog/autumn-budget-2026", "destination": "/blog/autumn-budget-2026.html" }
   ]
 }
