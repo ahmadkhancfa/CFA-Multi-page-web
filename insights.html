@@ -71,6 +71,13 @@
   <meta name="twitter:title" content="Insights | CFA Accountants Manchester"/>
   <meta name="twitter:description" content="Tax updates, business advice and practical guidance from the CFA Accountants team in Manchester."/>
   <meta name="twitter:image" content="https://www.cfaaccountants.com/assets/img/og-image.png"/>
+<style>
+/* Insight cards: every banner is exactly 300:110 so images fit with no cropping at any card width */
+.insights-grid .insight-card .ic-banner{height:auto;aspect-ratio:300/110;position:relative;overflow:hidden;padding:0}
+.insights-grid .insight-card .ic-banner>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+/* 3-column layouts: centre the 4th card instead of leaving it stranded on the left */
+@media (min-width:900px){.insights-grid .insight-card:nth-child(4):last-child{grid-column:2}}
+</style>
 </head>
 <body>
 <nav>
@@ -226,7 +233,7 @@
     <div class="wrap">
       <div class="insights-grid">
         <div class="insight-card fade" onclick="window.location='/blog/autumn-budget-2026'">
-          <div class="ic-banner" style="background:#0e073c;overflow:hidden;padding:0"><img src="/assets/img/autumn-budget-2026-cover.webp" alt="Autumn Budget 2026 cover graphic" style="width:100%;height:100%;object-fit:cover;object-position:center 12%;display:block"/></div>
+          <div class="ic-banner"><img src="/assets/img/autumn-budget-2026-card.webp" width="900" height="330" alt="Autumn Budget 2026: what does it mean for business owners?" loading="lazy"/></div>
           <div class="ic-body">
             <div class="ic-cat">Budget &amp; Tax Updates</div>
             <h3>Autumn Budget 2026: What It Means for Business Owners, Landlords and Individuals</h3>
@@ -256,7 +263,7 @@
           </div>
         </div>
         <div class="insight-card fade" onclick="window.location='/blog/making-tax-digital-income-tax-2026'">
-          <div class="ic-banner" style="background:linear-gradient(135deg,#04103d,#13245c);display:flex;align-items:center;justify-content:center;font-size:2.2rem">MTD</div>
+          <div class="ic-banner"><img src="/assets/img/mtd-income-tax-2026-card.webp" width="900" height="330" alt="Making Tax Digital for Income Tax: quarterly updates, 2026" loading="lazy"/></div>
           <div class="ic-body">
             <div class="ic-cat">Tax &amp; HMRC</div>
             <h3>Making Tax Digital for Income Tax: What Manchester Sole Traders and Landlords Need to Know</h3>

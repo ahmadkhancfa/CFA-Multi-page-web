@@ -72,6 +72,13 @@
   <meta name="twitter:title" content="CFA Accountants | Accounting & Tax Services Manchester"/>
   <meta name="twitter:description" content="Manchester-based chartered certified accountants offering accounting, bookkeeping, tax planning and business advisory for sole traders and limited companies."/>
   <meta name="twitter:image" content="https://www.cfaaccountants.com/assets/img/og-image.png"/>
+<style>
+/* Insight cards: every banner is exactly 300:110 so images fit with no cropping at any card width */
+.insights-grid .insight-card .ic-banner{height:auto;aspect-ratio:300/110;position:relative;overflow:hidden;padding:0}
+.insights-grid .insight-card .ic-banner>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+/* 3-column layouts: centre the 4th card instead of leaving it stranded on the left */
+@media (min-width:900px){.insights-grid .insight-card:nth-child(4):last-child{grid-column:2}}
+</style>
 </head>
 <body>
 <nav>
@@ -571,14 +578,24 @@
     <div class="wrap">
       <div class="fade" style="text-align:center"><div class="s-label">Knowledge & Insights</div><h2 class="s-title" style="text-align:center">Blogs & Insights</h2><p class="s-sub" style="text-align:center;margin:0 auto">Expert commentary, tax updates, and practical business advice from the CFA team.</p></div>
       <div class="insights-grid" style="margin-top:3.5rem">
-        <div class="insight-card fade" onclick="show('blog-mileage')">
+        <div class="insight-card fade" onclick="window.location='/blog/autumn-budget-2026'">
+          <div class="ic-banner"><img src="/assets/img/autumn-budget-2026-card.webp" width="900" height="330" alt="Autumn Budget 2026: what does it mean for business owners?" loading="lazy"/></div>
+          <div class="ic-body">
+            <div class="ic-cat">Budget &amp; Tax Updates</div>
+            <h3>Autumn Budget 2026: What It Means for Business Owners, Landlords and Individuals</h3>
+            <p>BADR halved to £500,000, a new Founders' Relief, a £3,000 Trading Allowance and higher tax on property and savings income. Here's what changed and how to plan before April 2027.</p>
+            <span class="ic-meta">October 2026 &middot; 9 min read</span>
+            <a class="ic-link" href="/blog/autumn-budget-2026">Read article &rarr;</a>
+          </div>
+        </div>
+        <div class="insight-card fade" onclick="window.location='/blog/hmrc-mileage-rate-increase-2026'">
           <div class="ic-banner photo-mini"></div>
           <div class="ic-body">
             <div class="ic-cat">Tax & HMRC</div>
             <h3>HMRC Raises Mileage Rate to 55p: What Employers and Sole Traders Should Know</h3>
             <p>HMRC has increased the Approved Mileage Allowance Payment to 55p per mile for the first time in 15 years. Here's what UK employers, employees and sole traders need to do.</p>
             <span class="ic-meta">June 2026 &middot; 5 min read</span>
-            <span class="ic-link">Read article &rarr;</span>
+            <a class="ic-link" href="/blog/hmrc-mileage-rate-increase-2026">Read article &rarr;</a>
           </div>
         </div>
         <div class="insight-card fade" onclick="window.location='/blog/summer-savings-vat-relief-2026'">
@@ -588,24 +605,22 @@
             <h3>Great British Summer Savings 2026: What the New VAT Relief Means for Your Business</h3>
             <p>From 25 June, VAT drops to 5% on qualifying children's meals and family attraction tickets. Here's what hospitality and entertainment businesses need to do before the deadline.</p>
             <span class="ic-meta">June 2026 &middot; 5 min read</span>
-            <span class="ic-link">Read article &rarr;</span>
+            <a class="ic-link" href="/blog/summer-savings-vat-relief-2026">Read article &rarr;</a>
           </div>
         </div>
         <div class="insight-card fade" onclick="window.location='/blog/making-tax-digital-income-tax-2026'">
-          <div class="ic-banner" style="background:linear-gradient(135deg,#04103d,#13245c);display:flex;align-items:center;justify-content:center">
-            <span style="font-family:'Inter',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:.05em">MTD 2026</span>
-          </div>
+          <div class="ic-banner"><img src="/assets/img/mtd-income-tax-2026-card.webp" width="900" height="330" alt="Making Tax Digital for Income Tax: quarterly updates, 2026" loading="lazy"/></div>
           <div class="ic-body">
             <div class="ic-cat">Tax &amp; HMRC</div>
             <h3>Making Tax Digital for Income Tax: What Manchester Sole Traders and Landlords Need to Know</h3>
             <p>From April 2026, sole traders and landlords with income over £50,000 must comply with MTD for Income Tax.</p>
             <span class="ic-meta">June 2026 &middot; 7 min read</span>
-            <span class="ic-link">Read article &rarr;</span>
+            <a class="ic-link" href="/blog/making-tax-digital-income-tax-2026">Read article &rarr;</a>
           </div>
         </div>
       </div>
       <div class="fade" style="text-align:center;margin-top:2.5rem">
-        <button class="btn-red" onclick="show('insights')">View all insights</button>
+        <a href="/insights" class="btn-red" style="display:inline-block;text-decoration:none">View all insights</a>
       </div>
     </div>
   </section>
