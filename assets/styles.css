@@ -695,3 +695,9 @@ footer{background:#050b22;padding:4rem 0 2rem}
   .hero-media{display:none}
   .hero-inner{max-width:680px}
 }
+
+/* Menu fit: keep every top-level link on one line (added with the Switch Accountant link) */
+.nav-inner{max-width:1320px;padding:0 1.5rem}
+.nav-links{gap:1.2rem}
+.nav-links>a,.nav-links>.nav-dd>a{white-space:nowrap}
+@media(max-width:1180px){.nav-links{display:none}.hamburger{display:flex}}

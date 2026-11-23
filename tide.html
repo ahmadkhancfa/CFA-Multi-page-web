@@ -235,7 +235,7 @@ footer{background:#050b22;padding:4rem 0 2rem}
 </head>
 <body>
 
-<nav id="mainNav" class="scrolled">
+<!-- include:nav scrolled --><nav id="mainNav" class="scrolled">
   <div class="nav-inner">
     <a href="/" class="brand-lockup" style="cursor:pointer;display:inline-flex;align-items:center;text-decoration:none">
       <div class="nav-logo-chip">
@@ -315,8 +315,8 @@ footer{background:#050b22;padding:4rem 0 2rem}
       <span></span><span></span><span></span>
     </button>
   </div>
-</nav>
-<div class="mobile-nav" id="mobileNav">
+</nav><!-- /include:nav -->
+<!-- include:mobile-nav --><div class="mobile-nav" id="mobileNav">
   <a href="/">Home</a>
   <div class="mob-section">
     <button class="mob-section-toggle" onclick="toggleMobileSection(this)">Services</button>
@@ -377,7 +377,7 @@ footer{background:#050b22;padding:4rem 0 2rem}
       <a href="/budget-planner">Monthly Budget Dashboard</a>
     </div>
   </div>
-</div>
+</div><!-- /include:mobile-nav -->
 
 <script>document.getElementById('mainNav').classList.add('scrolled');</script>
 <!-- HERO -->
@@ -566,7 +566,7 @@ footer{background:#050b22;padding:4rem 0 2rem}
 
 </main>
 
-<footer>
+<!-- include:footer --><footer>
   <div class="wrap">
     <div class="footer-grid">
       <div class="f-brand"><p>Modern, tech-forward accounting and advisory, proud to partner with Tide for business accounts and company formation across the North West.</p></div>
@@ -587,7 +587,7 @@ footer{background:#050b22;padding:4rem 0 2rem}
       <p><strong>Referral partner disclaimer:</strong> CFA Accountants is a registered referral partner for Tide (Tide Platform Ltd). When you open an account through our referral links we may receive a commission. Subject to applicable eligibility checks and verifications.</p>
     </div>
   </div>
-</footer>
+</footer><!-- /include:footer -->
 
 <div class="cfa-chat" id="cfaChat" role="dialog" aria-label="CFA assistant">
   <div class="cfa-chat-head">
