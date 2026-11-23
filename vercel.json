@@ -144,6 +144,10 @@
     {
       "source": "/blog/autumn-budget-2026",
       "destination": "/blog/autumn-budget-2026.html"
+    },
+    {
+      "source": "/switch-accountant",
+      "destination": "/switch-accountant.html"
     }
   ]
 }
