@@ -28,7 +28,7 @@ window.addEventListener('load',function(){try{if(location.hash){var el=document.
   function fit(){var vh=window.innerHeight||800,need=paper.offsetHeight+14+112-12;
     m.style.setProperty('--sc',Math.min(1,(vh-128-vh*0.04)/need).toFixed(3));}
   function upd(){tick=false;var r=t.getBoundingClientRect(),vh=window.innerHeight||800,span=r.height-vh,raw=span>0?(-r.top)/span:1,p=Math.max(0,Math.min(1,raw/0.9));
-    t.style.setProperty('--p',p.toFixed(3));t.classList.toggle('printing',p>0&&p<1);}
+    t.style.setProperty('--p',p.toFixed(3));var d=Math.max(0,Math.min(r.top,vh*0.9));t.style.setProperty('--ey',(-d).toFixed(0)+'px');t.style.setProperty('--eo',Math.max(0,Math.min(1,1-(d-vh*0.05)/(vh*0.3))).toFixed(2));t.classList.toggle('printing',p>0&&p<1);}
   t.classList.add('is-live');fit();
   window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});
   window.addEventListener('resize',function(){fit();upd();});upd();

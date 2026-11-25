@@ -763,3 +763,5 @@ html.fx-summer::before{content:"";position:fixed;inset:0;pointer-events:none;z-i
 .fx-pile-nav{position:fixed;left:0;top:0;z-index:1001}
 .fx-w{position:static}
 html:not(.fx-on) .fx-pile{display:none}
+
+.print-track.is-live .print-stage{transform:translateY(var(--ey,0px));opacity:var(--eo,1)}

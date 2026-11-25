@@ -34,7 +34,7 @@
 
     function count() {
       var a = W * H, s = W < 700 ? 0.6 : 1;
-      if (theme === 'winter') return Math.round(clamp(a / 70000, 9, 18) * s);
+      if (theme === 'winter') return Math.round(clamp(a / 45000, 14, 28) * s);
       if (theme === 'summer') return Math.round(clamp(a / 38000, 14, 34) * s);
       if (theme === 'spring') return Math.round(clamp(a / 50000, 10, 26) * s);
       return Math.round(clamp(a / 60000, 8, 22) * s);
@@ -44,7 +44,7 @@
 
     function make(initial) {
       var p = { x: rnd(0, W), y: initial ? rnd(-H, H) : rnd(-40, -10), ph: rnd(0, 6.28), a: rnd(0.4, 1.2), rot: rnd(0, 6.28), vr: rnd(-0.03, 0.03) };
-      if (theme === 'winter') { p.r = rnd(1.9, 3.9); p.k = (Math.random() * 3) | 0; p.vr = rnd(-0.012, 0.012); p.vy = 0.16 + p.r * 0.055; p.amp = rnd(0.12, 0.4); }
+      if (theme === 'winter') { p.k = Math.random() < 0.7 ? -1 : (Math.random() < 0.5 ? 1 : 2); p.r = p.k < 0 ? rnd(0.7, 1.7) : rnd(2.2, 3.2); p.al2 = p.k < 0 ? rnd(0.35, 0.7) : rnd(0.55, 0.8); p.vr = rnd(-0.012, 0.012); p.vy = 0.15 + p.r * 0.05; p.amp = rnd(0.12, 0.4); }
       else if (theme === 'summer') { p.y = initial ? rnd(0, H) : H + 10; p.r = rnd(1, 2.6); p.vy = -rnd(0.1, 0.42); p.amp = rnd(0.2, 0.6); p.col = POLLEN[(Math.random() * 4) | 0]; p.al = rnd(0.45, 0.9); }
       else if (theme === 'spring') { p.r = rnd(3.5, 7); p.vy = rnd(0.35, 0.9); p.amp = rnd(0.5, 1.2); p.col = PETAL[(Math.random() * 4) | 0]; }
       else { p.r = rnd(6, 12); p.vy = rnd(0.55, 1.25); p.amp = rnd(0.6, 1.4); p.col = (theme === 'halloween' ? LEAF_H : LEAF)[(Math.random() * 5) | 0]; }
@@ -98,7 +98,7 @@
       for (i = 0; i < parts.length; i++) {
         p = parts[i]; p.ph += 0.012 * dt * p.a; p.x += Math.sin(p.ph) * p.amp * dt; p.y += p.vy * dt; p.rot += p.vr * dt;
         if (p.y > H + 20 || p.y < -30 || p.x < -30 || p.x > W + 30) { if (p.x < -30) p.x = W + 20; else if (p.x > W + 30) p.x = -20; else { parts[i] = p = make(false); if (theme === 'summer') p.y = H + 10; } }
-        if (theme === 'winter') { ctx.globalAlpha = 0.78 * clamp((H - p.y) / (H * 0.14), 0, 1); ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.drawImage(snowSprites[p.k], -p.r * 2, -p.r * 2, p.r * 4, p.r * 4); ctx.restore(); }
+        if (theme === 'winter') { ctx.globalAlpha = p.al2 * clamp((H - p.y) / (H * 0.14), 0, 1); if (p.k < 0) { ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.28); ctx.fill(); } else { ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.drawImage(snowSprites[p.k], -p.r * 2, -p.r * 2, p.r * 4, p.r * 4); ctx.restore(); } }
         else if (theme === 'summer') { ctx.globalAlpha = p.al; ctx.fillStyle = p.col; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.28); ctx.fill(); }
         else if (theme === 'spring') { ctx.globalAlpha = 0.95; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.fillStyle = p.col; ctx.strokeStyle = 'rgba(214,120,150,.45)'; ctx.lineWidth = 0.7; ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r * 0.55, 0, 0, 6.28); ctx.fill(); ctx.stroke(); ctx.restore(); }
         else { ctx.globalAlpha = 0.95; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); leaf(p.r, p.col); ctx.restore(); }
@@ -139,21 +139,19 @@
     function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
     function rr(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
     function drift(g, x0, x1, base, Hm, o) {
-      Hm *= lvl; if (Hm < 1 || x1 - x0 < 6) return;
-      var R = rng(o.seed), p1 = R() * 6.28, p2 = R() * 6.28, p3 = R() * 6.28, f1 = 0.8 + R() * 1.1, f2 = 2.2 + R() * 2, f3 = 5 + R() * 4, len = x1 - x0, pts = [], x, t, h, edge, minY = base;
-      for (x = x0; x <= x1 + 0.1; x += 2) {
-        t = (x - x0) / len; h = 0.58 + 0.2 * Math.sin(t * 6.28 * f1 + p1) + 0.14 * Math.sin(t * 6.28 * f2 + p2) + 0.08 * Math.sin(t * 6.28 * f3 + p3);
-        edge = o.bank ? 1 : Math.pow(Math.sin(Math.PI * t), 0.55); var y = base - Hm * h * edge; pts.push([x, y]); if (y < minY) minY = y;
-      }
-      var bot = o.bank ? base + 3 : base + 3;
-      g.save(); g.beginPath(); g.moveTo(x0, bot); pts.forEach(function (q) { g.lineTo(q[0], q[1]); }); g.lineTo(x1, bot); g.closePath();
-      var gr = g.createLinearGradient(0, minY, 0, base + 3); gr.addColorStop(0, o.hi || '#ffffff'); gr.addColorStop(0.5, o.mid || '#f5f9ff'); gr.addColorStop(1, o.lo || '#c8daf3');
-      g.fillStyle = gr; g.globalAlpha = o.alpha || 1; g.shadowColor = 'rgba(10,25,60,.5)'; g.shadowBlur = 8; g.shadowOffsetY = 2; g.fill();
-      g.shadowColor = 'transparent'; g.shadowBlur = 0; g.shadowOffsetY = 0; g.clip();
-      g.strokeStyle = 'rgba(130,170,225,.4)'; g.lineWidth = 1.2; g.beginPath(); pts.forEach(function (q, i) { g[i ? 'lineTo' : 'moveTo'](q[0], q[1] + Hm * 0.28); }); g.stroke();
+      Hm *= lvl; if (Hm < 2 || x1 - x0 < 8) return;
+      var R = rng(o.seed), p1 = R() * 6.28, p2 = R() * 6.28, f1 = 0.7 + R() * 1.0, f2 = 2 + R() * 2, len = x1 - x0, rad = clamp(Hm * 0.3, 3.5, 11), pts = [], x, t, h, edge;
+      for (x = x0; x <= x1 + 0.1; x += 2) { t = (x - x0) / len; h = 0.62 + 0.24 * Math.sin(t * 6.28 * f1 + p1) + 0.14 * Math.sin(t * 6.28 * f2 + p2); edge = o.bank ? 1 : Math.pow(Math.sin(Math.PI * t), 0.5); pts.push([x, base - Hm * h * edge + rad * 0.6]); }
+      var minY = base; pts.forEach(function (q) { if (q[1] - rad < minY) minY = q[1] - rad; });
+      g.save(); g.globalAlpha = o.alpha || 1;
+      g.shadowColor = 'rgba(70,105,165,.55)'; g.shadowBlur = 5; g.shadowOffsetY = 2.5;
+      g.fillStyle = '#fff'; g.beginPath(); g.moveTo(x0, base + 3);
+      pts.forEach(function (q) { g.lineTo(q[0], q[1]); }); g.lineTo(x1, base + 3); g.closePath(); g.fill();
+      var j = 0; g.beginPath(); for (x = x0 + rad * 0.5; x < x1 - rad * 0.5; x += rad * (0.9 + R() * 0.9)) { var idx = clamp(Math.round((x - x0) / 2), 0, pts.length - 1), rr2 = rad * (0.75 + R() * 0.5); g.moveTo(x + rr2, pts[idx][1]); g.arc(x, pts[idx][1], rr2, 0, 6.28); j++; } g.fill();
+      g.shadowColor = 'transparent'; g.shadowBlur = 0; g.shadowOffsetY = 0;
+      var gr = g.createLinearGradient(0, minY, 0, base + 3); gr.addColorStop(0, 'rgba(255,255,255,0)'); gr.addColorStop(0.6, 'rgba(225,236,252,.0)'); gr.addColorStop(1, o.lo || 'rgba(170,196,236,.75)');
+      g.globalCompositeOperation = 'source-atop'; g.fillStyle = gr; g.fillRect(x0 - 2, minY - 2, len + 4, base + 8 - minY);
       g.restore();
-      g.save(); g.globalAlpha = (o.alpha || 1); g.strokeStyle = 'rgba(255,255,255,.95)'; g.lineWidth = 1.5; g.lineJoin = 'round'; g.beginPath(); pts.forEach(function (q, i) { g[i ? 'lineTo' : 'moveTo'](q[0], q[1]); }); g.stroke(); g.restore();
-      if (!o.nosparkle) { var n = Math.max(1, Math.round(len / 90)); for (var i = 0; i < n; i++) { var q = pts[(R() * pts.length) | 0], sz = 1 + R() * 1.6; g.fillStyle = 'rgba(255,255,255,.95)'; g.beginPath(); g.moveTo(q[0], q[1] - sz * 2); g.lineTo(q[0] + sz * 0.4, q[1] - sz * 0.4); g.lineTo(q[0] + sz * 2, q[1]); g.lineTo(q[0] + sz * 0.4, q[1] + sz * 0.4); g.lineTo(q[0], q[1] + sz * 2); g.lineTo(q[0] - sz * 0.4, q[1] + sz * 0.4); g.lineTo(q[0] - sz * 2, q[1]); g.lineTo(q[0] - sz * 0.4, q[1] - sz * 0.4); g.closePath(); g.fill(); } }
     }
     function blanket(g, x, y, w, h, rad, depth) {
       depth *= (0.6 + 0.4 * lvl); g.save(); rr(g, x, y, w, h, rad); g.clip();
