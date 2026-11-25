@@ -25,7 +25,7 @@
    ============================================================ */
 window.CFA_EFFECTS = {
   enabled: true,
-  force: "summer",
+  force: "spring",
   visitorSwitch: false,
   offPages: ['/privacy', '/pricing', '/contact', '/take-home-pay-calculator', '/salary-vs-dividend-calculator', '/budget-planner']
 };
