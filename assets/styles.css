@@ -757,3 +757,9 @@ html.fx-summer::before{content:"";position:fixed;inset:0;pointer-events:none;z-i
 
 @media(max-width:700px){.printer .p-led{right:auto;left:96px;bottom:26px}}
 .print-sec>.wrap{display:contents}
+
+.fx-canvas.fx-in-hero{position:absolute;z-index:5}
+.fx-pile{position:absolute;left:0;top:0;pointer-events:none;z-index:6}
+.fx-pile-nav{position:fixed;left:0;top:0;z-index:1001}
+.fx-w{position:static}
+html:not(.fx-on) .fx-pile{display:none}
