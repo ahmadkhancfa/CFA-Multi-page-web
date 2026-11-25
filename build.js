@@ -55,6 +55,8 @@ function walk(dir, rel) {
       }
       return out;
     });
+    // seasonal effects scripts on every page (except the standalone proposal)
+    if (r !== 'proposal.html' && !/seasonal\.js/.test(html)) html = html.replace('</body>', '<script src="/assets/effects-config.js" defer></script>\n<script src="/assets/seasonal.js" defer></script>\n</body>');
     fs.writeFileSync(dst, html);
     pages++;
   }
