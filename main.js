@@ -1,0 +1,35 @@
+// CFA Accountants — shared multi-page script
+var PAGE_URLS={home:'/',services:'/services',accounting:'/accounting',advisory:'/advisory',tax:'/tax',insights:'/insights','blog-mileage':'/blog/hmrc-mileage-rate-increase-2026',faqs:'/faqs',about:'/about',contact:'/contact',privacy:'/privacy'};
+function show(id){var u=PAGE_URLS[id];if(u)location.href=u;}
+var svcPageMap={'svc-bookkeeping':'accounting','svc-payroll':'accounting','svc-annual':'accounting','svc-vat':'accounting','svc-fd':'accounting','svc-mgmt':'advisory','svc-tax':'advisory','svc-biz':'advisory','svc-corp':'advisory','tax-business':'tax','tax-personal':'tax','tax-compliance':'tax'};
+function goService(id){var p=svcPageMap[id]||'accounting';location.href=PAGE_URLS[p]+'#'+id;}
+function onNavScroll(){var n=document.querySelector('nav');if(!n)return;if(window.scrollY>40)n.classList.add('scrolled');else n.classList.remove('scrolled');}
+window.addEventListener('scroll',onNavScroll,{passive:true});
+function toggleTax(btn){var c=btn.closest('.tax-card');if(c)c.classList.toggle('open');}
+function toggleFaq(btn){var i=btn.closest('.faq-item');if(i)i.classList.toggle('open');}
+function toggleNav(){var m=document.getElementById('mobileNav');if(m)m.classList.toggle('open');}
+function toggleMobileSection(el){var parent=el.parentElement;parent.classList.toggle('mob-open');}
+function closeMobile(){var m=document.getElementById('mobileNav');if(m)m.classList.remove('open');}
+function cvTab(name){document.querySelectorAll('.cv-tab').forEach(function(b){b.classList.remove('active');});document.querySelectorAll('.cv-tab').forEach(function(b){if(b.getAttribute('onclick')==="cvTab('"+name+"')")b.classList.add('active');});document.querySelectorAll('.cv-panel').forEach(function(p){p.classList.remove('cv-active');});var t=document.getElementById('cvPanel'+name.charAt(0).toUpperCase()+name.slice(1));if(t)t.classList.add('cv-active');}
+function animateFades(){var obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:0.08});document.querySelectorAll('.fade:not(.in)').forEach(function(el){obs.observe(el);});}
+function submitForm(btn){btn.textContent='Message Sent! \u2713';btn.style.background='#27ae60';setTimeout(function(){btn.textContent='Send Message';btn.style.background='';},3500);}
+function checkAdminHash(){var btn=document.getElementById('galleryAdminBtn');if(!btn)return;if(window.location.hash==='#gallery-admin'){btn.style.display='flex';}else{btn.style.display='none';var p=document.getElementById('galleryAdminPanel');if(p)p.style.display='none';}}
+function handleServiceHash(){var id=location.hash.replace('#','');if(!id)return;var el=document.getElementById(id);if(!el)return;el.classList.add('in');if(el.classList.contains('tax-card'))el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('flash');setTimeout(function(){el.classList.remove('flash');},1900);}
+document.addEventListener('DOMContentLoaded',function(){onNavScroll();setTimeout(animateFades,150);if(document.querySelector('.cv-tab'))cvTab('values');checkAdminHash();window.addEventListener('hashchange',checkAdminHash);setTimeout(handleServiceHash,400);});
+
+/* open a targeted <details> card when arriving via #hash */
+window.addEventListener('load',function(){try{if(location.hash){var el=document.querySelector('details'+location.hash);if(el){el.open=true;el.scrollIntoView({block:'center'});}}}catch(e){}});
+
+/* Receipt printer: the printer stays fixed on screen while the receipt rises out of it as you scroll (static if motion is reduced) */
+(function(){try{
+  var t=document.querySelector('[data-print]');if(!t)return;
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var m=t.querySelector('.print-machine'),paper=t.querySelector('.receipt'),tick=false;
+  function fit(){var vh=window.innerHeight||800,need=paper.offsetHeight+14+112-12;
+    m.style.setProperty('--sc',Math.min(1,(vh-128-vh*0.04)/need).toFixed(3));}
+  function upd(){tick=false;var r=t.getBoundingClientRect(),vh=window.innerHeight||800,span=r.height-vh,raw=span>0?(-r.top)/span:1,p=Math.max(0,Math.min(1,raw/0.8));
+    t.style.setProperty('--p',p.toFixed(3));t.classList.toggle('printing',p>0&&p<1);}
+  t.classList.add('is-live');fit();
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});
+  window.addEventListener('resize',function(){fit();upd();});upd();
+}catch(e){}})();
