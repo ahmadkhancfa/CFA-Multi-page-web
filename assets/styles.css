@@ -712,7 +712,7 @@ footer{background:#050b22;padding:4rem 0 2rem}
 .paper-window{position:relative;z-index:1;width:calc(100% - 76px);margin:0 auto -12px;overflow:hidden;padding-top:14px}
 .receipt{position:relative;background:#fff;color:#000;padding:28px 24px 30px;font-family:"Geist Mono","Geist Mono Fallback",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;line-height:21px;font-weight:400;text-align:center;box-shadow:0 0 0 1px rgba(4,16,61,.08),0 6px 18px rgba(4,16,61,.16)}
 .receipt::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px;background:linear-gradient(315deg,#fff 33.4%,transparent 33.4%) 0 0/18px 12px,linear-gradient(45deg,#fff 33.4%,transparent 33.4%) 0 0/18px 12px}
-.print-track.is-live{height:330vh;margin-top:calc(136px - 96vh)}
+.print-track.is-live{height:190vh;margin-top:calc(136px - 96vh)}
 .print-track.is-live{pointer-events:none}.print-track.is-live .receipt,.print-track.is-live .printer{pointer-events:auto}
 .print-track.is-live .print-stage{position:sticky;top:0;height:100vh;height:100svh;box-sizing:border-box;padding-top:128px;padding-bottom:4vh}
 .print-track.is-live .receipt{transform:translateY(calc(100% * (1 - var(--p))))}
@@ -764,4 +764,3 @@ html.fx-summer::before{content:"";position:fixed;inset:0;pointer-events:none;z-i
 .fx-w{position:static}
 html:not(.fx-on) .fx-pile{display:none}
 
-.print-track.is-live .print-stage{transform:translateY(var(--ey,0px));opacity:var(--eo,1)}
