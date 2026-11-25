@@ -19,3 +19,17 @@ document.addEventListener('DOMContentLoaded',function(){onNavScroll();setTimeout
 
 /* open a targeted <details> card when arriving via #hash */
 window.addEventListener('load',function(){try{if(location.hash){var el=document.querySelector('details'+location.hash);if(el){el.open=true;el.scrollIntoView({block:'center'});}}}catch(e){}});
+
+/* Receipt printer: the printer stays fixed on screen while the receipt rises out of it as you scroll (static if motion is reduced) */
+(function(){try{
+  var t=document.querySelector('[data-print]');if(!t)return;
+  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var m=t.querySelector('.print-machine'),paper=t.querySelector('.receipt'),tick=false;
+  function fit(){var vh=window.innerHeight||800,need=paper.offsetHeight+14+112-12;
+    m.style.setProperty('--sc',Math.min(1,(vh-84-vh*0.04)/need).toFixed(3));}
+  function upd(){tick=false;var r=t.getBoundingClientRect(),vh=window.innerHeight||800,span=r.height-vh,raw=span>0?(-r.top)/span:1,p=Math.max(0,Math.min(1,raw/0.8));
+    t.style.setProperty('--p',p.toFixed(3));t.classList.toggle('printing',p>0&&p<1);}
+  t.classList.add('is-live');fit();
+  window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});
+  window.addEventListener('resize',function(){fit();upd();});upd();
+}catch(e){}})();

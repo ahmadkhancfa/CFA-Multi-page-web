@@ -1,3 +1,4 @@
+@font-face{font-family:"Geist Mono";src:url("/assets/fonts/GeistMono-Variable.woff2") format("woff2");font-weight:100 900;font-display:swap}
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --navy:#04103d;--navy-mid:#070d2a;--navy-light:#13245c;
@@ -701,3 +702,43 @@ footer{background:#050b22;padding:4rem 0 2rem}
 .nav-links{gap:1.2rem}
 .nav-links>a,.nav-links>.nav-dd>a{white-space:nowrap}
 @media(max-width:1180px){.nav-links{display:none}.hamburger{display:flex}}
+
+/* Receipt printer section: the printer stays fixed on screen and the receipt rises out of its top slot as you scroll */
+.print-sec{background:var(--off-white);padding:3rem 0 0;overflow:visible}
+.print-title{text-align:center;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);margin:0}
+.print-track{--p:1;position:relative;margin-top:2rem}
+.print-stage{display:flex;align-items:flex-end;justify-content:center;padding:0 16px 3rem}
+.print-machine{width:100%;max-width:460px;display:flex;flex-direction:column;transform:scale(var(--sc,1));transform-origin:50% 100%;text-align:left}
+.paper-window{position:relative;z-index:1;width:calc(100% - 76px);margin:0 auto -12px;overflow:hidden;padding-top:14px}
+.receipt{position:relative;background:#fff;color:#000;padding:28px 24px 30px;font-family:"Geist Mono","Geist Mono Fallback",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;line-height:21px;font-weight:400;text-align:center;box-shadow:0 0 0 1px rgba(4,16,61,.08),0 6px 18px rgba(4,16,61,.16)}
+.receipt::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px;background:linear-gradient(315deg,#fff 33.4%,transparent 33.4%) 0 0/18px 12px,linear-gradient(45deg,#fff 33.4%,transparent 33.4%) 0 0/18px 12px}
+.print-track.is-live{height:190vh;margin-top:calc(136px - 96vh)}
+.print-track.is-live{pointer-events:none}.print-track.is-live .receipt,.print-track.is-live .printer{pointer-events:auto}
+.print-track.is-live .print-stage{position:sticky;top:0;height:100vh;height:100svh;box-sizing:border-box;padding-top:84px;padding-bottom:4vh}
+.print-track.is-live .receipt{transform:translateY(calc(100% * (1 - var(--p))))}
+.printer{position:relative;z-index:3;height:112px;border-radius:22px;background:linear-gradient(180deg,#eef1f8 0%,#c7cfe0 100%);border:1px solid rgba(4,16,61,.14);box-shadow:inset 0 1px 0 #fff,0 18px 36px rgba(4,16,61,.22)}
+.printer .p-slot{position:absolute;left:34px;right:34px;top:16px;height:12px;border-radius:8px;background:linear-gradient(#02050f,#0a1332);box-shadow:inset 0 3px 0 rgba(0,0,0,.35)}
+.printer .p-brand{position:absolute;left:34px;bottom:24px;font-weight:800;letter-spacing:.14em;font-size:1.05rem;color:#04103d}
+.printer .p-led{position:absolute;right:34px;bottom:28px;width:12px;height:12px;border-radius:50%;background:#8a93ad;box-shadow:0 0 0 3px rgba(4,16,61,.12)}
+.print-track.printing .p-led{background:#e74c3c;box-shadow:0 0 10px #e74c3c;animation:ledblink .7s infinite alternate}
+@keyframes ledblink{from{opacity:1}to{opacity:.35}}
+.rc-qr{display:block;width:140px;height:140px;margin:0 auto 14px;background:#fff}
+.rc-head{font-weight:800;font-size:15px;letter-spacing:.08em}
+.rc-sub{font-size:11.5px;letter-spacing:.1em;color:#000}
+.receipt hr{border:0;border-top:1.5px dashed #000;margin:14px 0}
+.rc-title{font-weight:700;letter-spacing:.12em;font-size:12.5px}
+.rc-list{list-style:none;margin:0;padding:0;text-align:left}
+.rc-list li,.rc-total{display:flex;gap:7px;align-items:baseline}
+.rc-dots{flex:1;overflow:hidden;white-space:nowrap;color:#000;font-style:normal;height:22px}
+.rc-dots::after{content:"......................................................................"}
+.rc-list b{font-weight:700;letter-spacing:.04em;font-size:12px}
+.rc-dbl{border-top:3px double #000;margin:14px 0}
+.rc-total{font-size:15px;font-weight:700;letter-spacing:.04em;text-align:left}
+.rc-note{font-size:11.5px;color:#000;margin-top:4px}
+.rc-thanks{font-size:11.5px;letter-spacing:.12em;color:#000}
+.rc-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}
+.rc-btns a{display:grid;place-items:center;height:44px;border:2px solid #000;background:#fff;color:#000;text-decoration:none;font-weight:600;font-size:12px;letter-spacing:.1em}
+.rc-btns a+a{background:#000;color:#fff}
+.rc-btns a:hover{background:#000;color:#fff}.rc-btns a+a:hover{background:#fff;color:#000}
+@media(max-width:520px){.paper-window{width:calc(100% - 44px)}.receipt{font-size:12px;padding:24px 16px 26px}.rc-qr{width:124px;height:124px}}
+@media(prefers-reduced-motion:reduce){.print-track.is-live{height:auto;margin-top:2rem}.print-track.is-live .print-stage{position:static;height:auto}.print-track.is-live .receipt{transform:none}.print-track.printing .p-led{animation:none}}

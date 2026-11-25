@@ -9,7 +9,8 @@ const OUT = path.join(ROOT, 'dist');
 const SKIP = new Set(['dist', 'partials', 'node_modules', '.git', 'build.js', 'package.json', 'package-lock.json', 'vercel.json', 'README.md', 'CFA_PROJECT_HANDOVER.md', '.DS_Store']);
 
 const partial = (n) => fs.readFileSync(path.join(ROOT, 'partials', n + '.html'), 'utf8').trim();
-const PARTS = { nav: partial('nav'), 'mobile-nav': partial('mobile-nav'), footer: partial('footer') };
+const PARTS = {};
+for (const f of fs.readdirSync(path.join(ROOT, 'partials'))) if (f.endsWith('.html')) PARTS[f.slice(0, -5)] = partial(f.slice(0, -5));
 
 // Which menu item is highlighted for which page.
 const SERVICE_PAGES = new Set(['services', 'accounting', 'advisory', 'annual-accounts', 'bookkeeping', 'company-secretarial', 'companies-house-id-verification', 'corporation-tax', 'mtd-vat', 'payroll', 'self-assessment', 'tax']);
@@ -45,8 +46,9 @@ function walk(dir, rel) {
     fs.mkdirSync(path.dirname(dst), { recursive: true });
     if (!name.endsWith('.html')) { fs.copyFileSync(src, dst); copied++; continue; }
     let html = fs.readFileSync(src, 'utf8');
-    html = html.replace(/<!-- include:(nav|mobile-nav|footer)([^>]*?)-->[\s\S]*?<!-- \/include:\1 -->/g, (m, key, flags) => {
+    html = html.replace(/<!-- include:([a-z0-9-]+)([^>]*?)-->[\s\S]*?<!-- \/include:\1 -->/g, (m, key, flags) => {
       let out = PARTS[key];
+      if (out === undefined) throw new Error('Missing partial partials/' + key + '.html used in ' + r);
       if (key === 'nav') {
         if (/scrolled/.test(flags)) out = out.replace(/^<nav>/, '<nav id="mainNav" class="scrolled">');
         out = markActive(out, activeId(r));
