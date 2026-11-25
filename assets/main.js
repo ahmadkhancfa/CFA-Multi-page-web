@@ -26,8 +26,8 @@ window.addEventListener('load',function(){try{if(location.hash){var el=document.
   if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   var m=t.querySelector('.print-machine'),paper=t.querySelector('.receipt'),tick=false;
   function fit(){var vh=window.innerHeight||800,need=paper.offsetHeight+14+112-12;
-    m.style.setProperty('--sc',Math.min(1,(vh-84-vh*0.04)/need).toFixed(3));}
-  function upd(){tick=false;var r=t.getBoundingClientRect(),vh=window.innerHeight||800,span=r.height-vh,raw=span>0?(-r.top)/span:1,p=Math.max(0,Math.min(1,raw/0.8));
+    m.style.setProperty('--sc',Math.min(1,(vh-128-vh*0.04)/need).toFixed(3));}
+  function upd(){tick=false;var r=t.getBoundingClientRect(),vh=window.innerHeight||800,span=r.height-vh,raw=span>0?(-r.top)/span:1,p=Math.max(0,Math.min(1,raw/0.9));
     t.style.setProperty('--p',p.toFixed(3));t.classList.toggle('printing',p>0&&p<1);}
   t.classList.add('is-live');fit();
   window.addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd);}},{passive:true});

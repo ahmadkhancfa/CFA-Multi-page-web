@@ -705,23 +705,23 @@ footer{background:#050b22;padding:4rem 0 2rem}
 
 /* Receipt printer section: the printer stays fixed on screen and the receipt rises out of its top slot as you scroll */
 .print-sec{background:var(--off-white);padding:3rem 0 0;overflow:visible}
-.print-title{text-align:center;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);margin:0}
+.print-title{position:sticky;top:72px;z-index:6;background:var(--off-white);padding:.55rem 0 .6rem;text-align:center;font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:800;letter-spacing:-.02em;color:var(--navy);margin:0}
 .print-track{--p:1;position:relative;margin-top:2rem}
 .print-stage{display:flex;align-items:flex-end;justify-content:center;padding:0 16px 3rem}
 .print-machine{width:100%;max-width:460px;display:flex;flex-direction:column;transform:scale(var(--sc,1));transform-origin:50% 100%;text-align:left}
 .paper-window{position:relative;z-index:1;width:calc(100% - 76px);margin:0 auto -12px;overflow:hidden;padding-top:14px}
 .receipt{position:relative;background:#fff;color:#000;padding:28px 24px 30px;font-family:"Geist Mono","Geist Mono Fallback",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12.5px;line-height:21px;font-weight:400;text-align:center;box-shadow:0 0 0 1px rgba(4,16,61,.08),0 6px 18px rgba(4,16,61,.16)}
 .receipt::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px;background:linear-gradient(315deg,#fff 33.4%,transparent 33.4%) 0 0/18px 12px,linear-gradient(45deg,#fff 33.4%,transparent 33.4%) 0 0/18px 12px}
-.print-track.is-live{height:190vh;margin-top:calc(136px - 96vh)}
+.print-track.is-live{height:330vh;margin-top:calc(136px - 96vh)}
 .print-track.is-live{pointer-events:none}.print-track.is-live .receipt,.print-track.is-live .printer{pointer-events:auto}
-.print-track.is-live .print-stage{position:sticky;top:0;height:100vh;height:100svh;box-sizing:border-box;padding-top:84px;padding-bottom:4vh}
+.print-track.is-live .print-stage{position:sticky;top:0;height:100vh;height:100svh;box-sizing:border-box;padding-top:128px;padding-bottom:4vh}
 .print-track.is-live .receipt{transform:translateY(calc(100% * (1 - var(--p))))}
 .printer{position:relative;z-index:3;height:112px;border-radius:22px;background:linear-gradient(180deg,#eef1f8 0%,#c7cfe0 100%);border:1px solid rgba(4,16,61,.14);box-shadow:inset 0 1px 0 #fff,0 18px 36px rgba(4,16,61,.22)}
 .printer .p-slot{position:absolute;left:34px;right:34px;top:16px;height:12px;border-radius:8px;background:linear-gradient(#02050f,#0a1332);box-shadow:inset 0 3px 0 rgba(0,0,0,.35)}
 .printer .p-brand{position:absolute;left:34px;bottom:24px;font-weight:800;letter-spacing:.14em;font-size:1.05rem;color:#04103d}
 .printer .p-led{position:absolute;right:34px;bottom:28px;width:12px;height:12px;border-radius:50%;background:#8a93ad;box-shadow:0 0 0 3px rgba(4,16,61,.12)}
-.print-track.printing .p-led{background:#e74c3c;box-shadow:0 0 10px #e74c3c;animation:ledblink .7s infinite alternate}
-@keyframes ledblink{from{opacity:1}to{opacity:.35}}
+.print-track.is-live .p-led,.print-track.printing .p-led{background:#e74c3c;box-shadow:0 0 10px #e74c3c;animation:ledblink .9s infinite alternate}
+@keyframes ledblink{from{opacity:1}to{opacity:.25}}
 .rc-qr{display:block;width:140px;height:140px;margin:0 auto 14px;background:#fff}
 .rc-head{font-weight:800;font-size:15px;letter-spacing:.08em}
 .rc-sub{font-size:11.5px;letter-spacing:.1em;color:#000}
@@ -742,3 +742,18 @@ footer{background:#050b22;padding:4rem 0 2rem}
 .rc-btns a:hover{background:#000;color:#fff}.rc-btns a+a:hover{background:#fff;color:#000}
 @media(max-width:520px){.paper-window{width:calc(100% - 44px)}.receipt{font-size:12px;padding:24px 16px 26px}.rc-qr{width:124px;height:124px}}
 @media(prefers-reduced-motion:reduce){.print-track.is-live{height:auto;margin-top:2rem}.print-track.is-live .print-stage{position:static;height:auto}.print-track.is-live .receipt{transform:none}.print-track.printing .p-led{animation:none}}
+
+/* Seasonal effects (see assets/seasonal.js and assets/effects-config.js) */
+.fx-canvas{position:fixed;inset:0;pointer-events:none;z-index:500}
+.fx-switch{position:fixed;left:1rem;bottom:1rem;z-index:9990;font:600 12px/1 'Inter',system-ui,sans-serif;letter-spacing:.02em;padding:.6rem .9rem;border-radius:999px;border:1px solid rgba(255,255,255,.4);background:rgba(4,16,61,.8);color:#fff;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 4px 14px rgba(4,16,61,.3)}
+.fx-switch:hover{background:rgba(4,16,61,.95)}
+.fx-switch:focus-visible{outline:2px solid #e74c3c;outline-offset:2px}
+.fx-cap{position:absolute;left:4%;right:4%;top:-9px;height:12px;pointer-events:none;z-index:3;transform:scaleY(var(--fx-lvl,0));transform-origin:50% 100%;transition:transform 2.5s linear;background:radial-gradient(ellipse 30% 100% at var(--fx-a,30%) 100%,#fff 68%,transparent 72%),radial-gradient(ellipse 24% 80% at var(--fx-b,70%) 100%,#fff 68%,transparent 72%),radial-gradient(ellipse 60% 45% at 50% 100%,#fff 68%,transparent 72%);filter:drop-shadow(0 1px 1px rgba(110,140,190,.6))}
+html:not(.fx-on) .fx-cap,html:not(.fx-on) .fx-mound{display:none}
+.fx-w{position:relative}
+.fx-mound{position:absolute;left:var(--fx-l,0);width:var(--fx-wd,.66em);top:.03em;height:.17em;z-index:2;pointer-events:none;transform:scaleY(var(--fx-lvl,0));transform-origin:50% 100%;transition:transform 2.5s linear;background:radial-gradient(ellipse 50% 100% at 50% 100%,#d6e6ff 70%,transparent 74%);filter:drop-shadow(0 -1px 0 #fff) drop-shadow(0 1px 1px rgba(40,70,130,.8))}
+html.fx-summer::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:499;background:radial-gradient(60% 55% at 100% 0%,rgba(255,206,92,.26),transparent 62%)}
+@media(max-width:640px){.fx-switch{bottom:.8rem;left:.8rem;font-size:11px;padding:.5rem .75rem}}
+
+@media(max-width:700px){.printer .p-led{right:auto;left:96px;bottom:26px}}
+.print-sec>.wrap{display:contents}
