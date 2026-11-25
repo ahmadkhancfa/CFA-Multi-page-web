@@ -47,7 +47,7 @@
       if (theme === 'winter') { p.k = Math.random() < 0.7 ? -1 : (Math.random() < 0.5 ? 1 : 2); p.r = p.k < 0 ? rnd(0.7, 1.7) : rnd(2.2, 3.2); p.al2 = p.k < 0 ? rnd(0.35, 0.7) : rnd(0.55, 0.8); p.vr = rnd(-0.012, 0.012); p.vy = 0.15 + p.r * 0.05; p.amp = rnd(0.12, 0.4); }
       else if (theme === 'summer') { p.y = initial ? rnd(0, H) : H + 10; p.r = rnd(1, 2.6); p.vy = -rnd(0.1, 0.42); p.amp = rnd(0.2, 0.6); p.col = POLLEN[(Math.random() * 4) | 0]; p.al = rnd(0.45, 0.9); }
       else if (theme === 'spring') { p.r = rnd(3.5, 7); p.vy = rnd(0.35, 0.9); p.amp = rnd(0.5, 1.2); p.col = PETAL[(Math.random() * 4) | 0]; }
-      else { p.r = rnd(6, 12); p.vy = rnd(0.55, 1.25); p.amp = rnd(0.6, 1.4); p.col = (theme === 'halloween' ? LEAF_H : LEAF)[(Math.random() * 5) | 0]; }
+      else { p.k = (Math.random() * 3) | 0; p.r = rnd(7, 13); p.vy = rnd(0.55, 1.25); p.amp = rnd(0.6, 1.4); p.col = (theme === 'halloween' ? LEAF_H : LEAF)[(Math.random() * 5) | 0]; }
       return p;
     }
     function sprite(kind) {
@@ -70,10 +70,30 @@
       g.shadowBlur = 0; g.fillStyle = 'rgba(255,255,255,.95)'; g.beginPath(); g.arc(0, 0, 5, 0, 6.28); g.fill();
       return c;
     }
-    function leaf(s, col) {
-      ctx.fillStyle = col; ctx.beginPath(); ctx.moveTo(0, -s); ctx.bezierCurveTo(s * 0.95, -s * 0.4, s * 0.8, s * 0.6, 0, s); ctx.bezierCurveTo(-s * 0.8, s * 0.6, -s * 0.95, -s * 0.4, 0, -s); ctx.fill();
-      ctx.strokeStyle = 'rgba(60,20,5,.35)'; ctx.lineWidth = 0.8; ctx.beginPath(); ctx.moveTo(0, -s); ctx.lineTo(0, s); ctx.stroke();
+    function leafG(g, s, col, kind) {
+      var i, t, w, a;
+      g.beginPath();
+      if (kind === 0) { /* maple */
+        var P = [[-180, 0.25], [-140, 0.42], [-112, 0.74], [-84, 0.46], [-56, 0.96], [-28, 0.52], [0, 1.06], [28, 0.52], [56, 0.96], [84, 0.46], [112, 0.74], [140, 0.42], [180, 0.25]];
+        P.forEach(function (q, n) { a = q[0] * Math.PI / 180; var x = s * q[1] * Math.sin(a), y = -s * q[1] * Math.cos(a); g[n ? 'lineTo' : 'moveTo'](x, y); });
+      } else if (kind === 1) { /* oak */
+        for (i = 0; i <= 28; i++) { t = i / 28; w = s * 0.55 * Math.pow(Math.sin(Math.PI * Math.pow(t, 0.9)), 0.8) * (1 + 0.3 * Math.cos(t * 4 * 6.283 + 0.6)); g[i ? 'lineTo' : 'moveTo'](w, -s + t * 2 * s); }
+        for (i = 28; i >= 0; i--) { t = i / 28; w = s * 0.55 * Math.pow(Math.sin(Math.PI * Math.pow(t, 0.9)), 0.8) * (1 + 0.3 * Math.cos(t * 4 * 6.283 + 0.6)); g.lineTo(-w, -s + t * 2 * s); }
+      } else { /* elm / birch with fine teeth */
+        for (i = 0; i <= 30; i++) { t = i / 30; w = s * 0.58 * Math.pow(Math.sin(Math.PI * Math.pow(t, 0.8)), 0.9) * (1 + 0.07 * Math.cos(t * 34)); g[i ? 'lineTo' : 'moveTo'](w, -s + t * 2 * s); }
+        for (i = 30; i >= 0; i--) { t = i / 30; w = s * 0.58 * Math.pow(Math.sin(Math.PI * Math.pow(t, 0.8)), 0.9) * (1 + 0.07 * Math.cos(t * 34)); g.lineTo(-w, -s + t * 2 * s); }
+      }
+      g.closePath(); g.fillStyle = col; g.fill();
+      var gr = g.createLinearGradient(-s, -s, s, s); gr.addColorStop(0, 'rgba(255,225,150,.32)'); gr.addColorStop(0.55, 'rgba(0,0,0,0)'); gr.addColorStop(1, 'rgba(40,10,0,.45)');
+      g.fillStyle = gr; g.fill();
+      g.strokeStyle = 'rgba(50,16,4,.5)'; g.lineWidth = Math.max(0.5, s * 0.07); g.lineCap = 'round';
+      g.beginPath(); g.moveTo(0, kind === 0 ? s * 0.2 : s * 0.95); g.lineTo(0, -s * (kind === 0 ? 0.95 : 0.85));
+      if (kind === 0) { [-56, -28, 28, 56].forEach(function (d) { var ad = d * Math.PI / 180; g.moveTo(0, s * 0.05); g.lineTo(s * 0.7 * Math.sin(ad), -s * 0.7 * Math.cos(ad)); }); }
+      else { for (i = 1; i < 5; i++) { var yy = -s * 0.8 + i * s * 0.36; g.moveTo(0, yy); g.lineTo(s * 0.32, yy - s * 0.2); g.moveTo(0, yy); g.lineTo(-s * 0.32, yy - s * 0.2); } }
+      g.stroke();
+      if (kind === 0) { g.beginPath(); g.moveTo(0, s * 0.2); g.lineTo(0, s * 1.15); g.stroke(); }
     }
+    function leaf(s, col, kind) { leafG(ctx, s, col, kind || 0); }
     function bat(e, t) {
       var f = Math.sin(t * 0.02) * 0.6 + 0.4; ctx.save(); ctx.translate(e.x, e.y); ctx.scale(e.dir, 1); ctx.fillStyle = 'rgba(10,8,14,.88)';
       ctx.beginPath(); ctx.ellipse(0, 0, 4, 6, 0, 0, 6.28); ctx.fill();
@@ -101,7 +121,7 @@
         if (theme === 'winter') { ctx.globalAlpha = p.al2 * clamp((H - p.y) / (H * 0.14), 0, 1); if (p.k < 0) { ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.28); ctx.fill(); } else { ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.drawImage(snowSprites[p.k], -p.r * 2, -p.r * 2, p.r * 4, p.r * 4); ctx.restore(); } }
         else if (theme === 'summer') { ctx.globalAlpha = p.al; ctx.fillStyle = p.col; ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.28); ctx.fill(); }
         else if (theme === 'spring') { ctx.globalAlpha = 0.95; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); ctx.fillStyle = p.col; ctx.strokeStyle = 'rgba(214,120,150,.45)'; ctx.lineWidth = 0.7; ctx.beginPath(); ctx.ellipse(0, 0, p.r, p.r * 0.55, 0, 0, 6.28); ctx.fill(); ctx.stroke(); ctx.restore(); }
-        else { ctx.globalAlpha = 0.95; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); leaf(p.r, p.col); ctx.restore(); }
+        else { ctx.globalAlpha = 0.95; ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.rot); leaf(p.r, p.col, p.k); ctx.restore(); }
       }
       ctx.globalAlpha = 1;
       if (!extra && now > nextExtra) { spawnExtra(now); nextExtra = now + (theme === 'spring' ? rnd(70000, 140000) : rnd(8000, 16000)); }
@@ -117,17 +137,17 @@
         }
       }
     }
-    function host() { return theme === 'winter' ? document.querySelector('.hero, .page-hero') : null; }
+    function host() { return (theme === 'winter' || theme === 'autumn' || theme === 'halloween') ? document.querySelector('.hero, .page-hero') : null; }
     function size() { var hh = host(); W = hh ? hh.clientWidth : innerWidth; H = hh ? hh.clientHeight : innerHeight; cv.width = W * DPR; cv.height = H * DPR; cv.style.width = W + 'px'; cv.style.height = H + 'px'; ctx.setTransform(DPR, 0, 0, DPR, 0, 0); }
     function start() {
       if (running) return; if (!cv) {
-        cv = document.createElement('canvas'); cv.className = 'fx-canvas'; cv.setAttribute('aria-hidden', 'true'); if (host()) { cv.className += ' fx-in-hero'; host().appendChild(cv); } else if (theme === 'winter') { return; } else document.body.appendChild(cv); ctx = cv.getContext('2d'); size();
+        cv = document.createElement('canvas'); cv.className = 'fx-canvas'; cv.setAttribute('aria-hidden', 'true'); if (host()) { cv.className += ' fx-in-hero'; host().appendChild(cv); } else if (theme === 'winter' || theme === 'autumn' || theme === 'halloween') { return; } else document.body.appendChild(cv); ctx = cv.getContext('2d'); size();
         if (theme === 'winter') snowSprites = [sprite(0), sprite(1), sprite(2)];
-        window.addEventListener('resize', function () { size(); if (theme === 'winter') paintSoon(); });
+        window.addEventListener('resize', function () { size(); if (theme === 'winter' || theme === 'autumn' || theme === 'halloween') paintSoon(); });
       }
       cv.style.display = 'block'; parts = []; var n = count(); for (var i = 0; i < n; i++) parts.push(make(true));
       document.documentElement.classList.add('fx-on', 'fx-' + theme);
-      if (theme === 'winter') caps(true);
+      if (theme === 'winter' || theme === 'autumn' || theme === 'halloween') caps(true);
       running = true; last = performance.now(); nextExtra = last + rnd(3000, 7000); requestAnimationFrame(frame);
     }
     function stop() {
@@ -138,6 +158,16 @@
     var lvl = 0.55, lvlTimer = null, hero = null, pileH = null, pileN = null, wrapped = false, paintT = null;
     function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
     function rr(g, x, y, w, h, r) { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); }
+    function leaves(g, x0, x1, y, n, size, seed) {
+      var R = rng(seed), cols = theme === 'halloween' ? LEAF_H : LEAF, i, j;
+      for (i = 0; i < n; i++) {
+        var cx = x0 + 6 + R() * Math.max(1, x1 - x0 - 12), k = R() < 0.4 ? 2 : 1;
+        for (j = 0; j < k; j++) {
+          var s = size * (0.8 + R() * 0.5); g.save(); g.translate(cx + j * size * 0.9, y - 1 - R() * size * 0.5 - j * size * 0.3); g.rotate(R() * 6.28);
+          g.shadowColor = 'rgba(0,0,0,.35)'; g.shadowBlur = 3; g.shadowOffsetY = 1.5; leafG(g, s, cols[(R() * cols.length) | 0], (R() * 3) | 0); g.restore();
+        }
+      }
+    }
     function drift(g, x0, x1, base, Hm, o) {
       Hm *= lvl; if (Hm < 2 || x1 - x0 < 8) return;
       var R = rng(o.seed), p1 = R() * 6.28, p2 = R() * 6.28, f1 = 0.7 + R() * 1.0, f2 = 2 + R() * 2, len = x1 - x0, rad = clamp(Hm * 0.3, 3.5, 11), pts = [], x, t, h, edge;
@@ -163,24 +193,30 @@
     }
     function prep(c, w, h) { var d = 2; c.width = w * d; c.height = h * d; c.style.width = w + 'px'; c.style.height = h + 'px'; var g = c.getContext('2d'); g.setTransform(d, 0, 0, d, 0, 0); g.clearRect(0, 0, w, h); return g; }
     function paint() {
+      var AUT = theme !== 'winter';
       if (!hero || !document.documentElement.classList.contains('fx-on')) return;
       var hr = hero.getBoundingClientRect(), w = hr.width, h = hr.height, g = prep(pileH, w, h), seed = 11;
       function rel(el) { var r = el.getBoundingClientRect(); return { x: r.left - hr.left, y: r.top - hr.top, w: r.width, h: r.height }; }
       /* bottom snowbank: back layer for depth, then the front */
+      if (AUT) { leaves(g, 0, w, h - 1, 9, 9, 5); } else {
       drift(g, -4, w + 4, h + 1, 16, { bank: true, seed: 5, hi: '#e6f0ff', mid: '#c9dbf5', lo: '#9db8e0', alpha: 0.7, nosparkle: true });
       drift(g, -4, w + 4, h + 2, 10, { bank: true, seed: 9, mid: '#f1f6ff', lo: '#aac3e8' });
+      }
       var media = hero.querySelector('.hero-media');
       if (media) { var m = rel(media); if (m.w > 0) {
+        if (AUT) { leaves(g, m.x, m.x + m.w, m.y + 4, 8, 8.5, 21); } else {
         blanket(g, m.x, m.y, m.w, m.h, 18, 10);
         drift(g, m.x - 6, m.x + m.w + 6, m.y + 3, 7, { seed: 21 });
         drift(g, m.x - 8, m.x + m.w * 0.3, m.y + 4, 11, { seed: 23 });
         drift(g, m.x + m.w * 0.72, m.x + m.w + 8, m.y + 4, 9.5, { seed: 27 });
+        }
       } }
       hero.querySelectorAll('.badge, .btn-red, .btn-ghost, .btn-outline').forEach(function (el) {
         var r = rel(el); if (r.w < 20 || r.h < 10) return; seed += 7;
+        if (AUT) { leaves(g, r.x, r.x + r.w, r.y + 3, 3, 6, seed); return; }
         blanket(g, r.x, r.y, r.w, r.h, 8, el.classList.contains('badge') ? 8 : 5); drift(g, r.x - 3, r.x + r.w + 3, r.y + 2, el.classList.contains('badge') ? 3.8 : 4.2, { seed: seed });
       });
-      hero.querySelectorAll('h1 .fx-w').forEach(function (sp, i) {
+      if (!AUT) hero.querySelectorAll('h1 .fx-w').forEach(function (sp, i) {
         var tn = sp.firstChild; if (!tn || tn.nodeType !== 3) return; var rg = document.createRange(); rg.setStart(tn, 0); rg.setEnd(tn, Math.min(2, tn.nodeValue.length)); var r = rg.getBoundingClientRect(), fs = parseFloat(getComputedStyle(sp).fontSize) || 48;
         var x0 = r.left - hr.left, y = r.top - hr.top + fs * 0.22;
         drift(g, x0 + fs * 0.02, x0 + fs * 0.62, y, fs * 0.056, { seed: 40 + i, nosparkle: true, mid: '#e6f0ff', lo: '#a9c2e8' });
@@ -189,7 +225,7 @@
       var gn = prep(pileN, innerWidth, 120);
       document.querySelectorAll('nav .nav-cta').forEach(function (el, i) {
         var r = el.getBoundingClientRect(); if (r.width < 20 || r.height < 10 || r.top > 110) return;
-        blanket(gn, r.left, r.top, r.width, r.height, 8, 10); drift(gn, r.left - 2, r.left + r.width + 2, r.top + 2, 3.8, { seed: 60 + i });
+        if (AUT) { leaves(gn, r.left, r.left + r.width, r.top + 3, 3, 6, 60 + i); return; } blanket(gn, r.left, r.top, r.width, r.height, 8, 10); drift(gn, r.left - 2, r.left + r.width + 2, r.top + 2, 3.8, { seed: 60 + i });
       });
     }
     function paintSoon() { clearTimeout(paintT); paintT = setTimeout(paint, 120); }
